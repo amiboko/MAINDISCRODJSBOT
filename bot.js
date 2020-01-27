@@ -1,0 +1,152 @@
+'use strict'
+
+if (Number(process.version.slice(1).split('.')[0]) < 10) throw new Error('NodeJS 10.0.0 or higher is required. Re-run this with NodeJS 10.0.0+')
+if (process.env.PREBOOT) eval(process.env.PREBOOT)
+require('dotenv').config()
+
+const Discord = require('discord.js')
+const Enmap = require('enmap')
+const cron = require('cron')
+const client = new Discord.Client({
+  disableEveryone: true,
+  disabledEvents: ['TYPING_START']
+})
+
+const dblposer = require('dblposter')
+const DBLPoster = new dblposer(process.env.DBL_TOKEN, client)
+
+DBLPoster.bind()
+
+client.starttime = new Date().getTime()
+client.points = new Enmap({ name: 'points' })
+client.pingwords = new Enmap({ name: 'pingwords' })
+client.inventory = new Enmap({ name: 'inventory' })
+client.garden = new Enmap({ name: 'garden' })
+client.money = new Enmap({ name: 'money' })
+client.cooldown = new Enmap({ name: 'cooldown' })
+client.badges = new Enmap({ name: 'badges' })
+client.logins = new Enmap({ name: 'logins' })
+client.reputation = new Enmap({ name: 'reputation' })
+client.settings = new Enmap({ name: 'settings' })
+client.fish = new Enmap({ name: 'fish' })
+client.flags = new Enmap({ name: 'flags' })
+client.treasure = new Enmap({ name: 'treasure' })
+client.life = new Enmap({ name: 'life' })
+client.tags = new Enmap({ name: 'tags' })
+client.uses = new Enmap({ name: 'commandpop' })
+client.minecooldown = new Discord.Collection()
+client.commands = new Discord.Collection()
+client.aliases = new Discord.Collection()
+client.liusers = new Discord.Collection()
+client.music = {}
+client.levelCache = {}
+
+process.env.SESSION_SECRET = ''
+for (let i = 0; i <= 1500; i++) {
+  process.env.SESSION_SECRET += Math.random()
+    .toString(16)
+    .slice(2, 8)
+    .toUpperCase()
+    .slice(-6) + i
+}
+
+client.config = require('./config.js')
+require('./modules/_functions')(client)
+require('./modules/commands')(client)
+require('./modules/events')(client)
+// require('./modules/webhooks')(client)
+
+client.on('ready', () => {
+    const CronJob = require('cron').CronJob;
+
+  var job = new CronJob({
+      // cronTime: '00 03 00 * * 1-7', // 00:03:00
+      cronTime: '* * * * *', //every minute
+  });
+  job.start();
+
+  function job() {
+      const embed = new Discord.RichEmbed()
+      .setColor(0x8644ba)
+      .setDescription('test')
+      client.channels.get('638368284491776032').send(embed)
+  }
+});
+
+client.on('presenceUpdate', (oldMember, newMember) => {
+  const guild = newMember.guild;
+  const playingRole = guild.roles.find(role => role.id === '583574396686434304');
+
+  if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
+
+  const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
+  const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+
+  if (!oldGame && newGame) {         // Started playing.
+    newMember.addRole(playingRole)
+      .then(() => console.log(`${playingRole.name} added to ${newMember.user.tag}.`))
+      .catch(console.error);
+  } else if (oldGame && !newGame) {  // Stopped playing.
+    newMember.removeRole(playingRole)
+      .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
+      .catch(console.error);
+  }
+});
+
+
+
+
+
+
+
+client.on("presenceUpdate", (oldMember, newMember) => {
+  if(oldMember.presence.game !== newMember.presence.game && newMember.presence.game === 'MappleRoyal'){
+      console.log(`${newMember.user.username} is now playing ${newMember.presence.game.name}`);
+  }
+});
+
+client.on("presenceUpdate", (oldMember, newMember) => {
+  if(newMember.presence.game === 'Dead By Daylight'){
+      console.log(`${newMember.user.username} is now playing ${newMember.presence.game.name}`);
+  }
+});
+
+client.on("presenceUpdate", (oldMember, newMember) => {
+  if(oldMember.presence.game === 'Call of Duty®: Modern Warfare'){
+      console.log(`${newMember.user.username} is now playing ${newMember.presence.game.name}`);
+  }
+});
+
+
+client.on('message', message => {
+  if(message.content.includes('משחק')) {
+      message.channel.send(message.author + '`יאלה בוא אני זורם`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content.includes('לא')) {
+      message.channel.send(message.author + '`למה אתה שלילי`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content.includes('כן')) {
+      message.channel.send(message.author + '`אני אוהב שאתה חיובי`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content === '?') {
+      message.channel.send(message.author + '`מה אתה רוצה?`');
+  }
+});
+
+for (let i = 0; i < client.config.permLevels.length; i++) {
+  const currentlevel = client.config.permLevels[i]
+  client.levelCache[currentlevel.name] = currentlevel.level
+}
+
+client.login(process.env.token)
+
+module.exports = client
