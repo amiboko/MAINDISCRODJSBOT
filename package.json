@@ -1,5 +1,5 @@
 {
-  "name": "Tsuyo",
+  "name": "AmiJS",
   "version": "1.0.0",
   "description": "A multipurpose bot to handle all your needs.",
   "main": "bot.js",
@@ -18,9 +18,9 @@
   "engines": {
     "node": "10.x"
   },
-  "repository": "github:TsuyoBot/main",
-  "author": "Venk#2020",
-  "license": "MIT",
+  "repository": "",
+  "author": "",
+  "license": "",
   "dependencies": {
     "better-sqlite-pool": "^0.2.2",
     "better-sqlite3": "^5.4.0",
@@ -60,8 +60,8 @@
     "nodemon": "^1.18.10"
   },
   "bugs": {
-    "url": "https://github.com/TsuyoBot/main/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/TsuyoBot/main",
-  "snyk": true
+  "homepage": "",
+  "snyk": false
 }
