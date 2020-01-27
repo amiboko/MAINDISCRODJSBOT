@@ -1,0 +1,5 @@
+{
+  "clientId": "",
+  "scopes": ["identify", "guilds", "guilds.join"],
+  "redirectUri": ""
+}
