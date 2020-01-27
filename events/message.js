@@ -23,8 +23,8 @@ module.exports = async (client, message) => {
       return message.channel.send(embed)
   }
   
-  const pingWords = require('../modules/pingWords.js')
-  pingWords(client, message)
+  const pingwords = require('../modules/pingwords.js')
+  pingwords(client, message)
   
   // Commands
   
