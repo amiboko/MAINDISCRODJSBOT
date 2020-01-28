@@ -95,5 +95,5 @@ exports.help = {
   name: 'קנה',
   category: 'הימורים',
   description: 'קנה מוצר מהחנות',
-  usage: 'קנה _שם מוצר'
+  usage: 'רשום קנה ואת שם המוצר ולא לשכוח כמות'
 }
