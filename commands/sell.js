@@ -26,14 +26,14 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['מכור','מכירה'],
+  aliases: [''],
   guildOnly: true,
   permLevel: 'User'
 }
 
 exports.help = {
-  name: 'מכירה',
-  category: 'הימורים',
+  name: 'NONE',
+  category: 'NONE',
   description: 'מכירת בייצים',
   usage: 'מכור [כמה בייצים]'
 }
