@@ -130,7 +130,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if(message.content === '?') {
+  if(message.content.includes('?')) {
     if (message.author.bot) return;
       message.channel.send(message.author + '`מה אתה רוצה?`');
   }
