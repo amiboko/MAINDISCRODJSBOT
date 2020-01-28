@@ -23,8 +23,8 @@ exports.run = async (client, message, args) => {
   })
 
   const money = client.money.get(message.author.id, 'money')
-  client.money.set(`${message.author.id}`, money + 100, 'money')
-  message.channel.send(`קיבלת בונוס יומי של \`${100}שקל\`!`)
+  client.money.set(`${message.author.id}`, money + 1000, 'money')
+  message.channel.send(`קיבלת בונוס יומי של \`${1000}שקל\`!`)
 }
 
 exports.conf = {
