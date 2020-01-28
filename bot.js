@@ -74,29 +74,37 @@ client.on('ready', () => {
 });
 
 
-client.on("presenceUpdate", (oldMember, newMember) => {
-  if(oldMember.presence.game !== newMember.presence.game && newMember.presence.game === 'MappleRoyal'){
-      console.log(`${newMember.user.username} is now playing ${newMember.presence.game.name}`);
+
+client.on('presenceUpdate', (oldMember, newMember) => {
+  const guild = newMember.guild;
+  const playingRole = guild.roles.find(role => role.id === '671631357725638656');
+
+  if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
+
+  const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
+  const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+
+  if (!oldGame && newGame) {         // Started playing.
+    newMember.addRole(playingRole)
+      .then(() => console.log(`${playingRole.name} added to ${newMember.user.tag}.`))
+      .catch(console.error);
+  } else if (oldGame && !newGame) {  // Stopped playing.
+    newMember.removeRole(playingRole)
+      .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
+      .catch(console.error);
   }
 });
 
-client.on("presenceUpdate", (oldMember, newMember) => {
-  if(newMember.presence.game === 'Dead By Daylight'){
-      console.log(`${newMember.user.username} is now playing ${newMember.presence.game.name}`);
-  }
-});
 
-client.on("presenceUpdate", (oldMember, newMember) => {
-  if(oldMember.presence.game === 'Call of Duty®: Modern Warfare'){
-      console.log(`${newMember.user.username} is now playing ${newMember.presence.game.name}`);
-  }
-});
 
-client.on("presenceUpdate", (oldMember, newMember) => {
-  if(oldMember.presence.game === 'Visual Studio Code'){
-      console.log(`${newMember.user.username} is now playing ${newMember.presence.game.name}`);
-  }
-});
+
+
+
+
+
+
+
+
 
 client.on('message', message => {
   
