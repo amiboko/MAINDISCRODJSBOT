@@ -86,8 +86,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
   if (!oldGame && newGame) {         // Started playing.
     newMember.addRole(playingRole)
-      .then(() => console.log(`${playingRole.name} added to ${newMember.user.tag}.`))
-      .catch(console.error);
+      .then(client.channels.get(`638368284491776032`).send(`${newMember.user}` + 'תהנה במשחק'));
   } else if (oldGame && !newGame) {  // Stopped playing.
     newMember.removeRole(playingRole)
       .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
