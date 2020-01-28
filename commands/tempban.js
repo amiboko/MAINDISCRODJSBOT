@@ -25,5 +25,5 @@ exports.help = {
   name: 'מזון',
   category: 'כיף',
   description: 'אני יעזור לך מה לאכול',
-  usage: 'רעב | אוכל | לאכול'
+  usage: 'רשום רעב או אוכל או לאכול'
 }
