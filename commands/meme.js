@@ -25,5 +25,5 @@ exports.help = {
   name: 'מם',
   category: 'כיף',
   description: 'פשוטו כמשמעו',
-  usage: 'meme | מם'
+  usage: 'רשום מם או מם באנגלית'
 }
