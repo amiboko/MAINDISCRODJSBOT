@@ -32,5 +32,5 @@ exports.help = {
   name: 'בוט',
   category: 'עזרים',
   description: 'קצת פרטים על הבוט',
-  usage: 'בוט'
+  usage: 'רשום בוט'
 }
