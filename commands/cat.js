@@ -12,7 +12,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['פורן', 'פורני', 'porn', 'poran'],
+  aliases: ['פורן', 'פורני', 'פורנו', 'PORN', 'porn'],
   guildOnly: false,
   permLevel: 'User'
 }
@@ -21,5 +21,5 @@ exports.help = {
   name: 'פורן',
   category: 'כיף',
   description: 'תמונה של פורן',
-  usage: 'פורן porn poran פורני'
+  usage: 'רשום פורן או פורני או פורנו '
 }
