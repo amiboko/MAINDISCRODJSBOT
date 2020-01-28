@@ -28,5 +28,5 @@ exports.help = {
   name: 'מחיקה',
   category: 'מנהל',
   description: 'מוחק הודעות',
-  usage: 'מחק | נקה | מחיקה 2-100'
+  usage: 'רשום מחק'
 }
