@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
     .setDescription(` \`${prefix} רשימת מוצרים\``)
     .setColor(colors.default)
     .addField('🍆 (₪100) דילדו',  `\`${prefix}יש להיעזר במבוגר אחראי\``, true)
-    .addField('💍 (₪1000) טבעת נישואין', `\`${prefix}?!גיימרים צריכים להתחתן לא\``, true)
+    .addField('💍 (₪10000) טבעת', `\`${prefix}?!גיימרים צריכים להתחתן לא\``, true)
     .addField('🌿 (₪50) ירוק', `\`${prefix}קצת סטלה לא תזיק\``, true)
     .addField('🔞 (₪10) קונדום ',  `\`${prefix}יש פה מספיק ילדים\``, true)
     .addField('🏎️ (₪10,000,000) למבורגיני', `\`${prefix}נראה אותך קונה אותי\``, true)
