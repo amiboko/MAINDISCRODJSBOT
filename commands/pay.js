@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
   console.log(parseInt(args[1]))
   console.log(parseInt(money) + parseInt(args[1]))
   client.money.set(`${message.author.id}`, parseInt(yourMoney) - parseInt(args[1]), 'money')
-  message.channel.send(`העברת **${user}** \`${parseInt(args[1])}\`\n**${user}'s סכום של:** $${parseInt(args[1])}\n**יתרה נוכחית:** $${parseInt(yourMoney) - parseInt(args[1])}`)
+  message.channel.send(`העברת **${user}** \`${parseInt(args[1])}\`\n**${user}'s סכום של:** ₪${parseInt(args[1])}\n**יתרה נוכחית:** $${parseInt(yourMoney) - parseInt(args[1])}`)
 }
 
 exports.conf = {
@@ -39,5 +39,5 @@ exports.help = {
   name: 'שלם',
   category: 'הימורים',
   description: 'שלם לחבר',
-  usage: 'מכור | שלם | העבר | פרגן'
+  usage: 'רשום העבר או פרגן או מכור או שלם ואז תייג משהו עם @ ואל תשכח תסכום'
 }
