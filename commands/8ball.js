@@ -47,5 +47,5 @@ exports.help = {
   name: 'שאל',
   category: 'עזרים',
   description: 'שאל אותי שאלה ידבע',
-  usage: 'שאל <שאלה>'
+  usage: 'רשום שאל והוסף תוכן'
 }
