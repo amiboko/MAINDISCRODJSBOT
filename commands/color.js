@@ -26,5 +26,5 @@ exports.help = {
   name: 'מפחיד',
   category: 'כיף',
   description: 'ואלה מפחיד',
-  usage: 'מפחיד'
+  usage: 'רשום מפחיד'
 }
