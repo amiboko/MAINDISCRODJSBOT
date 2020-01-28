@@ -902,5 +902,5 @@ exports.help = {
   name: ' הידעת',
   category: 'כיף',
   description: 'משפטים מפגרים או חכמים אין לי מושג',
-  usage: 'הידעת'
+  usage: 'רשום הידעת'
 }
