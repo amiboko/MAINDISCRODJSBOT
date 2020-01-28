@@ -19,5 +19,5 @@ exports.help = {
   name: 'שלח',
   category: 'מנהל',
   description: 'שולח הודעה בשמי',
-  usage: 'שלח _ אני זיין'
+  usage: 'רשום שלח ואז תוכן'
 }
