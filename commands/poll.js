@@ -27,7 +27,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['שאל','הצבעה','סקר',],
+  aliases: ['שאל','הצבעה','סקר'],
   guildOnly: true,
   permLevel: 'User'
 }
@@ -36,5 +36,5 @@ exports.help = {
   name: 'סקר',
   category: 'כלים',
   description: 'משאל עם, סקר, הצבעה. קרא לזה איך שאתה רוצה',
-  usage: 'שאל|סקר|הצבעה_ האם מוריס גיי'
+  usage: 'רשום סקר או שאל או הצבעה והוסף תוכן'
 }
