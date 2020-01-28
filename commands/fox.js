@@ -23,5 +23,5 @@ exports.help = {
   name: 'אלכס',
   category: 'כיף',
   description: 'מציג תמונה של אלכס',
-  usage: 'אלכס|ALEX'
+  usage: 'תרשום אלכס או אלכס באנגלית'
 }
