@@ -24,7 +24,7 @@ Full Name: ${user.user.tag}`)
 
 exports.conf = {
   enabled: true,
-  aliases: ['user', 'ui'],
+  aliases: [''],
   guildOnly: true,
   permLevel: 'User'
 }
