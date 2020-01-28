@@ -46,14 +46,14 @@ exports.run = (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['מ', '123'],
+  aliases: ['123'],
   guildOnly: false,
   permLevel: 'User'
 }
 
 exports.help = {
-  name: 'אבן נייר מספריים',
+  name: '123 - משחק',
   category: 'כיף',
   description: 'אבן נייר ומספריים הידוע',
-  usage: 'מ | 123 _אבן/נייר/מספריים'
+  usage: 'רשום 123 ואז אבן או נייר או מספריים'
 }
