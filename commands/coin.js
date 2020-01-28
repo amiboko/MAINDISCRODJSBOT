@@ -15,5 +15,5 @@ exports.help = {
   name: 'מטבע',
   category: 'כיף',
   description: 'תטיל מטבע',
-  usage: 'מטבע'
+  usage: 'רשום מטבע'
 }
