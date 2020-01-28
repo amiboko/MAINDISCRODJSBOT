@@ -30,5 +30,5 @@ exports.help = {
   name: 'בדיחה',
   category: 'כיף',
   description: 'ביקשת בדיחה קיבלת בדיחה',
-  usage: 'בדיחה | מצחיק | חח'
+  usage: 'רשום בדיחה או מצחיק או חחח'
 }
