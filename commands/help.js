@@ -25,7 +25,7 @@ exports.run = (client, message, args, level) => {
 	      	.setTitle(`תפריט עזרה - ${prefix}${command.help.name}`)
 	      	.setColor(colors.default)
           .setThumbnail(client.user.avatarURL)
-          .setDescription(`${command.help.description}\n\n**שימוש:** ${command.help.usage}\n**עזרים:** ${command.conf.aliases.join(' | ') || 'ריק'}`)
+          .setDescription(`${command.help.description}\n\n**שימוש:** ${command.help.usage}\n`)
 	      	.addField('רמת הרשאה', `${client.levelCache[command.conf.permLevel]} - ${command.conf.permLevel}`, true)
           .addField('קטגוריה', command.help.category, true)
           .addField('רשאי', command.conf.guildOnly ? 'כן' : 'לא', true)
