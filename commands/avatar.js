@@ -32,5 +32,5 @@ exports.help = {
   name: 'לוגו',
   category: 'עזרים',
   description: 'מציג את הלוגו שלך',
-  usage: 'לוגו [משתמש]'
+  usage: 'רשום לוגו'
 }
