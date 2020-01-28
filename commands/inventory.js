@@ -15,9 +15,9 @@ exports.run = async (client, message, args) => {
   })
   
   const embed = new Discord.RichEmbed()
-    .setTitle('רשימת מלאי שלי')
+    .setTitle('רשימת המחסן הפרטי שלי')
     .setColor(colors.default)
-    .addField(`💍 טבעת נישואין`, client.inventory.get(key, 'ring'))
+    .addField(`💍 טבעת`, client.inventory.get(key, 'ring'))
     .addField(`🍆 דילדו`, client.inventory.get(key, 'dildo'))
     .addField(`🌿 ירוק`, client.inventory.get(key, 'green'))
     .addField(`🔞 קונדום`, client.inventory.get(key, 'condom'))
@@ -30,14 +30,14 @@ exports.run = async (client, message, args) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['מלאי', 'תיק', 'ארון', 'שקית'],
+  aliases: ['מחסן', 'תיק', 'ארון', 'שקית'],
   guildOnly: false,
   permLevel: 'User'
 }
 
 exports.help = {
-  name: 'מלאי',
+  name: 'מחסן',
   category: 'הימורים',
-  description: 'מציג רשימת מלאי',
-  usage: 'מלאי | שקית | ארון | תיק'
+  description: 'מציג רשימת המחסן הפרטי שלי',
+  usage: 'רשום מחסן או ארון או שקית או תיק'
 }
