@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['כסף', 'עשיר', '$', 'ארנק', 'ויזה'],
+  aliases: ['כסף', 'עשיר', 'שקל', 'ארנק', 'ויזה'],
   guildOnly: false,
   permLevel: 'User'
 }
@@ -22,5 +22,5 @@ exports.help = {
   name: 'כסף',
   category: 'הימורים',
   description: 'כמה כסף יש לך',
-  usage: 'כסף | ארנק | ויזה | עשיר'
+  usage: 'רשום כסף או ארנק או עשיר או שקל או ויזה'
 }
