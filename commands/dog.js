@@ -24,5 +24,5 @@ exports.help = {
   name: 'מוריס',
   category: 'כיף',
   description: 'תרשום תשם של מוריס באנגלית ובעברית ותקבל תמונה של מוריס',
-  usage: 'מוריס|כלב|הודי|dog|puppy|moris|morris|maurice'
+  usage: 'רשום מוריס או מוריס באנגלית'
 }
