@@ -95,17 +95,6 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
 client.on('message', message => {
   
   if(message.content.includes('משחק')) {
