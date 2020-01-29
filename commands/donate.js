@@ -14,7 +14,7 @@ exports.run = (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['תרומה','תרום'],
+  aliases: [''],
   guildOnly: false,
   permLevel: 'User'
 }
