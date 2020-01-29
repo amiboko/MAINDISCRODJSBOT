@@ -21,7 +21,7 @@ exports.run = (client, message, args, level) => {
       const embed = new Discord.RichEmbed()
 	  .setTitle('תפריט פקודות')
 	  .setColor(colors.default)
-	  .addField(` רשימת פקודות לפי קטגוריות ${prefix}`, ':קטגוריות \n `מנהל`  `הימורים`  `כיף`  `הרשאות`  `כלים`')
+	  .addField(` רשימת פקודות לפי קטגוריות ${prefix}`, '\n \n `הימורים`  `כיף`  `כלים`    ')
 
       message.channel.send(embed)
     } else {
@@ -77,6 +77,6 @@ exports.conf = {
 exports.help = {
   name: 'פקודות',
   category: 'כלים',
-  description: 'מציג את כל הפקודות לפי קטגוריות',
-  usage: 'פקודות|פקודה _ קטגוריה'
+  description: 'מציג אינפורמציה לגביי כל הפקודות',
+  usage: 'רשום פקודות או פקודה ואז את שם הפקודה'
 }
