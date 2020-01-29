@@ -22,7 +22,7 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'מזון',
+  name: 'אוכל',
   category: 'כיף',
   description: 'אני יעזור לך מה לאכול',
   usage: 'רשום רעב או אוכל או לאכול'
