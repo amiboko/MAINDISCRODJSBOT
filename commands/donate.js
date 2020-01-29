@@ -20,8 +20,8 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'תרומה',
-  category: 'כלים',
+  name: 'NONE',
+  category: 'NONE',
   description: 'בבנייה',
   usage: 'טסט'
 }
