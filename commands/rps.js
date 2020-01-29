@@ -2,6 +2,12 @@ const colors = require('../lib/colors.json')
 const Discord = require('discord.js')
 
 exports.run = (client, message, args, level) => {
+
+  client.money.ensure(`${message.author.id}`, {
+    member: message.author.id,
+    money: 0
+  })
+  const money = client.money.get(message.author.id, 'money')
   const prefix = message.guild === null ? ';;' : client.getSettings(message.guild.id).prefix
   const input = args[0]
   if (input == 'אבן' || input == 'נייר' || input == 'מספריים') {
@@ -33,11 +39,21 @@ exports.run = (client, message, args, level) => {
     // If bot loses
 
     else if (input == 'אבן' && result[picker] == 'מספריים') {
-      message.channel.send('בחרתי :v:\n**ניצחת יזיין**!')
+      message.channel.send('בחרתי :v:\n\n**ניצחת יזיין**!\n\n  וגם זכית ב₪1000 💰')
+
+      client.money.set(`${message.author.id}`, money + 1000, 'money')
+      
     } else if (input == 'נייר' && result[picker] == 'אבן') {
-      message.channel.send('בחרתי :punch:\n**ניצחת יזיין**!')
+      message.channel.send('בחרתי :punch:\n\n**ניצחת יזיין**!\n\n  וגם זכית ב₪1000 💰')
+
+      client.money.set(`${message.author.id}`, money + 1000, 'money')
+
     } else if (input == 'מספריים' && result[picker] == 'נייר') {
-      message.channel.send('בחרתי :raised_hand:\n**ניצחת יזיין**!')
+
+      message.channel.send(`בחרתי :raised_hand:\n\n**ניצחת יזיין**!\n\n  וגם זכית ב₪1000 💰`)
+      
+      client.money.set(`${message.author.id}`, money + 1000, 'money')
+
     }
   } else {
     message.channel.send(`**ערך לא תקין:** ${prefix}באמא שלי הבוטית שאתה דבע`)
@@ -52,8 +68,8 @@ exports.conf = {
 }
 
 exports.help = {
-  name: '123 - משחק',
-  category: 'כיף',
-  description: 'אבן נייר ומספריים הידוע',
+  name: 'אבן נייר ומספריים',
+  category: 'הימורים',
+  description: 'אבן נייר ומספריים הידוע עם טוייסט בעלילה',
   usage: 'רשום 123 ואז אבן או נייר או מספריים'
 }
