@@ -28,7 +28,7 @@ exports.conf = {
 
 exports.help = {
   name: 'חנות',
-  category: 'כלכלי',
+  category: 'הימורים',
   description: 'רשימת מוצרים מהחנות שלי',
   usage: 'חנות'
 }
