@@ -37,7 +37,7 @@ exports.conf = {
 
 exports.help = {
   name: 'מחסן',
-  category: 'הימורים',
+  category: 'כלים',
   description: 'מציג רשימת המחסן הפרטי שלי',
   usage: 'רשום מחסן או ארון או שקית או תיק'
 }
