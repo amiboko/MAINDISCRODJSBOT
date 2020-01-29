@@ -16,7 +16,7 @@ exports.run = async (client, message, args, level) => {
     .setColor(colors.default)
     .setImage(`${user.displayAvatarURL}`)
     .setThumbnail(`${user.displayAvatarURL}`)
-    .addField(`${user.username}'s avatar:`, `${user.displayAvatarURL}`, true)
+    .addField(`${user.username}' לוגו`, `${user.displayAvatarURL}`, true)
 
   message.channel.send(embed2)
 }
