@@ -77,17 +77,20 @@ client.on('ready', () => {
 
 client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
-  const playingRole = guild.roles.find(role => role.id === '671635962228637696');
+  const playingRole = guild.roles.find(role => role.id === '671631357725638656');
 
   if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
 
   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
 
-  if (!oldGame && newGame) {         // Started playing.
+  if (!oldGame && newGame) {         
     newMember.addRole(playingRole)
-      .then(client.channels.get(`638368284491776032`).send(`${newMember.user}` + 'תהנה במשחק'));
-  } else if (oldGame && !newGame) {  // Stopped playing.
+
+    .then(() => client.channels.get(`583575179880431616`)
+    .send(`${newMember.user}` + 'תהנה במשחק'))
+
+  } else if (oldGame && !newGame) {  
     newMember.removeRole(playingRole)
       .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
       .catch(console.error);
