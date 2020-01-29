@@ -27,7 +27,7 @@ exports.run = async (client, message, args) => {
   const rep = client.reputation.get(`${user.id}`, 'reputation')
 
   client.reputation.set(`${user.id}`, rep + 1, 'reputation')
-  message.channel.send(`${user}פשששש! פירגנת ל`)
+  message.channel.send(`אולי אתה לא כזה גיי אחרי הכל\n\n  פירגנת כבוד ל${user}`)
   client.cooldown.set(`${message.author.id}`, date, 'rep') // Activate 24 hour cooldown
 }
 
@@ -41,6 +41,6 @@ exports.conf = {
 exports.help = {
   name: 'כבוד',
   category: 'הימורים',
-  description: 'פרגן לחבר קצת כבוד',
-  usage: 'פרגן | פנק | כבוד _@עמי'
+  description: ' פרגן לחבר קצת כבוד {לא כסף}',
+  usage: 'רשום כבוד או פנק או פרגן ואז תייג משתמש עם @ '
 }
