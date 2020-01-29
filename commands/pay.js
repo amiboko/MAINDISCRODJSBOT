@@ -30,14 +30,14 @@ exports.run = async (client, message, args) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['מכור', 'שלם', 'העבר', 'פרגן'],
+  aliases: ['מכור', 'שלם', 'העבר', 'פרגן', 'תרום'],
   guildOnly: true,
   permLevel: 'User'
 }
 
 exports.help = {
-  name: 'שלם',
+  name: 'תרומה',
   category: 'הימורים',
-  description: 'שלם לחבר',
-  usage: 'רשום העבר או פרגן או מכור או שלם ואז תייג משהו עם @ ואל תשכח תסכום'
+  description: 'תרום לחבר',
+  usage: 'רשום העבר או מכור או תרום ואז תייג משהו עם @ ואל תשכח תסכום'
 }
