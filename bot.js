@@ -109,8 +109,8 @@ if(oldStreamingStatus == newStreamingStatus){
 }
 
 if(newStreamingStatus){
-  if (newMember.presence.game && newMember.presence.game.name === 'Call of Duty®: Modern Warfare') {
-      channel.send(`${newMember.user}, TEST: ${newMember.presence.game.url}`);
+  if (newMember.presence.game && newMember.presence.game.name == 'Call of Duty®: Modern Warfare') {
+      channel.send(`${newMember.user}, TEST: `);
   return; 
   }
 }
