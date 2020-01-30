@@ -79,7 +79,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
   const playingRole = guild.roles.find(role => role.id === '671635962228637696');
 
-  if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
+  if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status || newMember.presence.game.type == 'STREAMING') return;
 
   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
@@ -96,6 +96,29 @@ client.on('presenceUpdate', (oldMember, newMember) => {
       .catch(console.error);
   }
 });
+
+
+client.on('presenceUpdate', (oldMember, newMember) => {
+  const channel = oldMember.guild.channels.find(x => x.name === "583575179880431616");
+  if (!channel) return;
+      let oldStreamingStatus = oldMember.presence.game ? oldMember.presence.game.streaming : false;
+      let newStreamingStatus = newMember.presence.game ? newMember.presence.game.streaming : false;
+
+if(oldStreamingStatus == newStreamingStatus){
+  return;
+}
+
+if(newStreamingStatus){
+  if (newMember.presence.game && newMember.presence.game.name === 'Call of Duty®: Modern Warfare') {
+      channel.send(`${newMember.user}, TEST: ${newMember.presence.game.url}`);
+  return; 
+  }
+}
+});
+
+
+// || newMember.presence.game.details.match(/keywords in stream/gi)
+
 
 client.on('message', message => {
   
