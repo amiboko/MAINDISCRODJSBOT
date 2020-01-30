@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['מכור', 'שלם', 'העבר', 'פרגן', 'תרום'],
+  aliases: ['מכור', 'שלם', 'העבר', 'תרומה', 'תרום'],
   guildOnly: true,
   permLevel: 'User'
 }
