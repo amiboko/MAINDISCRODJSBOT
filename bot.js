@@ -98,28 +98,6 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 });
 
 
-client.on('presenceUpdate', (oldMember, newMember) => {
-  const channel = oldMember.guild.channels.find(x => x.name === "583575179880431616");
-  if (!channel) return;
-      let oldStreamingStatus = oldMember.presence.game ? oldMember.presence.game.streaming : false;
-      let newStreamingStatus = newMember.presence.game ? newMember.presence.game.streaming : false;
-
-if(oldStreamingStatus == newStreamingStatus){
-  return;
-}
-
-if(newStreamingStatus){
-  if (newMember.presence.game && newMember.presence.game.name == 'Call of Duty®: Modern Warfare') {
-      channel.send(`${newMember.user}, TEST: `);
-  return; 
-  }
-}
-});
-
-
-// || newMember.presence.game.details.match(/keywords in stream/gi)
-
-
 client.on('message', message => {
   
   if(message.content.includes('משחק')) {
