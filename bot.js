@@ -79,7 +79,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
   const playingRole = guild.roles.find(role => role.id === '671635962228637696');
 
-  if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status || newMember.presence.game.type == 'STREAMING') return;
+  if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status || newMember.presence.game.type === 'STREAMING') return;
 
   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
