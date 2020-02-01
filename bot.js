@@ -77,7 +77,7 @@ client.on('ready', () => {
 
 client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
-  const playingRole = guild.roles.find(role => role.id === '673211967216812068');
+  const playingRole = guild.roles.find(role => role.id === '671635962228637696');
 
   if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
 
@@ -87,7 +87,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   if (!oldGame && newGame) {         
     newMember.addRole(playingRole)
 
-    .then(() => client.channels.get(`583575179880431616`)
+    .then(() => client.channels.get(`673211967216812068`)
     .send(`${newMember.user}` + 'תהנה במשחק'))
 
   } else if (oldGame && !newGame) {  
