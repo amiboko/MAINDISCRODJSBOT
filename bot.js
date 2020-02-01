@@ -88,7 +88,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
     newMember.addRole(playingRole)
 
     .then(() => client.channels.get(`673211967216812068`)
-    .send(`${newMember.user}` + 'תהנה במשחק'))
+    .send(`${newMember.user}` + newGame.newMember.presence.game + '✔️'))
 
   } else if (oldGame && !newGame) {  
     newMember.removeRole(playingRole)
