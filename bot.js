@@ -77,7 +77,7 @@ client.on('ready', () => {
 
 client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
-  const playingRole = guild.roles.find(role => role.id === '671635962228637696');
+  const playingRole = guild.roles.find(role => role.id === '673211967216812068');
 
   if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
 
