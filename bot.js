@@ -6,7 +6,6 @@ require('dotenv').config()
 
 const Discord = require('discord.js')
 const Enmap = require('enmap')
-const cron = require('cron')
 const client = new Discord.Client({
   disableEveryone: true,
   disabledEvents: ['TYPING_START']
@@ -56,22 +55,19 @@ require('./modules/commands')(client)
 require('./modules/events')(client)
 // require('./modules/webhooks')(client)
 
+
+
 client.on('ready', () => {
     const CronJob = require('cron').CronJob;
+    var job = new CronJob('*/15 * * * *', 
 
-  var job = new CronJob({
-      // cronTime: '00 03 00 * * 1-7', // 00:03:00
-      cronTime: '0 */01 * * * *', //every minute
-  });
-  job.start();
-
-  function job() {
+      function job() {
       const embed = new Discord.RichEmbed()
       .setColor(0x8644ba)
       .setDescription('test')
       .then(() => client.channels.get('673211967216812068').send(embed)
       )}
-});
+)});
 
 
 
