@@ -14,9 +14,9 @@ const dblposer = require('dblposter')
 const DBLPoster = new dblposer(process.env.DBL_TOKEN, client)
 const serverStats = {
   guildID: '583574396686434304',
-  totalUsersID: '673640435968638977',
-  memberCountID: '673640466134073344',
-  botCount: '673640480692764673'
+  totalUsersID: '673661197782089758',
+  memberCountID: '673661265180360847',
+  botCount: '673661316082302993'
   }
 DBLPoster.bind()
 
