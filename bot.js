@@ -10,10 +10,15 @@ const client = new Discord.Client({
   disableEveryone: true,
   disabledEvents: ['TYPING_START']
 })
-const cron = require('cron');
+const cron = require('cron').CronJob;
 const dblposer = require('dblposter')
 const DBLPoster = new dblposer(process.env.DBL_TOKEN, client)
-
+const serverStats = {
+  guildID: '673247608671698970',
+  totalUsersID: '673640435968638977',
+  memberCountID: '673640466134073344',
+  botCount: '673640480692764673'
+  }
 DBLPoster.bind()
 
 client.starttime = new Date().getTime()
@@ -55,40 +60,24 @@ require('./modules/commands')(client)
 require('./modules/events')(client)
 // require('./modules/webhooks')(client)
 
-client.on('ready', () => {
-const serverStats = {
-  guildID: '673247608671698970',
-  totalUsersID: '673640435968638977',
-  memberCountID: '673640466134073344',
-  botCount: '673640480692764673'
-  }
-  
-  //______________________When someone joins the server___________________
+
   client.on('guildMemberAdd', member => {
   client.channels.get(serverStats.totalUsersID).setName(`סהכ משתמשים ${member.guild.memberCount}`);
   client.channels.get(serverStats.memberCountID).setName(`משתמשים ${member.guild.members.filter(m => !m.user.bot).size}`);
   client.channels.get(serverStats.botCount).setName(`בוטים ${member.guild.members.filter(m => m.user.bot).size}`);
   });
-  //______________________When someone leaves the server__________________
+ 
   client.on('guildMemberRemove', member => {
   client.channels.get(serverStats.totalUsersID).setName(`סהכ משתמשים ${member.guild.memberCount}`);
   client.channels.get(serverStats.memberCountID).setName(`משתמשים ${member.guild.members.filter(m => !m.user.bot).size}`);
   client.channels.get(serverStats.botCount).setName(`בוטים ${member.guild.members.filter(m => m.user.bot).size}`)
     });
-  });
 
 
-  client.on('ready', () => {
-    let scheduledMessage = new cron.CronJob('00 30 00 * * *', () => {
-      // This runs every day at 10:30:00, you can do anything you want
-      let channel = yourGuild.channels.get('673211967216812068');
-      channel.send('You message');
-    });
-    
-    // When you want to start it, use:
-    scheduledMessage.start()
-    // You could also make a command to pause and resume the job
-});
+
+new CronJob('1 * * * * *', function() {
+console.log("staring cron");
+}, null, true);
 
 
 client.on('presenceUpdate', (oldMember, newMember) => {
