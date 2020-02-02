@@ -61,7 +61,7 @@ client.on('ready', () => {
 
   var job = new CronJob({
       // cronTime: '00 03 00 * * 1-7', // 00:03:00
-      cronTime: '*/1 * * * *', //every minute
+      cronTime: '0 */01 * * * *', //every minute
   });
   job.start();
 
