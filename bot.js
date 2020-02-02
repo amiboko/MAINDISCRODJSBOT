@@ -57,7 +57,7 @@ require('./modules/events')(client)
 
 client.on('ready', () => {
 const serverStats = {
-  guildID: '583574396686434304',
+  guildID: '673247608671698970',
   totalUsersID: '673640435968638977',
   memberCountID: '673640466134073344',
   botCount: '673640480692764673'
@@ -79,7 +79,7 @@ const serverStats = {
 
 
   client.on('ready', () => {
-    let scheduledMessage = new cron.CronJob('00 14 00 * * *', () => {
+    let scheduledMessage = new cron.CronJob('00 24 00 * * *', () => {
       // This runs every day at 10:30:00, you can do anything you want
       let channel = yourGuild.channels.get('673211967216812068');
       channel.send('You message');
