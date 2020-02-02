@@ -79,10 +79,17 @@ const serverStats = {
 
 
   client.on('ready', () => {
-cron.schedule('* * * * *', function(){
-  console.log('running a task every minute');
+    let scheduledMessage = new cron.CronJob('00 14 00 * * *', () => {
+      // This runs every day at 10:30:00, you can do anything you want
+      let channel = yourGuild.channels.get('673211967216812068');
+      channel.send('You message');
+    });
+    
+    // When you want to start it, use:
+    scheduledMessage.start()
+    // You could also make a command to pause and resume the job
 });
-});
+
 
 client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
