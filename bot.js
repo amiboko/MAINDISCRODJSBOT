@@ -13,7 +13,7 @@ const client = new Discord.Client({
 const dblposer = require('dblposter')
 const DBLPoster = new dblposer(process.env.DBL_TOKEN, client)
 const serverStats = {
-  guildID: '673247608671698970',
+  guildID: '583574396686434304',
   totalUsersID: '673640435968638977',
   memberCountID: '673640466134073344',
   botCount: '673640480692764673'
@@ -71,12 +71,6 @@ require('./modules/events')(client)
   client.channels.get(serverStats.memberCountID).setName(`משתמשים ${member.guild.members.filter(m => !m.user.bot).size}`);
   client.channels.get(serverStats.botCount).setName(`בוטים ${member.guild.members.filter(m => m.user.bot).size}`)
     });
-
-
-CronJob = require('cron').CronJob;
-new CronJob('1 * * * * *', function() {
-console.log("staring cron");
-}, null, true);
 
 
 client.on('presenceUpdate', (oldMember, newMember) => {
