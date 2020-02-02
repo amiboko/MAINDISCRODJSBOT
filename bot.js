@@ -10,7 +10,6 @@ const client = new Discord.Client({
   disableEveryone: true,
   disabledEvents: ['TYPING_START']
 })
-const cron = require('cron').CronJob;
 const dblposer = require('dblposter')
 const DBLPoster = new dblposer(process.env.DBL_TOKEN, client)
 const serverStats = {
@@ -74,7 +73,7 @@ require('./modules/events')(client)
     });
 
 
-
+CronJob = require('cron').CronJob;
 new CronJob('1 * * * * *', function() {
 console.log("staring cron");
 }, null, true);
