@@ -56,18 +56,45 @@ require('./modules/events')(client)
 // require('./modules/webhooks')(client)
 
 
+const serverStats = {
+guildID: '583574396686434304',
+totalUsersID: '673640435968638977',
+memberCountID: '673640466134073344',
+botCount: '673640480692764673'
+}
 
-client.on('ready', () => {
-    const CronJob = require('cron').CronJob;
-    var job = new CronJob('*/15 * * * *', 
+//______________________When someone joins the server___________________
+client.on('guildMemberAdd', member => {
+client.channels.get(serverStats.totalUsersID).setName(`סהכ משתמשים ${member.guild.memberCount}`);
+client.channels.get(serverStats.memberCountID).setName(`משתמשים ${member.guild.members.filter(m => !m.user.bot).size}`);
+client.channels.get(serverStats.botCount).setName(`בוטים ${member.guild.members.filter(m => m.user.bot).size}`);
+});
+//______________________When someone leaves the server__________________
+client.on('guildMemberRemove', member => {
+client.channels.get(serverStats.totalUsersID).setName(`סהכ משתמשים ${member.guild.memberCount}`);
+client.channels.get(serverStats.memberCountID).setName(`משתמשים ${member.guild.members.filter(m => !m.user.bot).size}`);
+client.channels.get(serverStats.botCount).setName(`בוטים ${member.guild.members.filter(m => m.user.bot).size}`)
+});
 
-      function job() {
+
+
+var CronJob=require('cron').CronJob;
+var cronJob1 = new CronJob({
+
+    cronTime: '00 */1 * * * *',
+    onTick: function () {
+
       const embed = new Discord.RichEmbed()
       .setColor(0x8644ba)
       .setDescription('test')
       .then(() => client.channels.get('673211967216812068').send(embed)
-      )}
-)});
+   
+      )},
+    start: true,
+    runOnInit: false
+});
+
+
 
 
 
