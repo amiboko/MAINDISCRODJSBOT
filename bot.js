@@ -10,7 +10,7 @@ const client = new Discord.Client({
   disableEveryone: true,
   disabledEvents: ['TYPING_START']
 })
-const cron = require('node-cron');
+const cron = require('cron');
 const dblposer = require('dblposter')
 const DBLPoster = new dblposer(process.env.DBL_TOKEN, client)
 
