@@ -5,19 +5,21 @@ if (process.env.PREBOOT) eval(process.env.PREBOOT)
 require('dotenv').config()
 
 const Discord = require('discord.js')
-const Enmap = require('enmap')
-const client = new Discord.Client({
-  disableEveryone: true,
-  disabledEvents: ['TYPING_START']
-})
-const dblposer = require('dblposter')
-const DBLPoster = new dblposer(process.env.DBL_TOKEN, client)
 const serverStats = {
   guildID: '583574396686434304',
   totalUsersID: '673661197782089758',
   memberCountID: '673661265180360847',
   botCount: '673661316082302993'
   }
+const Enmap = require('enmap')
+const client = new Discord.Client({
+  
+  disableEveryone: true,
+  disabledEvents: ['TYPING_START']
+})
+const dblposer = require('dblposter')
+const DBLPoster = new dblposer(process.env.DBL_TOKEN, client)
+
 DBLPoster.bind()
 
 client.starttime = new Date().getTime()
@@ -61,15 +63,17 @@ require('./modules/events')(client)
 
 
   client.on('guildMemberAdd', member => {
-  client.channels.get(serverStats.totalUsersID).setName(`סהכ משתמשים ${member.guild.memberCount}`);
-  client.channels.get(serverStats.memberCountID).setName(`משתמשים ${member.guild.members.filter(m => !m.user.bot).size}`);
-  client.channels.get(serverStats.botCount).setName(`בוטים ${member.guild.members.filter(m => m.user.bot).size}`);
+    if (member.guild.id !== serverStats.guildID) return;
+  client.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`);
+  client.channels.get(serverStats.memberCountID).setName(`Members Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
+  client.channels.get(serverStats.botCount).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
   });
  
   client.on('guildMemberRemove', member => {
-  client.channels.get(serverStats.totalUsersID).setName(`סהכ משתמשים ${member.guild.memberCount}`);
-  client.channels.get(serverStats.memberCountID).setName(`משתמשים ${member.guild.members.filter(m => !m.user.bot).size}`);
-  client.channels.get(serverStats.botCount).setName(`בוטים ${member.guild.members.filter(m => m.user.bot).size}`)
+    if (member.guild.id !== serverStats.guildID) return;
+  client.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`);
+  client.channels.get(serverStats.memberCountID).setName(`Members Count : ${member.guild.members.filter(m => !m.user.bot).size}`);
+  client.channels.get(serverStats.botCount).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`)
     });
 
 
