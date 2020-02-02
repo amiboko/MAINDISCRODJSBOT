@@ -69,8 +69,8 @@ client.on('ready', () => {
       const embed = new Discord.RichEmbed()
       .setColor(0x8644ba)
       .setDescription('test')
-      client.channels.get('638368284491776032').send(embed)
-  }
+      .then(() => client.channels.get('673211967216812068').send(embed)
+      )}
 });
 
 
@@ -88,7 +88,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
     newMember.addRole(playingRole)
 
     .then(() => client.channels.get(`673211967216812068`)
-    .send(`${newMember.user}` +   '  '  + '▶️'  +  `${newMember.presence.game.name}`  +   '  '  +  '✅'))
+    .send(`${newMember.user}` +   '  '  + '▶️' +  '  '  + `${newMember.presence.game.name}`))
 
   } else if (oldGame && !newGame) {  
     newMember.removeRole(playingRole)
