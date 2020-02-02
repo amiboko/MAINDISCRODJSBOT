@@ -10,7 +10,7 @@ const client = new Discord.Client({
   disableEveryone: true,
   disabledEvents: ['TYPING_START']
 })
-
+const cron = require('node-cron');
 const dblposer = require('dblposter')
 const DBLPoster = new dblposer(process.env.DBL_TOKEN, client)
 
@@ -79,8 +79,6 @@ const serverStats = {
 
 
   client.on('ready', () => {
-var cron = require('node-cron');
- 
 cron.schedule('* * * * *', function(){
   console.log('running a task every minute');
 });
