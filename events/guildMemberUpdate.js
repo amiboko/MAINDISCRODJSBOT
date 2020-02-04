@@ -20,7 +20,7 @@ module.exports = (client, oldMember, newMember) => {
       .addField('Old nickname:', `${oldMember.nickname !== undefined ? `${oldMember.nickname}` : oldMember.username}`, true)
       .addField('New nickname:', `${newMember.nickname !== undefined ? `${newMember.nickname}` : oldMember.username}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
-      .setTimestamp()
+      
 
       modLogChannel.send(embed).catch()
   	}
@@ -33,7 +33,7 @@ module.exports = (client, oldMember, newMember) => {
       .addField('Old username', `${oldMember.username}`, true)
       .addField('New username:', `${newMember.username}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
-      .setTimestamp()
+     
 
       modLogChannel.send(embed).catch()
   	}
@@ -59,7 +59,7 @@ module.exports = (client, oldMember, newMember) => {
       .addField('Old roles:', `${output}`, true)
       .addField('New roles:', `឵${outputNew}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
-    	.setTimestamp()
+    	
 
     	modLogChannel.send(embed).catch()
   	}
