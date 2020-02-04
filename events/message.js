@@ -80,7 +80,7 @@ module.exports = async (client, message) => {
         const curLevel = Math.floor(0.5 * Math.sqrt(client.points.get(key, 'points')))
 
         if (client.points.get(key, 'level') < curLevel) {
-          message.reply(`גייצ'וק עלית רמה ל **${curLevel}**! מבסוט?`)
+          message.reply(`עלית רמה ל **${curLevel}**!`)
           client.points.set(key, curLevel, 'level')
         }
       }
