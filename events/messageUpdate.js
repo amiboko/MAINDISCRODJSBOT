@@ -22,7 +22,7 @@ module.exports = (client, message, messageNew) => {
 				.setDescription(`Message edited by <@${messageNew.author.id}> in ${message.channel}`)
 				.addField('Old message:', `${message}`, true)
 				.addField('New message:', `${messageNew}`, true)
-				.setTimestamp()
+				
 
 			if (message.guild.channels.find(channel => channel.name == settings.modLogChannel)) {
 				message.guild.channels.find(channel => channel.name == settings.modLogChannel).send(embed).catch()
