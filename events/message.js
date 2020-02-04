@@ -12,7 +12,7 @@ module.exports = async (client, message) => {
     const embed = new Discord.RichEmbed()
       .setTitle('עזרה')
       .setColor(colors.default)
-      .setThumbnail('')
+      .setThumbnail(user.avatarURL)
       .addField('פקודות', `הקש \`${prefix}פקודות\`.`)
     
       if (message.guild !== null) {
