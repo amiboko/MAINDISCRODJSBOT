@@ -22,7 +22,7 @@ const config = {
     deniedChannel: 'denied-suggestions',
 		acceptedChannel: 'accepted-suggestions',
     welcomeChannel: 'general',
-    welcomeMessage: 'ברוך הבא לשרת גיימרים {{mention}}!',
+    welcomeMessage: '!ברוך הבא לשרת גיימרים',
     welcomeEnabled: 'true',
     pointsEnabled: 'true',
     logMessageUpdates: 'true',
