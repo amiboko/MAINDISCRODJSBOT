@@ -17,7 +17,7 @@ module.exports = (client, message) => {
 					.setColor(colors.default)
 					.setDescription(`Message deleted by <@${message.author.id}> in ${message.channel}`)
 					.addField('Message:', `${message}`)
-					.setTimestamp()
+					
 
 				modLogChannel.send(embed)
 			}
