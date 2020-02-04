@@ -13,8 +13,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
     client.points.ensure(`${message.guild.id}-${user.id}`, {
       user: message.author.id,
       guild: message.guild.id,
-      points: 0,
-      level: 1
+
     })
 
     // Get their current points.
@@ -42,8 +41,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
     client.points.ensure(`${message.guild.id}-${user.id}`, {
       user: message.author.id,
       guild: message.guild.id,
-      points: 0,
-      level: 1
+      
     })
 
     // Get their current points.
