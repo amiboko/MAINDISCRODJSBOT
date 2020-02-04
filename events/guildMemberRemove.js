@@ -10,9 +10,9 @@ module.exports = (client, member) => {
       if (!modLogChannel.permissionsFor(member.guild.me).has('SEND_MESSAGES')) return
 
       const embed = new Discord.RichEmbed()
-        .setAuthor('📤 Member left')
+        .setAuthor('📤 ביי ביי')
         .setColor(colors.red)
-        .setDescription(`**Total member count:** \`${member.guild.memberCount}\`\n<@${member.user.id}> left the Discord.`)
+        .setDescription(`**סהכ משתמשים** \`${member.guild.memberCount}\`\n<@${member.user.id}> עזב אותנו`)
         .setThumbnail(`${member.user.displayAvatarURL}`)
         .setTimestamp()
 
