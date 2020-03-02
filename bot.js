@@ -128,7 +128,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if(client.config.FILTER_LIST.some(word => message.content.includes(word))){
+  if(client.config.FILTER_LIST(word => message.content.includes(word))){
     message.channel.send(message.author + '`שמור על הפה שלך בבקשה`');
   }});
 
