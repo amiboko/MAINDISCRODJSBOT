@@ -16,7 +16,6 @@ const config = {
   defaultSettings: {
     prefix: '',
   language: 'en-US',
-    FILTER_LIST : ["זיין", "זונה", "מזדיין", "זין"],
     modLogChannel: 'mod-log',
     modRole: 'Moderator',
     adminRole: 'Administrator',
