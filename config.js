@@ -1,4 +1,5 @@
 // Put member IDs in these for special perms, competely optional
+
 const config = {
   owners: ['524302700695912506'],
   managers: [],
@@ -8,12 +9,14 @@ const config = {
   support: [],
   helpers: [],
   token: [],
+  
 
   blacklisted: [],
 
   defaultSettings: {
     prefix: '',
-	language: 'en-US',
+  language: 'en-US',
+    FILTER_LIST : ["זיין", "זונה", "מזדיין", "זין"],
     modLogChannel: 'mod-log',
     modRole: 'Moderator',
     adminRole: 'Administrator',
