@@ -81,7 +81,9 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
   const playingRole = guild.roles.find(role => role.id === '671635962228637696');
 
-  if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
+// newMember.presence.clientStatus === 'mobile'
+
+  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
 
   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
@@ -102,7 +104,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 client.on('message', message => {
   
-  if(message.content.includes('משחק')) {
+  if(message.content.includes('?משחק')) {
     if (message.author.bot) return;
       message.channel.send(message.author + '`יאלה בוא אני זורם`');
       
@@ -110,7 +112,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if(message.content.includes('לא')) {
+  if(message.content === 'לא') {
     if (message.author.bot) return;
       message.channel.send(message.author + '`למה אתה שלילי`');
   }
