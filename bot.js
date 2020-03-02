@@ -62,6 +62,30 @@ require('./modules/events')(client)
 // require('./modules/webhooks')(client)
 
 
+
+//runs the message looker thingy
+ client.on('message', async message => {
+  //1 blacklisted words
+  let blacklisted = ['זיין', 'זין'] //words put , after the word
+
+  //2 looking for words
+  let foundInText = false;
+  for (var i in blacklisted) { // loops through the blacklisted list
+    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
+  }
+  // checks casesensitive words
+
+  //3 deletes and send message
+    if (foundInText) {
+      //message.delete();
+      message.channel.send(message.author + '`סליחה! רק לי מותר לקלל פה יזיין`');
+  }
+});
+
+
+
+
+
   client.on('guildMemberAdd', member => {
     if (member.guild.id !== serverStats.guildID) return;
   client.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`);
@@ -126,12 +150,6 @@ client.on('message', message => {
       message.channel.send(message.author + '`למה אתה שלילי`');
   }
 });
-
-client.on('message', message => {
-  if(client.config.FILTER_LIST(word => message.content.includes(word))){
-    message.channel.send(message.author + '`שמור על הפה שלך בבקשה`');
-  }});
-
 
 client.on('message', message => {
   if(message.content.includes('כן')) {
