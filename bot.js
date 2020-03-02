@@ -77,6 +77,7 @@ require('./modules/events')(client)
 
   //3 deletes and send message
     if (foundInText) {
+      if (message.author.bot) return;
       //message.delete();
       message.channel.send(message.author + '`סליחה! רק לי מותר לקלל פה יזיין`');
   }
