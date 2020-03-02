@@ -104,9 +104,18 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 client.on('message', message => {
   
-  if(message.content.includes('?משחק')) {
+  if(message.content.includes('משחק')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`יאלה בוא אני זורם`');
+      message.channel.send(message.author + '`מה יש משחק? למה אתה משחק ולא מזמין יזיין`');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('Maurice')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`מי אמר מוריס ולא קיבל?!`');
       
   }
 });
@@ -117,6 +126,12 @@ client.on('message', message => {
       message.channel.send(message.author + '`למה אתה שלילי`');
   }
 });
+
+client.on('message', message => {
+  if(config.FILTER_LIST.some(word => message.content.includes(word))){
+    message.channel.send(message.author + '`שמור על הפה שלך בבקשה`');
+  }});
+
 
 client.on('message', message => {
   if(message.content.includes('כן')) {
