@@ -66,7 +66,7 @@ require('./modules/events')(client)
 //runs the message looker thingy
  client.on('message', async message => {
   //1 blacklisted words
-  let blacklisted = ['זיין', 'זין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מנייאק', 'דפוק', 'אידיוט', 'חמור'] //words put , after the word
+  let blacklisted = ['זיין', 'זין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מנייאק', 'דפוק', 'אידיוט', 'חמור', 'מניאק'] //words put , after the word
 
   //2 looking for words
   let foundInText = false;
@@ -160,7 +160,42 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if(message.content.includes('?')) {
+  if(message.content.includes('אחי')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`כולנו אחים`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content.includes('סבבה')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`סבמבה`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content === '?') {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`מה אתה רוצה?`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content === '??') {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`מה אתה רוצה?`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content === '???') {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`מה אתה רוצה?`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content === '????') {
     if (message.author.bot) return;
       message.channel.send(message.author + '`מה אתה רוצה?`');
   }
