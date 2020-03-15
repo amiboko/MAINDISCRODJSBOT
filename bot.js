@@ -66,7 +66,7 @@ require('./modules/events')(client)
 //runs the message looker thingy
  client.on('message', async message => {
   //1 blacklisted words
-  let blacklisted = ['זיין', 'זין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מנייאק', 'דפוק', 'אידיוט', 'חמור', 'מניאק'] //words put , after the word
+  let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מנייאק', 'דפוק', 'אידיוט', 'חמור', 'מנייאק'] //words put , after the word
 
   //2 looking for words
   let foundInText = false;
@@ -131,7 +131,7 @@ client.on('message', message => {
   
   if(message.content.includes('משחק')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`מה יש משחק? למה אתה משחק ולא מזמין יזיין`');
+      message.channel.send(message.author + '`אני אוהב לשחק בבייצים`');
       
   }
 });
