@@ -1,9 +1,8 @@
 const Discord = require('discord.js')
 
 
-module.exports.run = async (bot, message, args, Invite) => {
+module.exports.run = async (bot, message, args) => {
 
-  let Invite = message.guild.channels.first().createInvite()
   let Owner = message.author;
   if(Owner.id !== "ID 1" && Owner.id !== "ID 2") return message.reply("Only the bot owner can use this command!") //you need to add your id and another one if you want
  
