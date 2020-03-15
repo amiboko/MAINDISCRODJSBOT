@@ -16,7 +16,7 @@ const config = {
   defaultSettings: {
     prefix: '',
   language: 'en-US',
-    modLogChannel: 'mod-log',
+    modLogChannel: 'reports',
     modRole: 'Moderator',
     adminRole: 'Administrator',
     muteRole: 'Muted',
