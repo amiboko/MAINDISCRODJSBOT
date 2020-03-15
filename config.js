@@ -24,7 +24,7 @@ const config = {
     deniedChannel: 'denied-suggestions',
 		acceptedChannel: 'accepted-suggestions',
     welcomeChannel: 'general',
-    welcomeMessage: 'welcome',
+    welcomeMessage: '{{name}} , {{mention}} , {{members}}',
     welcomeEnabled: 'true',
     pointsEnabled: 'true',
     logMessageUpdates: 'true',
