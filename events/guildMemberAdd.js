@@ -56,7 +56,7 @@ module.exports = (client, member) => {
         .setColor(colors.green)
         .setDescription(`**סהכ משתמשים** \`${member.guild.memberCount}\`\n<@${member.user.id}> הצטרף לשרת`)
         .setThumbnail(`${member.user.displayAvatarURL}`)
-      modLogChannel.send(embed)
+      modLogChannel.send(embed);
  		}
   }
 }
