@@ -102,6 +102,6 @@ module.exports = async (client, message) => {
     client.uses.ensure(cmd.help.name, 1)
     client.uses.inc(cmd.help.name)
   } catch (err) {
-    message.channel.send('שגיאה, תייג את עמי\n' + err).catch()
+    message.channel.send('שגיאה 4\n' + err).catch()
   }
 }
