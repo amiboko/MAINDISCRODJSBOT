@@ -16,7 +16,6 @@ module.exports = (client, message) => {
 					.setAuthor('🗑️ הודעה נמחקה')
 					.setColor(colors.default)
 					.setDescription(`נמחק ע"י <@${message.author.id}> ב ${message.channel}`)
-					.addField('הודעה:', `${message}`,true)
 					
 				modLogChannel.send(embed)
 			}
