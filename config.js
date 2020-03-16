@@ -23,7 +23,7 @@ const config = {
     noPermissionNotice: 'true',
     deniedChannel: 'denied-suggestions',
 		acceptedChannel: 'accepted-suggestions',
-    welcomeChannel: '',
+    welcomeChannel: 'general',
     welcomeMessage: 'ברוך הבא {{mention}}',
     welcomeEnabled: 'true',
     pointsEnabled: 'true',
