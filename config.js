@@ -21,17 +21,17 @@ const config = {
     adminRole: 'Administrator',
     muteRole: 'Muted',
     noPermissionNotice: 'true',
-    deniedChannel: 'denied-suggestions',
-		acceptedChannel: 'accepted-suggestions',
+    deniedChannel: 'reports',
+		acceptedChannel: 'reports',
     welcomeChannel: 'general',
-    welcomeMessage: '',
+    welcomeMessage: 'טוב שבאת {{mention}}',
     welcomeEnabled: 'true',
     pointsEnabled: 'true',
     logMessageUpdates: 'true',
     logChannelUpdates: 'true',
     logEmojiUpdates: 'false',
     logMemberUpdates: 'true',
-    starboardChannel: 'starboard'
+    starboardChannel: 'reports'
   },
 
   permLevels: [
