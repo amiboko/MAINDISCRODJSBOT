@@ -6,7 +6,7 @@ exports.run = async (client, message, args, level) => {
 
     message.channel.send('תוצאה: ' +  math.eval(args.join(' ')))
   } catch (err) {
-    message.channel.send('שגיאה, תייג את עמי\n' + err).catch()
+    message.channel.send('שגיאה 2\n' + err).catch()
   }
 }
 
