@@ -116,7 +116,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   if (!oldGame && newGame) {         
     newMember.addRole(playingRole)
 
-    .then(() => client.channels.get(`673211967216812068`)
+    .then(() => client.channels.get(`646991444648656927`)
     .send(`${newMember.user}` +   '  '  + '▶️' +  '  '  + `${newMember.presence.game.name}`))
 
   } else if (oldGame && !newGame) {  
