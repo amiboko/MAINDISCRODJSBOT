@@ -12,9 +12,8 @@ module.exports = async (client, message) => {
     const embed = new Discord.RichEmbed()
       .setTitle('עזרה')
       .setColor(colors.default)
-      .setThumbnail(user.avatarURL)
-      .addField('פקודות', `הקש \`${prefix}פקודות\`.`)
-    
+      .setThumbnail(user.avatarURL);   
+
       if (message.guild !== null) {
         if (!message.channel.permissionsFor(client.user).has('SEND_MESSAGES')) return
         return message.channel.send(embed)
