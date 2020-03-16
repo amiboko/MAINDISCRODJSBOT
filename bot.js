@@ -137,15 +137,6 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  
-  if(message.content.includes('Maurice')) {
-    if (message.author.bot) return;
-      message.channel.send(message.author + '`מי אמר מוריס ולא קיבל?!`');
-      
-  }
-});
-
-client.on('message', message => {
   if(message.content === 'לא') {
     if (message.author.bot) return;
       message.channel.send(message.author + '`למה אתה שלילי`');
