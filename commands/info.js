@@ -40,7 +40,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
 
     message.channel.send(embed)
   } catch (err) {
-    message.channel.send('שגיאה, תייג את עמי\n' + err).catch()
+    message.channel.send('שגיאה 1\n' + err).catch()
   }
 }
 
