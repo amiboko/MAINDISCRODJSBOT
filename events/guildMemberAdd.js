@@ -45,5 +45,18 @@ module.exports = (client, member) => {
     }
   }
 
+  if (settings.logMessageUpdates === 'true') {
+    const modLogChannel = member.guild.channels.find(c => c.name === settings.modLogChannel)
+    if (settings.modLogChannel && modLogChannel) {
+      if (!modLogChannel.permissionsFor(member.guild.me).has('VIEW_CHANNEL')) return
+      if (!modLogChannel.permissionsFor(member.guild.me).has('SEND_MESSAGES')) return
 
+      const embed = new Discord.RichEmbed()
+        .setAuthor('𝒲𝐸𝐿𝒞𝒪𝑀𝐸')
+        .setColor(colors.green)
+        .setDescription(`<@${member.user.id}> שלום לך \n\n **סהכ משתמשים** \`${member.guild.memberCount}\``)
+        .setThumbnail(`${member.user.displayAvatarURL}`)
+      modLogChannel.send(embed)
+ 		}
+  }
 }
