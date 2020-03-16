@@ -54,7 +54,7 @@ module.exports = (client, member) => {
       const embed = new Discord.RichEmbed()
         .setAuthor('𝒲𝐸𝐿𝒞𝒪𝑀𝐸')
         .setColor(colors.green)
-        .setDescription(`<@${member.user.id}> שלום לך \n\n **סהכ משתמשים** \`${member.guild.memberCount}\``)
+        .setDescription(`\n<@${member.user.id}> שלום לך \n\n **סהכ משתמשים** \`${member.guild.memberCount}\``)
         .setThumbnail(`${member.user.displayAvatarURL}`)
       modLogChannel.send(embed)
  		}
