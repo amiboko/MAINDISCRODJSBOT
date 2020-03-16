@@ -52,11 +52,11 @@ module.exports = (client, member) => {
       if (!modLogChannel.permissionsFor(member.guild.me).has('SEND_MESSAGES')) return
 
       const embed = new Discord.RichEmbed()
-        .setAuthor('📥 ברוך הבא')
+        .setAuthor('𝒲𝐸𝐿𝒞𝒪𝑀𝐸')
         .setColor(colors.green)
-        .setDescription(`**סהכ משתמשים** \`${member.guild.memberCount}\`\n<@${member.user.id}> הצטרף לשרת`)
+        .setDescription(`שלום לך <@${member.user.id}> \n **סהכ משתמשים** \`${member.guild.memberCount}\``)
         .setThumbnail(`${member.user.displayAvatarURL}`)
-      modLogChannel.send(embed);
- 		}
+      modLogChannel.send(embed)
+ 		};
   }
 }
