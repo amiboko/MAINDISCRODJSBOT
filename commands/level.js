@@ -3,7 +3,7 @@ exports.run = async (client, message, args, level) => {
     const friendly = client.config.permLevels.find(l => l.level === level).name
     message.reply(`רמת ההרשאה שלך היא ${level} (${friendly}).`)
   } catch (err) {
-    message.channel.send('שגיאה, תייג את עמי\n' + err).catch()
+    message.channel.send('שגיאה 3\n' + err).catch()
   }
 }
 
