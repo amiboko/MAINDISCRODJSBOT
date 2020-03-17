@@ -23,7 +23,7 @@ const config = {
     noPermissionNotice: 'true',
     deniedChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
 		acceptedChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
-    welcomeChannel: '𝓜𝓪𝓲𝓷',
+    welcomeChannel: 'general',
     welcomeMessage: 'טוב שבאת {{mention}}',
     welcomeEnabled: 'true',
     pointsEnabled: 'true',
