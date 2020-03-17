@@ -47,7 +47,7 @@ module.exports = (client, oldMember, newMember) => {
     	})
 
     	newMember.roles.forEach(role => {
-      	outputNew += '\n' + role.name
+      	outputNew += role.name
     	})
 
     	if (output == outputNew) return
@@ -56,8 +56,8 @@ module.exports = (client, oldMember, newMember) => {
       .setAuthor('👤 Member roles updated')
     	.setColor(colors.default)
     	.setDescription(`\Roles updated for <@${newMember.id}>`)
-      .addField('Old roles:', `${output}`, true)
-      .addField('New roles:', `឵${outputNew}`, true)
+      .addField('Old role:', `${output}`, true)
+      .addField('New role:', `឵${outputNew}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
