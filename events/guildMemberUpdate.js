@@ -53,11 +53,12 @@ module.exports = (client, oldMember, newMember) => {
     	if (output == outputNew) return
 
     	embed = new Discord.RichEmbed()
-      .setAuthor('👤 Member roles updated')
+      .setAuthor(' 🤖  עדכון סטטוס  🤖 ')
     	.setColor(colors.default)
-    	.setDescription(`\Roles updated for <@${newMember.id}>`)
-      .addField('Old role:', `${output}`, true)
-      .addField('New role:', `឵${outputNew}`, true)
+      .setDescription(`<@${newMember.id}> `)
+      .setDescription(`${newMember.presence.game.name}`)
+      .addField('ישן:', `${output}`)
+      .addField('חדש:', `឵${outputNew}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
