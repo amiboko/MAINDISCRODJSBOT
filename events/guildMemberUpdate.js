@@ -39,6 +39,7 @@ module.exports = (client, oldMember, newMember) => {
     }
     
   	if (oldMember.roles !== newMember.roles) {
+      
     	let output = ''
     	let outputNew = ''
 
@@ -55,9 +56,9 @@ module.exports = (client, oldMember, newMember) => {
     	embed = new Discord.RichEmbed()
       .setAuthor(' 🤖  עדכון סטטוס  🤖 ')
     	.setColor(colors.default)
-      .setDescription(`<@${newMember.id}>` + ' 🎮 ' + `${newMember.presence.game.name}`)
-      // .addField('◀️', `${output}`)
-      .addField('▶️', `${outputNew}`, true)
+      .setDescription(`<@${newMember.id}>` + ' 🎮 ')
+      .addField('Old role:', `${output}`, true)
+      .addField('New role:', `឵${outputNew}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
