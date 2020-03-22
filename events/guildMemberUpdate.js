@@ -57,7 +57,7 @@ module.exports = (client, oldMember, newMember) => {
     	.setColor(colors.default)
       .setDescription(`<@${newMember.id}>` + ' 🎮 ' + `${newMember.presence.game.name}`)
       // .addField('◀️', `${output}`)
-      .addField('▶️', `${outputNew}`)
+      .addField('▶️', `${outputNew}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
