@@ -108,7 +108,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 // newMember.presence.clientStatus === 'mobile'
 
-  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
+  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status || newMember.presence.clientStatus !== 'mobile') return;
 
   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
