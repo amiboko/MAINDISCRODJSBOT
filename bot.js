@@ -102,29 +102,29 @@ require('./modules/events')(client)
     });
 
 
-// client.on('presenceUpdate', (oldMember, newMember) => {
-//   const guild = newMember.guild;
-//   const playingRole = guild.roles.find(role => role.id === '671635962228637696');
+client.on('presenceUpdate', (oldMember, newMember) => {
+  const guild = newMember.guild;
+  const playingRole = guild.roles.find(role => role.id === '671635962228637696');
 
-// // newMember.presence.clientStatus === 'mobile'
+// newMember.presence.clientStatus === 'mobile'
 
-//   if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
+  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
 
-//   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
-//   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+  const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
+  const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
 
-//   if (!oldGame && newGame) {         
-//     newMember.addRole(playingRole)
+  if (!oldGame && newGame) {         
+    newMember.addRole(playingRole)
 
-//     .then(() => client.channels.get(`646991444648656927`)
-//     .send(`${newMember.user}` +   '  '  + '▶️' +  '  '  + `${newMember.presence.game.name}`))
+    .then(() => client.channels.get(`646991444648656927`)
+    .send(`${newMember.user}` +   '  '  + '▶️' +  '  '  + `${newMember.presence.game.name}`))
 
-//   } else if (oldGame && !newGame) {  
-//     newMember.removeRole(playingRole)
-//       .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
-//       .catch(console.error);
-//   }
-// });
+  } else if (oldGame && !newGame) {  
+    newMember.removeRole(playingRole)
+      .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
+      .catch(console.error);
+  }
+});
 
 
 client.on('message', message => {
