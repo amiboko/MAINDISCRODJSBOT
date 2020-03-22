@@ -44,8 +44,8 @@ module.exports = (client, oldMember, newMember) => {
   	if (oldMember.roles !== newMember.roles) {
       let output = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
       let outputNew = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
-    	let output = ''
-    	let outputNew = ''
+    	// let output = ''
+    	// let outputNew = ''
 
     	oldMember.roles.forEach(role => {
       	output += role.name
@@ -60,7 +60,7 @@ module.exports = (client, oldMember, newMember) => {
     	embed = new Discord.RichEmbed()
       .setAuthor(' 🤖  עדכון סטטוס  🤖 ')
     	.setColor(colors.default)
-      .setDescription(`<@${newMember.id}>` + ' 🎮 ' + `${newMember.presence.game.name}`)
+      .setDescription(`<@${newMember.id}>` + ' 🎮 ' + `${newMember.presence.game.type}`)
       .addField('◀️', `${output}`)
       .addField('▶️', `${outputNew}`)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
