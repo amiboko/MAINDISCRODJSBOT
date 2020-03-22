@@ -43,11 +43,11 @@ module.exports = (client, oldMember, newMember) => {
     	let outputNew = ''
 
     	oldMember.roles.forEach(role => {
-      	output += '\n' + role.name
+      	output += role.name
     	})
 
     	newMember.roles.forEach(role => {
-      	outputNew += '\n' + role.name
+      	outputNew += role.name
     	})
 
     	if (output == outputNew) return
@@ -57,7 +57,7 @@ module.exports = (client, oldMember, newMember) => {
     	.setColor(colors.default)
       .setDescription(`<@${newMember.id}>` + ' 🎮 ' + `${newMember.presence.game.name}`)
       .addField('◀️', `${output}`, true)
-      .addField('▶️', `${newMember.roles.name}`)
+      .addField('▶️', `${newMember.roles.role.name}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
