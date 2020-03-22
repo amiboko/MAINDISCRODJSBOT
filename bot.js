@@ -66,7 +66,7 @@ require('./modules/events')(client)
 //runs the message looker thingy
  client.on('message', async message => {
   //1 blacklisted words
-  let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מנייאק', 'דפוק', 'אידיוט', 'חמור', 'מנייאק'] //words put , after the word
+  let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מנייאק', 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'pussy', 'PUSSY', 'ass', 'ASS'] //words put , after the word
 
   //2 looking for words
   let foundInText = false;
@@ -146,7 +146,7 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content.includes('כן')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`אני אוהב שאתה חיובי`');
+      message.channel.send(message.author + '`כן?`');
   }
 });
 
