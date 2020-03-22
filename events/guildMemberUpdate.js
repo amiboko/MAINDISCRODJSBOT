@@ -36,9 +36,14 @@ module.exports = (client, oldMember, newMember) => {
      
 
       modLogChannel.send(embed).catch()
-  	}
-
+    }
+    
+     
+     const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+    if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
   	if (oldMember.roles !== newMember.roles) {
+      let output = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
+      let outputNew = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
     	let output = ''
     	let outputNew = ''
 
@@ -56,8 +61,8 @@ module.exports = (client, oldMember, newMember) => {
       .setAuthor(' 🤖  עדכון סטטוס  🤖 ')
     	.setColor(colors.default)
       .setDescription(`<@${newMember.id}>` + ' 🎮 ' + `${newMember.presence.game.name}`)
-      // .addField('◀️', `${output}`, true)
-      .addField('▶️', `${outputNew}`, true)
+      .addField('◀️', `${output}`)
+      .addField('▶️', `${outputNew}`)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
