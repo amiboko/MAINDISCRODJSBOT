@@ -38,9 +38,6 @@ module.exports = (client, oldMember, newMember) => {
       modLogChannel.send(embed).catch()
     }
     
-     
-     
-    if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
   	if (oldMember.roles !== newMember.roles) {
     	let output = ''
     	let outputNew = ''
