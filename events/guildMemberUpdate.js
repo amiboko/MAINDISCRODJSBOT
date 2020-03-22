@@ -47,7 +47,7 @@ module.exports = (client, oldMember, newMember) => {
     	})
 
     	newMember.roles.forEach(role => {
-      	outputNew += role.name
+      	outputNew += '\n' + role.name
     	})
 
     	if (output == outputNew) return
@@ -56,8 +56,8 @@ module.exports = (client, oldMember, newMember) => {
       .setAuthor(' 🤖  עדכון סטטוס  🤖 ')
     	.setColor(colors.default)
       .setDescription(`<@${newMember.id}>` + ' 🎮 ' + `${newMember.presence.game.name}`)
-      .addField('ישן:', output)
-      .addField('חדש:', outputNew)
+      .addField('◀️', `${output}`, true)
+      .addField('▶️', role.name)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
