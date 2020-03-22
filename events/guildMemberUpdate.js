@@ -44,11 +44,11 @@ module.exports = (client, oldMember, newMember) => {
     	let outputNew = ''
 
     	oldMember.roles.forEach(role => {
-      	output += role.name
+      	output = role.name
     	})
 
     	newMember.roles.forEach(role => {
-      	outputNew += role.name
+      	outputNew = role.name
     	})
 
     	if (output == outputNew) return
