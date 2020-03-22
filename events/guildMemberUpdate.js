@@ -39,7 +39,7 @@ module.exports = (client, oldMember, newMember) => {
     }
     
      
-     const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+     
     if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
   	if (oldMember.roles !== newMember.roles) {
       let output = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
