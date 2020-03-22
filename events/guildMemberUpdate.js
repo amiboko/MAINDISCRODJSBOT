@@ -55,10 +55,9 @@ module.exports = (client, oldMember, newMember) => {
     	embed = new Discord.RichEmbed()
       .setAuthor(' 🤖  עדכון סטטוס  🤖 ')
     	.setColor(colors.default)
-      .setDescription(`<@${newMember.id}> `)
-      .setDescription(`${newMember.presence.game.name}`)
-      .addField('ישן:', `${output}`)
-      .addField('חדש:', `឵${outputNew}`, true)
+      .setDescription(`<@${newMember.id}>` + ' 🎮 ' + `${newMember.presence.game.name}`)
+      .addField('ישן:', output)
+      .addField('חדש:', outputNew)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
