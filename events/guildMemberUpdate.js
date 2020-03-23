@@ -38,30 +38,30 @@ module.exports = (client, oldMember, newMember) => {
       modLogChannel.send(embed).catch()
     }
     
-  	if (oldMember.roles !== newMember.roles) {
+  	// if (oldMember.roles !== newMember.roles) {
       
-    	let output = ''
-    	let outputNew = ''
+    // 	let output = ''
+    // 	let outputNew = ''
 
-    	oldMember.roles.forEach(role => {
-      	output = role.name
-    	})
+    // 	oldMember.roles.forEach(role => {
+    //   	output = role.name
+    // 	})
 
-    	newMember.roles.forEach(role => {
-      	outputNew = role.name
-    	})
+    // 	newMember.roles.forEach(role => {
+    //   	outputNew = role.name
+    // 	})
 
-    	if (output == outputNew) return
+    // 	if (output == outputNew) return
 
-    	embed = new Discord.RichEmbed()
-      .setAuthor(':aea6b19d1ebb42b998d64136ff2ede45:')
-    	.setColor(colors.default)
-      .setDescription(`${newMember.user}`)
-      // .addField('⏹️', `${output}`, true)
-      // .addField('🆕', `឵${outputNew}`, true)
-      .setThumbnail(`${oldMember.user.displayAvatarURL}`)
+    // 	embed = new Discord.RichEmbed()
+    //   .setAuthor(":aea6b19d1ebb42b998d64136ff2ede45:")
+    // 	.setColor(colors.default)
+    //   .setDescription(`${newMember.user}`)
+    //   // .addField('⏹️', `${output}`, true)
+    //   // .addField('🆕', `឵${outputNew}`, true)
+    //   .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
-    	modLogChannel.send(embed).catch()
-  	}
+    // 	modLogChannel.send(embed).catch()
+  	// }
 }
