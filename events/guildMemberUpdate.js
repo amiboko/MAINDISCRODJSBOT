@@ -64,7 +64,6 @@ module.exports = (client, oldMember, newMember) => {
 
     	modLogChannel.send(embed).catch()
   	}
-}
 
 client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
@@ -89,3 +88,5 @@ client.on('presenceUpdate', (oldMember, newMember) => {
       .catch(console.error);
   }
 });
+
+}
