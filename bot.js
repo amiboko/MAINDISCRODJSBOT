@@ -116,7 +116,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
   embed = new Discord.RichEmbed()
   .setAuthor(':aea6b19d1ebb42b998d64136ff2ede45:')
-  .setColor(colors.red)
+  .setColor("#F74847")
   .setDescription(`${newMember.user}` +   ':49cf4ba1f4034ffc841493817797b739:'  + `${newMember.presence.game.name}`)
   .setThumbnail(`${oldMember.user.displayAvatarURL}`)
 
