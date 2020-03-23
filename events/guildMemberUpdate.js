@@ -3,7 +3,10 @@ const colors = require('../lib/colors.json')
 
 module.exports = (client, oldMember, newMember) => {
   let embed
+  const guild = newMember.guild
   const settings = client.getSettings(oldMember.guild.id)
+  const playingRole = guild.roles.find(role => role.id === '671635962228637696')
+
 
   if (!settings.logMemberUpdates == true) return
   if (!settings.modLogChannel) return
@@ -38,6 +41,24 @@ module.exports = (client, oldMember, newMember) => {
       modLogChannel.send(embed).catch()
     }
     
+    if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
+  
+    const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
+    const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+  
+    if (!oldGame && newGame) {         
+      newMember.addRole(playingRole)
+  
+      .then(() => client.channels.get(`689067371843158026`)
+      .send(embed)).catch()
+  
+    } else if (oldGame && !newGame) {  
+      newMember.removeRole(playingRole)
+        .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
+        .catch(console.error);
+    }
+
+
   	if (oldMember.roles !== newMember.roles) {
       
     	let output = ''
@@ -56,9 +77,9 @@ module.exports = (client, oldMember, newMember) => {
     	embed = new Discord.RichEmbed()
       .setAuthor(' 🤖  עדכון סטטוס  🤖 ')
     	.setColor(colors.default)
-      .setDescription(`<@${newMember.id}>` + ' 🎮 ')
-      .addField('⏹️', `${output}`, true)
-      .addField('🆕', `឵${outputNew}`, true)
+      .setDescription(`<@${newMember.id}>` + ' 🎮 ' + `${newMember.presence.game.name}`)
+      // .addField('⏹️', `${output}`, true)
+      // .addField('🆕', `឵${outputNew}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
