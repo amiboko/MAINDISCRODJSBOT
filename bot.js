@@ -6,6 +6,7 @@ require('dotenv').config()
 
 const Discord = require('discord.js')
 const Enmap = require('enmap')
+const colors = require('../lib/colors.json')
 const client = new Discord.Client({
   
   disableEveryone: true,
@@ -115,10 +116,8 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
   embed = new Discord.RichEmbed()
   .setAuthor(':aea6b19d1ebb42b998d64136ff2ede45:')
-  .setColor(colors.default)
+  .setColor(colors.red)
   .setDescription(`${newMember.user}` +   ':49cf4ba1f4034ffc841493817797b739:'  + `${newMember.presence.game.name}`)
-  // .addField('⏹️', `${output}`, true)
-  // .addField('🆕', `឵${outputNew}`, true)
   .setThumbnail(`${oldMember.user.displayAvatarURL}`)
 
   if (!oldGame && newGame) {         
