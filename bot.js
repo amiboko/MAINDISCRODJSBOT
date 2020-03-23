@@ -110,8 +110,8 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
   if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
 
-  const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
-  const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+  const oldGame = oldMember.presence.game && oldMember.presence.game.name && [0, 1].includes(oldMember.presence.game.type) ? true : false;
+  const newGame = newMember.presence.game && newMember.presence.game.name && [0, 1].includes(newMember.presence.game.type) ? true : false;
 
   const embed = new Discord.RichEmbed()
   .setAuthor(":aea6b19d1ebb42b998d64136ff2ede45:")
