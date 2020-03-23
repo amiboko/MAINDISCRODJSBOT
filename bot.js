@@ -6,7 +6,6 @@ require('dotenv').config()
 
 const Discord = require('discord.js')
 const Enmap = require('enmap')
-const colors = require('../lib/colors.json')
 const client = new Discord.Client({
   
   disableEveryone: true,
