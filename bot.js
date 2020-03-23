@@ -102,29 +102,37 @@ require('./modules/events')(client)
     });
 
 
-// client.on('presenceUpdate', (oldMember, newMember) => {
-//   const guild = newMember.guild;
-//   const playingRole = guild.roles.find(role => role.id === '671635962228637696');
+client.on('presenceUpdate', (oldMember, newMember) => {
+  const guild = newMember.guild;
+  const playingRole = guild.roles.find(role => role.id === '671635962228637696');
 
-// // newMember.presence.clientStatus === 'mobile'
+// newMember.presence.clientStatus === 'mobile'
 
-//   if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
+  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
 
-//   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
-//   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+  const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
+  const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
 
-//   if (!oldGame && newGame) {         
-//     newMember.addRole(playingRole)
+  embed = new Discord.RichEmbed()
+  .setAuthor(':aea6b19d1ebb42b998d64136ff2ede45:')
+  .setColor(colors.default)
+  .setDescription(`${newMember.user}` +   ':49cf4ba1f4034ffc841493817797b739:'  + `${newMember.presence.game.name}`)
+  // .addField('⏹️', `${output}`, true)
+  // .addField('🆕', `឵${outputNew}`, true)
+  .setThumbnail(`${oldMember.user.displayAvatarURL}`)
 
-//     .then(() => client.channels.get(`646991444648656927`)
-//     .send(`${newMember.user}` +   '  '  + '▶️' +  '  '  + `${newMember.presence.game.name}`))
+  if (!oldGame && newGame) {         
+    newMember.addRole(playingRole)
 
-//   } else if (oldGame && !newGame) {  
-//     newMember.removeRole(playingRole)
-//       .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
-//       .catch(console.error);
-//   }
-// });
+    .then(() => client.channels.get(`689067371843158026`)
+    .send(embed))
+
+  } else if (oldGame && !newGame) {  
+    newMember.removeRole(playingRole)
+      .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
+      .catch(console.error);
+  }
+});
 
 
 client.on('message', message => {
