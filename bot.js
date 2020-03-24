@@ -114,9 +114,10 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
 
   const embed = new Discord.RichEmbed()
-  .setAuthor(`${newMember.user}`)
-  .setColor("#F74847")
-  .setDescription(`${playingRole}` + '  ' + `${newMember.presence.game}` + '<a:itsmine:691725601966391387>')
+  .setAuthor('New Report')
+  .setTitle(newMember.user)
+  .setColor("#3498DB")
+  .setDescription(`${playingRole}` + '  ' + `${newMember.presence.game}` +  '  ' + '<a:itsmine:691725601966391387>')
   .setThumbnail(`${oldMember.user.displayAvatarURL}`)
 
   if (!oldGame && newGame) {         
