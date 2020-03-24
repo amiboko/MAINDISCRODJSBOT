@@ -116,7 +116,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   const embed = new Discord.RichEmbed()
   .setAuthor(`${newMember.user}`)
   .setColor("#F74847")
-  .setDescription(`${playingRole.name}` + '  ' + `${newMember.presence.game}` + '<a:itsmine:691725601966391387>')
+  .setDescription(`${playingRole}` + '  ' + `${newMember.presence.game}` + '<a:itsmine:691725601966391387>')
   .setThumbnail(`${oldMember.user.displayAvatarURL}`)
 
   if (!oldGame && newGame) {         
