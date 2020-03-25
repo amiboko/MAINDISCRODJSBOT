@@ -113,22 +113,29 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
 
-  const embed = new Discord.RichEmbed()
+  const embed1 = new Discord.RichEmbed()
   .setTitle('New Status')
   .setColor("#3498DB")
   .setDescription('\n\n' + `${newMember.user}`  + '\n\n' + `${playingRole}` + '  ' + `${newMember.presence.game}` +  '\xa0\xa0  ' + '<a:itsmine:691725601966391387>')
+  .setThumbnail(`${oldMember.user.displayAvatarURL}`)
+
+  const embed2 = new Discord.RichEmbed()
+  .setTitle('New Status')
+  .setColor("#3498DB")
+  .setDescription('\n\n' + `${newMember.user}` + ' ' + '\n\n' + 'Stopped Playing' + '\xa0\xa0' + '<a:itsmine:691725601966391387>')
   .setThumbnail(`${oldMember.user.displayAvatarURL}`)
 
   if (!oldGame && newGame) {         
     newMember.addRole(playingRole)
 
     .then(() => client.channels.get(`689067371843158026`)
-    .send(embed))
+    .send(embed1))
 
   } else if (oldGame && !newGame) {  
     newMember.removeRole(playingRole)
-      .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
-      .catch(console.error);
+
+    .then(() => client.channels.get(`689067371843158026`)
+    .send(embed2))
   }
 });
 
