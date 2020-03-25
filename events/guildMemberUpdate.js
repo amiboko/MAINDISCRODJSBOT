@@ -51,9 +51,9 @@ module.exports = (client, oldMember, newMember) => {
     	if (output == outputNew) return
 
     	embed = new Discord.RichEmbed()
-      .setTitle('New Status' + '\n')
+      .setTitle('New Status')
       .setColor("#3498DB")
-      .setDescription(`${newMember.user}` + ' ' + '\n\n' + 'Stopped Playing' + ' ' + '<a:itsmine:691725601966391387>')
+      .setDescription(`\n${newMember.user}` + ' ' + '\n\n' + 'Stopped Playing' + '\xa0' + '<a:itsmine:691725601966391387>')
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
     	
 
