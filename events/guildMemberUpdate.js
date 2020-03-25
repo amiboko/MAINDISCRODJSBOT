@@ -43,12 +43,16 @@ module.exports = (client, oldMember, newMember) => {
     	let output = ''
     	let outputNew = ''
 
-    	oldMember.roles.forEach(role => {
+    	oldMember.roles.forEach(role => { 
       	output = role.name
-    	})
+      })
+      
+    	newMember.roles.forEach(role => {
+      	outputNew = role.name
+      })
+      
 
-
-    	if (output == outputNew) return
+    	if (output === outputNew) return
 
     	embed = new Discord.RichEmbed()
       .setTitle('New Status')
