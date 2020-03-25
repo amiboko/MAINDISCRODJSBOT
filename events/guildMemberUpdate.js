@@ -52,7 +52,7 @@ module.exports = (client, oldMember, newMember) => {
       })
       
 
-    	if (output && !outputNew) return
+    	if (!output && outputNew) return
 
     	embed = new Discord.RichEmbed()
       .setTitle('New Status')
