@@ -94,12 +94,4 @@ module.exports = async (client, message) => {
     }
   }
 
-  try {
-    cmd.run(client, message, args, level)
-
-    client.uses.ensure(cmd.help.name, 1)
-    client.uses.inc(cmd.help.name)
-  } catch (err) {
-    message.channel.send('שגיאה 4\n' + err).catch()
-  }
 }
