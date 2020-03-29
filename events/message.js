@@ -10,7 +10,7 @@ module.exports = async (client, message) => {
   const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`)
   if (message.content.match(prefixMention)) {
     const embed = new Discord.RichEmbed()
-      .setTitle('איך אתה מעז לתייג אותי?')
+      .setTitle('?איך אתה מעז לתייג אותי')
       .setColor(colors.default)
 
       if (message.guild !== null) {
