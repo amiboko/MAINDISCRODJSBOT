@@ -116,14 +116,16 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   const embed1 = new Discord.RichEmbed()
   .setTitle('New Status')
   .setColor("#3498DB")
-  .setDescription('\n\n' + `${newMember.user}`  + '\n\n' + `${playingRole}` + '  ' + `${newMember.presence.game}` +  '\xa0\xa0  ' + '<a:itsmine:691725601966391387>')
+  .setDescription('\n\n\n\n' + `${newMember.user}`  + '\n\n' + `${playingRole}` + '  ' + `${newMember.presence.game}` +  '\xa0\xa0' + '\n\n' +'<a:itsmine:691725601966391387>')
   .setThumbnail(`${oldMember.user.displayAvatarURL}`)
+  .setTimestamp()
 
   const embed2 = new Discord.RichEmbed()
   .setTitle('New Status')
   .setColor("#3498DB")
-  .setDescription('\n\n' + `${newMember.user}` + ' ' + '\n\n' + 'Stopped Playing' + '\xa0\xa0' + '<a:itsmine:691725601966391387>')
+  .setDescription('\n\n\n\n' + `${newMember.user}` + ' ' + '\n\n' + 'Finished' +  `${playingRole}` + '\xa0\xa0' + '<a:pica:693846940743499846>')
   .setThumbnail(`${oldMember.user.displayAvatarURL}`)
+  .setTimestamp()
 
   if (!oldGame && newGame) {         
     newMember.addRole(playingRole)
