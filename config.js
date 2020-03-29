@@ -24,7 +24,7 @@ const config = {
     deniedChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
 		acceptedChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
     welcomeChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
-    welcomeMessage: 'טוב שבאת {{mention}}',
+    welcomeMessage: '{{name}}',
     welcomeEnabled: 'true',
     pointsEnabled: 'true',
     logMessageUpdates: 'true',
