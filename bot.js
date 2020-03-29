@@ -144,9 +144,9 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 client.on('message', message => {
   
-  if(message.content.includes('משחק')) {
+  if(message.content.includes('לשחק')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`אני אוהב לשחק בבייצים`');
+      message.channel.send(message.author + '`יאלה אני בא`');
       
   }
 });
