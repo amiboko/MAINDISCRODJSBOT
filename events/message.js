@@ -94,4 +94,12 @@ module.exports = async (client, message) => {
     }
   }
 
+  try {
+    cmd.run(client, message, args, level)
+
+    client.uses.ensure(cmd.help.name, 1)
+    client.uses.inc(cmd.help.name)
+  } catch (err) {
+    message.channel.send('<a:cooldoge:693846954073129051>').catch()
+  }
 }
