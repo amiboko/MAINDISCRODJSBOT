@@ -885,7 +885,7 @@ exports.run = async (client, message, args, level) => {
   //.setAuthor(message.author.tag)
   .setColor("#CC22E2")
   .addField("?הידעת", factsuseless[factnum])
-  .setThumbnail(`https://raw.githubusercontent.com/amiboko/Gaymersbot/master/img/3942177.gif`);
+  .setThumbnail(`https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/MOSHED-2020-3-7-10-43-13.gif`);
 
 
   message.channel.send(factembed);
