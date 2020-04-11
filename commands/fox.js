@@ -7,7 +7,6 @@ exports.run = async (client, message, args, level) => {
     const embed = new Discord.RichEmbed()
       .setColor(colors.default)
       .setTitle('אלכס הוא אחלה גבר שבעולם')
-      .setImage('')
 
     message.channel.send(embed)
   
