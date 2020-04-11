@@ -19,7 +19,7 @@ client.on('message', message => {
   
   if(message.content.includes('מפחיד')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`יאלה אני בא`');
+      message.channel.send(embed);
       
   }
 });
