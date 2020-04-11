@@ -7,9 +7,16 @@ exports.run = async (client, message, args, level) => {
     const color = !args[0] ? hex : args[0] 
     const embed = new Discord.RichEmbed()
       .setColor(hex)
-      .setImage(`https://raw.githubusercontent.com/amiboko/Gaymersbot/master/img/WhatsApp%20Image%202020-01-17%20at%2010.36.25.jpeg`)
+      .setImage(`https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/clown.gif`)
 
     message.channel.send(embed)
+
+
+ if(message.content.includes('מפחיד')) {
+ if (message.author.bot) return;
+     message.channel.send(embed);
+ };
+
   } catch (err) {
     message.channel.send('שגיאה שגיאתית, ספר לעמי\n' + err).catch()
   }
@@ -17,7 +24,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['מפחיד'],
+  aliases: ['אמא','יו','אמאלה','פחד','אבאלה','אבא','מפחיד', ],
   guildOnly: false,
   permLevel: 'User'
 }
