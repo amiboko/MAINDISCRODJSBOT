@@ -6,7 +6,7 @@ exports.run = async (client, message, args, level) => {
   message.channel.send(
     new Discord.RichEmbed()
       .setColor(colors.default)
-      .setImage('https://raw.githubusercontent.com/amiboko/Gaymersbot/master/img/poran.jpg')
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/poran.jpg')
   )
 }
 
