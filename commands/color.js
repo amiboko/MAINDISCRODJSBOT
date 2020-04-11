@@ -10,19 +10,12 @@ exports.run = async (client, message, args, level) => {
       .setImage(`https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/clown.gif`)
 
     message.channel.send(embed)
-  } catch (err) {
+  }
+    
+  catch (err) {
     message.channel.send('שגיאה שגיאתית, ספר לעמי\n' + err).catch()
   }
 }
-
-client.on('message', message => {
-  
-  if(message.content.includes('מפחיד')) {
-    if (message.author.bot) return;
-      message.channel.send(embed);
-      
-  }
-});
 
 exports.conf = {
   enabled: true,
