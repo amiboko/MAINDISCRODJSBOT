@@ -21,7 +21,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
 
 exports.conf = {
   enabled: true,
-  aliases: ['בדיחה', 'ח', 'חח', 'חחח', 'חחחח', 'חחחחח', 'חחחחחח', 'חחחחחחח', 'חחחחחחח', 'מצחיק'],
+  aliases: ['בדיחה', 'מצחיק', 'funny', 'lol'],
   guildOnly: false,
   permLevel: 'User'
 }
@@ -29,6 +29,6 @@ exports.conf = {
 exports.help = {
   name: 'בדיחה',
   category: 'כיף',
-  description: 'ביקשת בדיחה קיבלת בדיחה',
-  usage: 'רשום בדיחה או מצחיק או חחח'
+  description: 'בדיחות רנדומליות באנגלית כי עברית שפה חרא',
+  usage: 'רשום בדיחה או מצחיק'
 }
