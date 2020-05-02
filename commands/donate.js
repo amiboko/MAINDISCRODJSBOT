@@ -1,27 +1,48 @@
-const colors = require('../lib/colors.json')
 const Discord = require('discord.js')
+const request = require('request')
 
-exports.run = (client, message, args, level) => {
-  const embed = new Discord.RichEmbed()
-    .setTitle('💰 תרומה')
-    .setColor(colors.default)
-    .setThumbnail('טסט')
-    .addField('טסט')
-    .addField('טסט')
+exports.run = async (client, message, args, level) => {
+  let factsuseless = 
+  [
 
-  message.channel.send(embed)
+      "אתה בא לחלע?!",
+      "יש משחק?!",
+      "אני חם!",
+      "בוא נפרק!",
+      "WARZONE?",
+      "BR כן?!",
+
+  ];
+
+  let factnum = Math.floor((Math.random() * factsuseless.length));
+
+  let factembed = new Discord.RichEmbed()
+  //.setAuthor(message.author.tag)
+  .setColor("#CC22E2")
+  .setTitle('אני רוני ואני גבר', factsuseless[factnum])
+  .addField("היי", factsuseless[factnum])
+  .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
+
+
+  message.channel.send(factembed)  
+
+  if(message.content.includes('COD')) {
+      if (message.author.bot) return;
+        message.channel.send(factembed);
+        
+    };
 }
 
 exports.conf = {
   enabled: true,
-  aliases: [''],
+  aliases: ['הידעת', 'COD', 'cod'],
   guildOnly: false,
   permLevel: 'User'
 }
 
 exports.help = {
-  name: 'NONE',
-  category: 'NONE',
-  description: 'בבנייה',
-  usage: 'טסט'
+  name: 'קוד',
+  category: 'כיף',
+  description: 'אני אוהב קוד',
+  usage: 'קוד'
 }
