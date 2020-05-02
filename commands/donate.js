@@ -18,8 +18,8 @@ exports.run = async (client, message, args, level) => {
 
   let factembed = new Discord.RichEmbed()
   //.setAuthor(message.author.tag)
-  .setColor("#CC22E2")
-  .setTitle('אני רוני ואני גבר', factsuseless[factnum])
+  .setColor("#000000")
+  .setTitle(factsuseless[factnum])
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
 
