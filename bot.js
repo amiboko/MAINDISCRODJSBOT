@@ -99,16 +99,17 @@ client.on('message', async message => {
   let factnum = Math.floor((Math.random() * factsuseless.length));
 
   let factembed = new Discord.RichEmbed()
-  .setAuthor(message.author.tag)
+  .setAuthor(message.author)
   .setColor("#000000")
   .setTitle(factsuseless[factnum])
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
-  if(message.content.includes('קוד' || 'cod' || 'COD')) {
+  if(message.content.includes('קוד'))
+  if(message.content.includes('cod'))
+  if(message.content.includes('COD'))
+   {
       message.channel.send(factembed);
-
-  
-  }
+   }
 
   if (message.author.bot) return
 });
