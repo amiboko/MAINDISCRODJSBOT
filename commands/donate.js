@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const request = require('request')
 
+
+
 exports.run = async (client, message, args, level) => {
   let factsuseless = 
   [
@@ -23,34 +25,20 @@ exports.run = async (client, message, args, level) => {
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
 
-  message.channel.send(factembed)  
-
   if(message.content.includes('COD')) {
-      if (message.author.bot) return;
-        message.channel.send(factembed)
-        
-    }
-
-    if(message.content.includes('cod')) {
-      if (message.author.bot) return;
-        message.channel.send(factembed)
-        
-    };
-}
-
-client.on('message', message => {
-  
-  if(message.content.includes('קוד')) {
     if (message.author.bot) return;
-      message.channel.send(factembed);
+      message.channel.send(factembed)
       
   }
-});
 
+  if(message.content.includes('cod')) {
+    if (message.author.bot) return;
+      message.channel.send(factembed)
+      
+  }
+  // message.channel.send(factembed)  
 
-
-
-
+}
 
 exports.conf = {
   enabled: true,
