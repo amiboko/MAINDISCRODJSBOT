@@ -20,7 +20,6 @@ exports.run = async (client, message, args, level) => {
   //.setAuthor(message.author.tag)
   .setColor("#CC22E2")
   .setTitle('אני רוני ואני גבר', factsuseless[factnum])
-  .addField("היי", factsuseless[factnum])
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
 
@@ -31,11 +30,23 @@ exports.run = async (client, message, args, level) => {
         message.channel.send(factembed);
         
     };
+
+    if(message.content.includes('קוד')) {
+      if (message.author.bot) return;
+        message.channel.send(factembed);
+        
+    };
+
+    if(message.content.includes('cod')) {
+      if (message.author.bot) return;
+        message.channel.send(factembed);
+        
+    };
 }
 
 exports.conf = {
   enabled: true,
-  aliases: ['הידעת', 'COD', 'cod'],
+  aliases: [''],
   guildOnly: false,
   permLevel: 'User'
 }
