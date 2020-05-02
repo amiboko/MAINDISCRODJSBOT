@@ -83,8 +83,39 @@ require('./modules/events')(client)
   }
 });
 
+client.on('message', async message => {
+  let factsuseless = 
+  [
 
+      "אתה בא לחלע?!",
+      "יש משחק?!",
+      "אני חם!",
+      "בוא נפרק!",
+      "WARZONE?",
+      "BR כן?!",
 
+  ];
+
+  let factnum = Math.floor((Math.random() * factsuseless.length));
+
+  let factembed = new Discord.RichEmbed()
+  .setAuthor(message.author.tag)
+  .setColor("#000000")
+  .setTitle(factsuseless[factnum])
+  .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
+
+   message.channel.send(factembed)  
+
+  });
+
+  client.on('message', message => {
+  
+    if(message.content.includes('קוד')) {
+      if (message.author.bot) return;
+        message.channel.send(factembed);
+        
+    }
+  });
 
 
   client.on('guildMemberAdd', member => {
