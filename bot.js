@@ -104,18 +104,14 @@ client.on('message', async message => {
   .setTitle(factsuseless[factnum])
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
-   message.channel.send(factembed)  
+  if(message.content.includes('קוד' || 'cod' || 'COD')) {
+      message.channel.send(factembed);
 
-  });
-
-  client.on('message', message => {
   
-    if(message.content.includes('קוד')) {
-      if (message.author.bot) return;
-        message.channel.send(factembed);
-        
-    }
-  });
+  }
+
+  if (message.author.bot) return
+});
 
 
   client.on('guildMemberAdd', member => {
