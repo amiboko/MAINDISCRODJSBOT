@@ -9,9 +9,9 @@ exports.run = async (client, message, args, level) => {
   const input = message.content.split(`${settings.prefix}הצבעה `)
 
   const embed = new Discord.RichEmbed()
-    .setTitle('🗳 הצבעה')
+    .setTitle('הצבעה 🗳')
     .setColor(colors.default)
-    .addField(`תצביע עם 👍 או ${noEmoji} או תוסיף אחד לטעמך`, input, true)
+    .addField(`תצביע עם 👍 או ${noEmoji} או תוסיף אחד לטעמך`, input, false + '\n')
     .setTimestamp()
 
   if (args.length === 0) {
