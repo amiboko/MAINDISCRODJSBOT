@@ -11,11 +11,11 @@ exports.run = async (client, message, args, level) => {
   const embed = new Discord.RichEmbed()
     .setTitle('הצבעה 🗳')
     .setColor(colors.default)
-    .addField(`תצביע עם 👍 או ${noEmoji} או תוסיף אחד לטעמך`, input, false + '\n')
+    .addField(`תצביע עם 👍 או ${noEmoji} או תוסיף אחד לטעמך`, '\n')
     .setTimestamp()
 
   if (args.length === 0) {
-    message.channel.send(`על מה תיהיה ההצבעה? \nלדוגמה, \`${settings.prefix}האם מוריס גיי?\``)
+    message.channel.send(`על מה תיהיה ההצבעה?`)
   } else {
     message.delete()
     message.channel.send(embed).then(message => {
