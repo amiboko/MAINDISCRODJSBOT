@@ -66,7 +66,7 @@ require('./modules/events')(client)
 //runs the message looker thingy
  client.on('message', async message => {
   //1 blacklisted words
-  let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מנייאק', 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'pussy', 'PUSSY', 'ass', 'ASS'] //words put , after the word
+  let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מנייאק', 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק'] 
 
   //2 looking for words
   let foundInText = false;
@@ -130,14 +130,14 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   if (!oldGame && newGame) {         
     newMember.addRole(playingRole)
 
-    .then(() => client.channels.get(`689067371843158026`)
-    .send(embed1))
+    // .then(() => client.channels.get(`689067371843158026`)
+    // .send(embed1))
 
   } else if (oldGame && !newGame) {  
     newMember.removeRole(playingRole)
 
-    .then(() => client.channels.get(`689067371843158026`)
-    .send(embed2))
+    // .then(() => client.channels.get(`689067371843158026`)
+    // .send(embed2))
   }
 });
 
@@ -182,26 +182,33 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content === '?') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`מה אתה רוצה?`');
+      message.channel.send(message.author + '`תרשום עזרה תקבל עזרה`');
   }
 });
 
 client.on('message', message => {
   if(message.content === '??') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`מה אתה רוצה?`');
+      message.channel.send(message.author + '`מה הסיפור שלך?`');
   }
 });
 
 client.on('message', message => {
   if(message.content === '???') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`מה אתה רוצה?`');
+      message.channel.send(message.author + '`יש מצב שאתה גיי?`');
   }
 });
 
 client.on('message', message => {
   if(message.content === '????') {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`טוב מה נסגר איתך?`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content === '?????') {
     if (message.author.bot) return;
       message.channel.send(message.author + '`מה אתה רוצה?`');
   }
