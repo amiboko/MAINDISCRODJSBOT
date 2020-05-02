@@ -1,32 +1,25 @@
-// WIP until Discord allows spoilers in embeds
-const Discord = require('discord.js');
-const request = require('request');
-const colors = require('../lib/colors.json');
+const Discord = require('discord.js')
+const request = require('request')
+const colors = require('../lib/colors.json')
 
-exports.run = async (client, message, args, level) => {     
-	const random = require('random-puppy');
-	if (message.channel.nsfw === false) return message.channel.send('You need to be in an NSFW channel to use this command.')
- 
-	random('fiftyfifty').then(url => {
-		const embed = new Discord.RichEmbed()
-		.setAuthor('Reddit 50/50', 'https://www.redditinc.com/assets/images/site/reddit-logo.png', url)
-		.setColor('#FF4300')
-		.setImage(`${url}`)
-		
-		message.channel.send(embed);
-	})
-};
+exports.run = async (client, message, args, level) => {
+  message.channel.send(
+    new Discord.RichEmbed()
+      .setColor(colors.default)
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/MOSHED-2020-3-7-10-43-13.gif')
+  )
+}
 
 exports.conf = {
-  enabled: false,
-  aliases: ['fifty', 'fiftyfifty', 'fifty-fifty', '5050', '50-50', '50/50', 'fifty/fifty'],
-  guildOnly: true,
+  enabled: true,
+  aliases: ['מוזס', 'מושיקו', 'משה', 'MOSES', 'מושה', 'מוש', 'MOSHE', 'משהמשה', 'Moshe'],
+  guildOnly: false,
   permLevel: 'User'
-};
+}
 
 exports.help = {
-  name: '50',
-  category: 'Fun',
-  description: 'Reddit 50/50 challenge.',
-  usage: '50'
-};
+  name: 'משה',
+  category: 'כיף',
+  description: 'גיף של משה',
+  usage: 'רשום משה'
+}
