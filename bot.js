@@ -8,7 +8,7 @@ const Discord = require('discord.js')
 const Enmap = require('enmap')
 const client = new Discord.Client({
   
-  disableEveryone: true,
+  disableEveryone: false,
   disabledEvents: ['TYPING_START']
 })
 const serverStats = {
