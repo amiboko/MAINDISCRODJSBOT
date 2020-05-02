@@ -1,7 +1,7 @@
 exports.run = async (client, message, args, level) => {
   try {
     message.delete().catch()
-    const mg = args.join(' ')
+    const mg = args.join('` `')
     message.channel.send(mg)
   } catch (err) {
     message.channel.send('שגיאהההה, תייג את עמי\n' + err).catch()
