@@ -104,9 +104,7 @@ client.on('message', async message => {
   .setTitle(factsuseless[factnum])
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
-  if(message.content.includes('קוד'))
-  if(message.content.includes('cod'))
-  if(message.content.includes('COD'))
+  if(message.content.includes('קוד' && 'cod' && 'COD'))
    {
       message.channel.send(factembed);
    }
