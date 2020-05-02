@@ -100,7 +100,7 @@ client.on('message', async message => {
 
   let factembed = new Discord.RichEmbed()
   .setColor("#000000")
-  .setTitle(message.author + factsuseless[factnum])
+  .setTitle(factsuseless[factnum])
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
   if(message.content.includes('קוד'))
