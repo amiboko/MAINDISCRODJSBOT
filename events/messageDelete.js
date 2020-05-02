@@ -13,9 +13,9 @@ module.exports = (client, message) => {
 				if (!modLogChannel.permissionsFor(message.guild.me).has('SEND_MESSAGES')) return
 
 				const embed = new Discord.RichEmbed()
-					.setAuthor('🗑️ הודעה נמחקה')
+					.setAuthor('הודעה נמחקה 🗑️')
 					.setColor(colors.default)
-					.setDescription(`${message.channel} ב <@${message.author.id}> נמחק ע"י`)
+					.setDescription(`נמחק ע"י <@${message.author.id}> בערוץ ${message.channel}`)
 					
 				modLogChannel.send(embed)
 			}
