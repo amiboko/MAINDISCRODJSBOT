@@ -176,9 +176,9 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 client.on('message', message => {
   
-  if(message.content.includes('MASTERBOT')) {
+  if(message.content.includes("@MASTERBOT")) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '\xa0' + '`איך את מעז לכתוב את שמי?! חוצפן`');
+      message.channel.send(message.author + '\xa0\xa0' + '`איך את מעז לכתוב את שמי?! חוצפן`');
       
   }
 });
@@ -187,7 +187,7 @@ client.on('message', message => {
   
   if(message.content.includes('@everyone')) {
     if (message.author.bot) return;
-      message.channel.send("@everyone");
+      message.channel.send("@everyone" + '☝ ☝ ☝');
       
   }
 });
