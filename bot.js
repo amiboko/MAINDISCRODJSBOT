@@ -79,7 +79,7 @@ require('./modules/events')(client)
     if (foundInText) {
       if (message.author.bot) return;
       //message.delete();
-      message.channel.send(message.author + '`סליחה! רק לי מותר לקלל פה יזיין`');
+      message.channel.send(message.author +'\xa0\xa0'+ '`סליחה! רק לי מותר לקלל פה יזיין`');
   }
 });
 
@@ -177,12 +177,12 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 client.on('message', message => {
   
-  if(message.content.includes("@MASTERBOT")) {
+  if(message.content.includes('@MASTERBOT')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('`איך את מעז לכתוב את שמי?! <a:veri:691980334782218240>`')
     .setColor("#000000")
-    .setThumbnail(message.author.displayAvatarURLT)
+
       message.channel.send(embed);
       
   }
@@ -195,7 +195,7 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
     .setTitle('`רוווווווווני`')
     .setColor("#000000")
-    .setThumbnail(message.author.displayAvatarURL)
+
       message.channel.send(embed);
       
   }
