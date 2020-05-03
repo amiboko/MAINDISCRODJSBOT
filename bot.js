@@ -176,13 +176,25 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 client.on('message', message => {
   
-  if(message.content.includes('<@635882115661168681>')) {
+  if(message.content.includes(`@${client.user.id}`)) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('`איך את מעז לכתוב את שמי?! <a:veri:691980334782218240>`')
     .setColor(colors.default)
     .setThumbnail(`${message.author.displayAvatarURL}`)
       message.channel.send(embed);
+      
+  }
+});
+
+
+client.on('message', message => {
+  
+  if (message.content.includes('רוני')) {
+    if (message.author.bot) return;
+    let user = message.mentions.users.first();
+    message.channel.send("פה" + user);
+  
       
   }
 });
