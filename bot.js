@@ -177,19 +177,6 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 client.on('message', message => {
   
-  if(message.content.includes('@MASTERBOT')) {
-    if (message.author.bot) return;
-    const embed = new Discord.RichEmbed()
-    .setTitle('`איך את מעז לכתוב את שמי?! <a:veri:691980334782218240>`')
-    .setColor("#000000")
-
-      message.channel.send(embed);
-      
-  }
-});
-
-client.on('message', message => {
-  
   if(message.content.includes('רוני')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
