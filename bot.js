@@ -174,6 +174,33 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   }
 });
 
+client.on('message', message => {
+  
+  if(message.content.includes('@MASTERBOT')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + + '\xa0\xa0' + '`איך את מעז לתייג אותי?! חוצפן`');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('@everyone')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + + '\xa0\xa0' + '`@everyone`');
+      
+  }
+});
+
+
+client.on('message', message => {
+  
+  if(message.content.includes('זורם')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + + '\xa0\xa0' + '`אני זורם`');
+      
+  }
+});
 
 client.on('message', message => {
   
