@@ -195,7 +195,6 @@ message.channel.send('What tag would you like to see? This will await will be ca
 });
 
 
-
 client.on('message', message => {
   
   if(message.content.includes()) {
@@ -216,7 +215,7 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
     .setTitle('`רוווווווווני`')
     .setColor(colors.default)
-    .setThumbnail(`${message.author.displayAvatarURL}`)
+    .setThumbnail(message.author.displayAvatarURL)
       message.channel.send(embed);
       
   }
