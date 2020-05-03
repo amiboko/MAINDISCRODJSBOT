@@ -176,19 +176,19 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 client.on('message', message => {
 
-  if(message.content.includes('TEST')){
-message.channel.send('What tag would you like to see? This will await will be cancelled in 30 seconds. It will finish when you provide a message that goes through the filter the first time.')
+  if(message.content.includes('מוריס')){
+message.channel.send('יש לך 30 שניות לפני שאתה מקבל בעיטה מהשרת על הוצאת שמו של מוריס לשווא, אני ממתין למילה סליחה.. 30...29...')
 .then(() => {
-  message.channel.awaitMessages(response => response.content === 'test', {
+  message.channel.awaitMessages(response => response.content === 'סליחה', {
     max: 1,
     time: 30000,
     errors: ['time'],
   })
   .then((collected) => {
-      message.channel.send(`The collected message was: ${collected.first().content}`);
+      message.channel.send(`כל הכבוד ${collected.first().content}`);
     })
     .catch(() => {
-      message.channel.send('There was no collected message that passed the filter within the time limit!');
+      message.channel.send('ביי ביי' + message.author);
     })
 })
 }
@@ -197,12 +197,12 @@ message.channel.send('What tag would you like to see? This will await will be ca
 
 client.on('message', message => {
   
-  if(message.content.includes()) {
+  if(message.content.includes("@MASTERBOT")) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('`איך את מעז לכתוב את שמי?! <a:veri:691980334782218240>`')
-    .setColor(colors.default)
-    .setThumbnail(`${message.author.displayAvatarURL}`)
+    .setColor("#000000")
+    .setThumbnail(message.author.displayAvatarURLT)
       message.channel.send(embed);
       
   }
@@ -214,7 +214,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('`רוווווווווני`')
-    .setColor(colors.default)
+    .setColor("#000000")
     .setThumbnail(message.author.displayAvatarURL)
       message.channel.send(embed);
       
