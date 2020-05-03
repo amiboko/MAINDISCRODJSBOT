@@ -173,7 +173,22 @@ client.on('presenceUpdate', (oldMember, newMember) => {
     // .send(embed2))
   }
 });
+https://en.wikipedia.org/wiki/Shroud_(gamer)
 
+
+
+client.on('message', message => {
+  
+  if(message.content.includes('SHROUD')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`https://en.wikipedia.org/wiki/Shroud_(gamer)`')
+    .setColor("#000000")
+
+      message.channel.send(embed);
+      
+  }
+});
 
 client.on('message', message => {
   
