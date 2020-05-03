@@ -11,7 +11,7 @@ exports.run = (client, message, args, level) => {
 				.setColor(colors.default)
 				.setThumbnail(client.user.avatarURL)
 				.addField('קצת עזרה לא תזיק', `עזרה פקודות: מידע לשימוש בפקודות \n עזרה <שם פקודה>: פרטים לכל פקודה`)
-				.addField('?רוצים להזמין עוד משהוא לשרת', '[יילע ץחלת](https://discord.gg/RcHes6y)')
+				.addField('רוצים להזמין עוד משהוא לשרת?', '[CLICK ME](https://discord.gg/RcHes6y)')
 				.setImage("https://scontent.fhfa2-2.fna.fbcdn.net/v/t1.0-9/s960x960/81214613_1397300473812746_7875231392332775424_o.jpg?_nc_cat=109&_nc_ohc=2mjhu9slCRgAX-QuI0n&_nc_ht=scontent.fhfa2-2.fna&_nc_tp=1002&oh=209fde4a212c3de86dcf387e57fec1c0&oe=5E9ACFDF")
 
       message.channel.send(embed)
