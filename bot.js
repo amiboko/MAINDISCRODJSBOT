@@ -179,15 +179,21 @@ https://en.wikipedia.org/wiki/Shroud_(gamer)
 
 client.on('message', message => {
   
-  if(message.content.includes('SHROUD')) {
-    if (message.author.bot) return;
-    const embed = new Discord.RichEmbed()
-    .setTitle('(https://en.wikipedia.org/wiki/Shroud_(gamer))')
-    .setColor("#000000")
+  if(message.content.includes('SHROUD'))
+   {
+      message.channel.send('https://en.wikipedia.org/wiki/Shroud_(gamer)');
+   }
+   if(message.content.includes('shroud'))
+   {
+      message.channel.send('https://en.wikipedia.org/wiki/Shroud_(gamer)');
+   }
+   if(message.content.includes('שראוד'))
+   {
+      message.channel.send('https://en.wikipedia.org/wiki/Shroud_(gamer)');
+   }
 
-      message.channel.send(embed);
-      
-  }
+  if (message.author.bot) return
+  
 });
 
 client.on('message', message => {
@@ -197,6 +203,19 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
     .setTitle('`רוווווווווני`')
     .setColor("#000000")
+
+      message.channel.send(embed);
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('מלשין')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`<a:veri:691980334782218240>`')
+    .setColor("#0000FF")
 
       message.channel.send(embed);
       
