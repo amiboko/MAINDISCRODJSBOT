@@ -176,9 +176,13 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 client.on('message', message => {
   
-  if(message.content.includes("@MASTERBOT")) {
+  if(message.content.includes('<@635882115661168681>')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '\xa0\xa0' + '`איך את מעז לכתוב את שמי?! חוצפן`');
+    const embed = new Discord.RichEmbed()
+    .setTitle('`איך את מעז לכתוב את שמי?! <a:veri:691980334782218240>`')
+    .setColor(colors.default)
+    .setThumbnail(`${message.author.displayAvatarURL}`)
+      message.channel.send(embed);
       
   }
 });
@@ -187,11 +191,19 @@ client.on('message', message => {
   
   if(message.content.includes('@everyone')) {
     if (message.author.bot) return;
-      message.channel.send("@everyone" + '☝ ☝ ☝');
+      message.channel.send("@everyone" + '<a:veri:691980333968785448>');
       
   }
 });
 
+client.on('message', message => {
+  
+  if(message.content.includes('חכם')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author +'\xa0\xa0'+ '<a:veri:691980335235334155>');
+      
+  }
+});
 
 client.on('message', message => {
   
