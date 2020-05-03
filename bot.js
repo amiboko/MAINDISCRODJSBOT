@@ -232,9 +232,9 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if(message.content.includes('כן')) {
+  if(message.content === ('כן')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`כן?`');
+      message.channel.send(message.author + '`אתה בטוח?`');
   }
 });
 
