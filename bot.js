@@ -175,8 +175,30 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 });
 
 client.on('message', message => {
+
+  if(message.content.includes('TEST')){
+message.channel.send('What tag would you like to see? This will await will be cancelled in 30 seconds. It will finish when you provide a message that goes through the filter the first time.')
+.then(() => {
+  message.channel.awaitMessages(response => response.content === 'test', {
+    max: 1,
+    time: 30000,
+    errors: ['time'],
+  })
+  .then((collected) => {
+      message.channel.send(`The collected message was: ${collected.first().content}`);
+    })
+    .catch(() => {
+      message.channel.send('There was no collected message that passed the filter within the time limit!');
+    })
+})
+}
+});
+
+
+
+client.on('message', message => {
   
-  if(message.content.includes(`@${client.user.id}`)) {
+  if(message.content.includes()) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('`איך את מעז לכתוב את שמי?! <a:veri:691980334782218240>`')
@@ -187,14 +209,15 @@ client.on('message', message => {
   }
 });
 
-
 client.on('message', message => {
   
-  if (message.content.includes('רוני')) {
+  if(message.content.includes('רוני')) {
     if (message.author.bot) return;
-    let user = message.mentions.users.first();
-    message.channel.send("פה" + user);
-  
+    const embed = new Discord.RichEmbed()
+    .setTitle('`רוווווווווני`')
+    .setColor(colors.default)
+    .setThumbnail(`${message.author.displayAvatarURL}`)
+      message.channel.send(embed);
       
   }
 });
@@ -203,7 +226,7 @@ client.on('message', message => {
   
   if(message.content.includes('@everyone')) {
     if (message.author.bot) return;
-      message.channel.send("@everyone" + '<a:veri:691980333968785448>');
+      message.channel.send("@everyone" +'\xa0\xa0'+ '<a:veri:691980333968785448>');
       
   }
 });
