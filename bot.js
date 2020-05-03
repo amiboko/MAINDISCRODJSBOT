@@ -174,26 +174,6 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   }
 });
 
-client.on('message', message => {
-
-  if(message.content.includes('מוריס')){
-message.channel.send('יש לך 30 שניות לפני שאתה מקבל בעיטה מהשרת על הוצאת שמו של מוריס לשווא, אני ממתין למילה סליחה.. 30...29...')
-.then(() => {
-  message.channel.awaitMessages(response => response.content === 'סליחה', {
-    max: 1,
-    time: 30000,
-    errors: ['time'],
-  })
-  .then((collected) => {
-      message.channel.send(`כל הכבוד ${collected.first().content}`);
-    })
-    .catch(() => {
-      message.channel.send('ביי ביי' + message.author);
-    })
-})
-}
-});
-
 
 client.on('message', message => {
   
