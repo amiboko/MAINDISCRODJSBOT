@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const hash = require("string-hash");
 
 const numEmojis = ["1⃣", "2⃣", "3⃣", "4⃣", "5⃣", "6⃣", "7⃣", "8⃣", "9⃣", "🔟"];
 const handEmojis = ["👍", "👎"];
