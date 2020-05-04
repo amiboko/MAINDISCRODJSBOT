@@ -241,20 +241,3 @@ client.on("message", async (msg) => {
 });
 
 client.on("error", console.error);
-
-
-
-
-exports.conf = {
-  enabled: true,
-  aliases: [''],
-  guildOnly: true,
-  permLevel: 'User'
-}
-
-exports.help = {
-  name: 'poll',
-  category: 'Moderation',
-  description: 'Creates a poll.',
-  usage: 'poll <yes or no question>'
-}
