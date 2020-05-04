@@ -20,8 +20,6 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "nedb": "^1.8.0",
-    "string-hash": "^1.1.3",
     "better-sqlite-pool": "^0.2.2",
     "better-sqlite3": "^5.4.0",
     "body-parser": "^1.19.0",
