@@ -119,7 +119,7 @@ client.on('message', async message => {
       message.channel.send(factembed);
    }
 
- 
+   if (message.author.bot) return
 });
 
 
