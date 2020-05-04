@@ -104,17 +104,17 @@ client.on('message', async message => {
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
   if(message.content === 'קוד')
-  if (message.author.bot) return;
+   if (message.author.bot) return;
    {
       message.channel.send(factembed);
    }
    if(message.content.includes('cod'))
-   if (message.author.bot) return;
+ 
    {
       message.channel.send(factembed);
    }
    if(message.content.includes('COD'))
-   if (message.author.bot) return;
+  
    {
       message.channel.send(factembed);
    }
@@ -193,7 +193,7 @@ client.on('message', message => {
       message.channel.send('https://en.wikipedia.org/wiki/Shroud_(gamer)');
    }
 
-  if (message.author.bot) return
+  if (message.author.bot) return;
   
 });
 
