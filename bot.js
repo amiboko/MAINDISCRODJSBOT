@@ -104,15 +104,17 @@ client.on('message', async message => {
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
   if(message.content === 'קוד')
-   if (message.author.bot) return;
+  
    {
       message.channel.send(factembed);
    }
+
    if(message.content.includes('cod'))
  
    {
       message.channel.send(factembed);
    }
+   
    if(message.content.includes('COD'))
   
    {
