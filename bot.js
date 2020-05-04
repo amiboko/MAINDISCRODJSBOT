@@ -103,20 +103,23 @@ client.on('message', async message => {
   .setTitle(factsuseless[factnum])
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
-  if(message.content.includes('קוד'))
+  if(message.content === 'קוד')
+  if (message.author.bot) return;
    {
       message.channel.send(factembed);
    }
    if(message.content.includes('cod'))
+   if (message.author.bot) return;
    {
       message.channel.send(factembed);
    }
    if(message.content.includes('COD'))
+   if (message.author.bot) return;
    {
       message.channel.send(factembed);
    }
 
-  if (message.author.bot) return
+ 
 });
 
 
@@ -173,8 +176,6 @@ client.on('presenceUpdate', (oldMember, newMember) => {
     // .send(embed2))
   }
 });
-https://en.wikipedia.org/wiki/Shroud_(gamer)
-
 
 
 client.on('message', message => {
@@ -214,7 +215,7 @@ client.on('message', message => {
   if(message.content.includes('מלשין')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
-    .setTitle('`<a:veri:691980334782218240>`')
+    .setTitle('<a:veri:691980334782218240>')
     .setColor("#0000FF")
 
       message.channel.send(embed);
