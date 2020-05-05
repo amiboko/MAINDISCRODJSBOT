@@ -25,7 +25,6 @@ exports.run = async (client, message, args, level) => {
   }, timer);
 };
 
-
 exports.conf = {
   enabled: true,
   aliases: ['פליי'],
