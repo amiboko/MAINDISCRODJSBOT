@@ -83,6 +83,39 @@ require('./modules/events')(client)
   }
 });
 
+client.on('voiceStateUpdate', (oldMember, newMember) => {
+
+  // Here I'm storing the IDs of their voice channels, if available
+  let oldChannel = oldMember.voiceChannel ? oldMember.voiceChannel.id : null;
+  let newChannel = newMember.voiceChannel ? newMember.voiceChannel.id : null;
+  if (oldChannel === newChannel) return; // If there has been no change, exit
+  
+  // Here I'm getting the bot's channel (bot.voiceChannel does not exist)
+  let botMember = oldMember.guild.member(bot.user),
+      botChannel = botMember ? botMember.voiceChannel.id : null;
+  
+  var server = servers[botMember.guild.id];
+  
+  // Here I'm getting the channel, just replace VVV this VVV with the channel's ID
+  let textChannel = oldMember.guild.channels.get('583574397118316545');
+  if (!textChannel) throw new Error("ערוץ לא קיים");
+  
+  // Here I don't need to check if they're the same, since it would've exit before
+  if (newChannel === botChannel) {
+      // console.log("A user joined.");
+  
+      server.dispatcher = botMember.voiceConnection.playFile('./img/aniroze.mp3');
+  
+      textChannel.send(newMember.displayName + "בדיקה");
+  
+  } else if (oldChannel === botChannel) {
+      // console.log("A user left.");
+      textChannel.send(newMember.displayName + "בדיקה 2");
+  }
+  });
+
+
+
 client.on('message', async message => {
   let factsuseless = 
   [
