@@ -91,7 +91,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
   if (oldChannel === newChannel) return; // If there has been no change, exit
   
   // Here I'm getting the bot's channel (bot.voiceChannel does not exist)
-  let botMember = oldMember.guild.member(bot.user),
+  let botMember = oldMember.guild.member(client.user),
       botChannel = botMember ? botMember.voiceChannel.id : null;
   
   var server = servers[botMember.guild.id];
