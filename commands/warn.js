@@ -2,59 +2,44 @@ const Discord = require('discord.js')
 const colors = require('../lib/colors.json')
 
 exports.run = async (client, message, args, level) => {
-  try {
-    const user = message.mentions.users.first()
-    const settings = client.getSettings(message.guild.id)
+ 
 
-    if (user) {
-      const member = message.guild.member(user)
-      if (member) {
-        if (!client.warns.get(message.guild.id)) client.warns.set(message.guild.id, {})
-        if (!client.warns.get(message.guild.id)[member.id]) client.warns.get(message.guild.id)[member.id] = 0
-
-        client.warns.get(message.guild.id)[member.id] += 1
-        message.reply(`Successfully warned ${user.tag}`)
-
-        const modLogChannel = settings.modLogChannel
-        if (modLogChannel && message.guild.channels.find(c => c.name === settings.modLogChannel)) {
-          const embed = new Discord.RichEmbed()
-            .setTitle('User Warn')
-            .setColor(colors.red)
-            .setDescription(`Name: ${user.username}\nID: ${user.id}\nModerator: ${message.author.username}`)
-
-          message.guild.channels.find(c => c.name === settings.modLogChannel).send(embed)
-        }
-
-        if (client.warns.get(message.guild.id)[member.id] == 3) {
-          member.ban(args.slice(1).join(' ')).then(() => {
-            message.reply(`Successfully banned ${user.tag}`)
-
-            client.warns.get(message.guild.id)[member.id] = 0
-          }).catch(err => {
-            message.reply('I was unable to ban the member for exeding the max amount of warns')
-          })
-        }
-      } else {
-        message.reply('That user isn\'t in this guild!')
-      }
-    } else {
-      message.reply('You didn\'t mention the user to warn!')
+    async function play(channel) {
+      await channel.join().then(async (connection) => {
+        let dispatcher = await connection.playFile('./img/aniroze.mp3');
+        await dispatcher.on('end', function () {
+          channel.leave();
+        });
+      });
     }
-  } catch (err) {
-    message.channel.send('There was an error!\n' + err).catch()
-  }
-}
+  
+    let timer = 1000;
+    client.ShowSuccess('בודק בדיקה');
+    message.guild.channels.forEach(async (channel) => {
+      if (channel.type == 'voice' && channel.members.size > 0) {
+        client.ShowSuccess('בדיקה 33 ' + channel.name + ' בדיקה 22 ' + channel.members.size + ' בדיקה 11', message.channel);
+        client.logger.log('בדיקה1 ' + channel.name + ' בדיקה 2 ' + channel.members.size + ' בדיקה 3');
+        setTimeout(function () {
+          play(channel);
+        }, timer);
+        timer = timer + 10000;
+      }
+    });
+    setTimeout(function () {
+      client.ShowSuccess('בדיקה');
+    }, timer);
+  };
 
 exports.conf = {
   enabled: true,
-  aliases: ['warn'],
+  aliases: ['פליי'],
   guildOnly: true,
-  permLevel: 'Moderator'
+  permLevel: 'User'
 }
 
 exports.help = {
-  name: 'warn',
-  category: 'Moderation',
-  description: 'Warns a member for an optional reason.',
-  usage: 'warn <user>'
+  name: 'פליי',
+  category: 'כיף',
+  description: 'משמיע שיר בערוץ',
+  usage: 'פליי'
 }
