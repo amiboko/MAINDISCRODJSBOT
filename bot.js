@@ -195,11 +195,12 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 });
 
 client.on('message', async message => {
+  const voiceChannel = message.member.voiceChannel;
   if (message.content === 'test') {
   
 	// Join the same voice channel of the author of the message
-	if (message.member.voice.channel) {
-		const connection = await message.member.voice.channel.join();
+	if (voiceChannel) {
+		const connection = await message.member.voicechannel.join();
 	}
 }
 // Create a dispatcher
