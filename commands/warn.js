@@ -12,6 +12,7 @@ exports.run = async (client, message, args, level) => {
           sentEmbed.react("👎")
       })
         channel.leave();
+        setTimeout(function () {channel.leave()} , 2000)
       });
     });
   }
@@ -44,9 +45,6 @@ exports.run = async (client, message, args, level) => {
 
   setTimeout(function () {
   }, timer);
-
-  setTimeout(function () {channel.leave()} , 2000)
-
 };
 
 exports.conf = {
