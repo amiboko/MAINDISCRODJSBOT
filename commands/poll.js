@@ -27,7 +27,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['שאל','הצבעה','סקר'],
+  aliases: ['האם','שאל','הצבעה','סקר'],
   guildOnly: true,
   permLevel: 'User'
 }
