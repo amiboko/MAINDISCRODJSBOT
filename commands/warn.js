@@ -8,11 +8,11 @@ exports.run = async (client, message, args, level) => {
       let dispatcher = await connection.playFile('./img/aniroze.mp3');
       await dispatcher.on('end', function () {
         channel.leave();
+        message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
+          sentEmbed.react("👍")
+          sentEmbed.react("👎")
       });
-      message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
-        sentEmbed.react("👍")
-        sentEmbed.react("👎")
-    });
+      });
   });
   }
 
@@ -32,12 +32,12 @@ exports.run = async (client, message, args, level) => {
       }, timer);
       // timer = timer + 10000;
     }
-    while (channel.type == 'voice' && channel.members.size == 0)
-    return message.channel.send('**תתחבר קודם לערוץ שיחה**');
   });
   setTimeout(function () {
 
   }, timer);
+  while (channel.type == 'voice' && channel.members.size == 0)
+  return message.channel.send('**תתחבר קודם לערוץ שיחה**');
 };
 
 
