@@ -66,7 +66,9 @@ require('./modules/events')(client)
 //runs the message looker thingy
  client.on('message', async message => {
   //1 blacklisted words
-  let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מנייאק', 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק'] 
+  let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מכוער'
+  , 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'מגעיל', 'טיפש',
+   'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק'] 
 
   //2 looking for words
   let foundInText = false;
@@ -79,7 +81,17 @@ require('./modules/events')(client)
     if (foundInText) {
       if (message.author.bot) return;
       //message.delete();
-      message.channel.send(message.author +'\xa0\xa0'+ '`סליחה! רק לי מותר לקלל פה יזיין`');
+
+      let answerlist = [
+      '`סליחה! רק לי מותר לקלל פה יזיין`'
+            , '`אתה מקלל הרבה לאחרונה... הכל בסדר בבית?`' 
+            ,'מה יהיה עם הקללות'
+            ,'הלו תרגיע עם הקללות שלך'
+            ,'חבל!']
+      
+      let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+
+      message.channel.send(message.author +'\xa0\xa0'+ ansxd);
   }
 });
 
@@ -214,6 +226,21 @@ client.on('message', message => {
       
   }
 });
+
+
+client.on('message', message => {
+  
+  if(message.content.includes('חזק')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('חזק ובניו 💪')
+    .setColor("#F0F0F0")
+
+      message.channel.send(embed);
+      
+  }
+});
+
 
 client.on('message', message => {
   
