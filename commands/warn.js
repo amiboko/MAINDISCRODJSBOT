@@ -19,7 +19,7 @@ exports.run = async (client, message, args, level) => {
 
   let timer = 10000;
     message.guild.channels.forEach(async (channel) => {
-    if (channel.type == 'voice' && channel.members.size > 0) 
+    if (channel.type == 'voice' && channel.members.size > 0) {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
@@ -29,6 +29,7 @@ exports.run = async (client, message, args, level) => {
       message.channel.send(embed2);
       if (channel.type == 'voice' && channel.members.size == 0) 
       return message.channel.send('**תתחבר קודם לערוץ שיחה**');
+    }
       setTimeout(function () {play(channel);
       }, timer);
       // timer = timer + 10000;
