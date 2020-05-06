@@ -7,7 +7,10 @@ exports.run = async (client, message, args, level) => {
     await channel.join().then(async (connection) => {
          let dispatcher = await connection.playFile('./img/aniroze.mp3');
       await dispatcher.on('end', function () {
-        message.channel.send("🎧 **?נו אז איך היה** 🎧");
+        message.channel.send("🎧 **?נו אז איך היה** 🎧").then(sentEmbed => {
+          sentEmbed.react("👍")
+          sentEmbed.react("👎")
+      })
         channel.leave();
       });
     });
@@ -16,13 +19,6 @@ exports.run = async (client, message, args, level) => {
   let timer = 10000;
     message.guild.channels.forEach(async (channel) => {
     if (channel.type == 'voice' && channel.members.size > 0) {
-      if (channel.members.size < 0) {
-        const embed1 = new RichEmbed()
-          .setTitle('🚫 ').setColor('#031900')
-          .setDescription('**תתחבר קודם לערוץ שיחה**');
-        return message.channel.send({embed1});
-      }
-
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
@@ -30,15 +26,27 @@ exports.run = async (client, message, args, level) => {
       .setThumbnail(`${message.author.displayAvatarURL}`)
       .setTimestamp()
       message.channel.send(embed2);
+      }
+
+      else {
+        const embed1 = new RichEmbed()
+          .setTitle('🚫 ').setColor('#031900')
+          .setDescription('**תתחבר קודם לערוץ שיחה**');
+        return message.channel.send(embed1)
+      };
 
       setTimeout(function () {
         play(channel);
       }, timer);
       // timer = timer + 10000;
     }
-  });
+  );
+
   setTimeout(function () {
   }, timer);
+
+  setTimeout(function () {Channel.leave()} , 2000)
+
 };
 
 exports.conf = {
