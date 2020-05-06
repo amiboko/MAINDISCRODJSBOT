@@ -4,8 +4,9 @@ const colors = require('../lib/colors.json')
 exports.run = async (client, message, args, level) => {
 
   async function play(channel) {
+    message.channel.send("🎧 כנס לשיחה אני תוך 10 שניות נכנס להשמיע לך קטע טוב 🎧");
     await channel.join().then(async (connection) => {
-      message.channel.send("🎧 כנס לשיחה אני נכנס להשמיע לך קטע טוב 🎧");
+      // message.channel.send("🎧 כנס לשיחה אני תוך 10 שניות נכנס להשמיע לך קטע טוב 🎧");
       let dispatcher = await connection.playFile('./img/aniroze.mp3');
       await dispatcher.on('end', function () {
         message.channel.send("🎧 ?איך היה 🎧");
