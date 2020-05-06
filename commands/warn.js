@@ -9,14 +9,14 @@ exports.run = async (client, message, args, level) => {
       await dispatcher.on('end', function () {
         channel.leave();
       });
+      message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
+        sentEmbed.react("👍")
+        sentEmbed.react("👎")
     });
-    message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
-      sentEmbed.react("👍")
-      sentEmbed.react("👎")
   });
   }
 
-  let timer = 1000;
+  let timer = 10000;
 
   message.guild.channels.forEach(async (channel) => {
     if (channel.type == 'voice' && channel.members.size > 0) {
@@ -30,9 +30,9 @@ exports.run = async (client, message, args, level) => {
       setTimeout(function () {
         play(channel);
       }, timer);
-      timer = timer + 10000;
+      // timer = timer + 10000;
     }
-    else if (channel.type == 'voice' && channel.members.size < 0)
+    while (channel.type == 'voice' && channel.members.size == 0)
     return message.channel.send('**תתחבר קודם לערוץ שיחה**');
   });
   setTimeout(function () {
