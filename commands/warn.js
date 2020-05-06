@@ -5,9 +5,10 @@ exports.run = async (client, message, args, level) => {
 
   async function play(channel) {
     await channel.join().then(async (connection) => {
+      message.channel.send("🎧 כנס שיחה אני נכנס להשמיע לך קטע טוב ? 🎧");
       let dispatcher = await connection.playFile('./img/aniroze.mp3');
       await dispatcher.on('end', function () {
-        message.channel.send("🎧 שים פול ווליום אני בא להשמיע לך קטע טוב 🎧");
+        message.channel.send("🎧 איך היה ? 🎧");
         channel.leave();
       });
     });
