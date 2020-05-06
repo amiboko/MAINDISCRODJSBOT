@@ -6,24 +6,17 @@ exports.run = async (client, message, args, level) => {
   async function play(channel) {
     await channel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/aniroze.mp3');
-      await dispatcher.on('end', function () {channel.leave();});
-
-          message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
+      await dispatcher.on('end', function () {
+        message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
           sentEmbed.react("👍")
           sentEmbed.react("👎")
-      
+        
+        channel.leave();});
       });
   });
   }
 
   let timer = 10000;
-
-  if (message.guild.channels.size == 0){
-    message.channel.send('**תתחבר קודם לערוץ שיחה**');
-    if (message.author.bot) return;
-    
-  }
-
   message.guild.channels.forEach(async (channel) => {
         if (channel.type == 'voice' && channel.members.size > 0) {
       const embed2 = new Discord.RichEmbed()
