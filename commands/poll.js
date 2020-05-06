@@ -11,7 +11,7 @@ exports.run = async (client, message, args, level) => {
   const embed = new Discord.RichEmbed()
     .setTitle('הצבעה 🗳')
     .setColor(colors.default)
-    .addField(`תצביע עם 👍 או ${noEmoji} או תוסיף אחד לטעמך`, '\n')
+    .addField(`תצביע עם 👍 או ${noEmoji} או תוסיף אחד לטעמך`, '\n' , input, true)
     .setTimestamp()
 
   if (args.length === 0) {
