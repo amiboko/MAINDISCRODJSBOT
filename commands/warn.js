@@ -12,14 +12,14 @@ exports.run = async (client, message, args, level) => {
           sentEmbed.react("👎")
       })
         channel.leave();
-        setTimeout(function () {channel.leave()} , 2000)
+        setTimeout(function () {channel.leave()} , 5000)
       });
     });
   }
 
   let timer = 10000;
     message.guild.channels.forEach(async (channel) => {
-    if (channel.type == 'voice' && channel.members.size > 0) {
+    if (channel.type == 'voice' && channel.members.size > 1) {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
