@@ -16,7 +16,7 @@ exports.run = async (client, message, args, level) => {
   let timer = 10000;
     message.guild.channels.forEach(async (channel) => {
     if (channel.type == 'voice' && channel.members.size > 0) {
-      message.channel.send(essage.author +'\n'+ "🎧 כנס לשיחה אני תוך 10 שניות נכנס להשמיע לך קטע טוב 🎧");
+      message.channel.send(message.author +'\n'+ "🎧 כנס לשיחה אני תוך 10 שניות נכנס להשמיע לך קטע טוב 🎧");
       setTimeout(function () {
         play(channel);
       }, timer);
