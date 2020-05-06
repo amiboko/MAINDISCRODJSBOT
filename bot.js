@@ -220,8 +220,10 @@ client.on('message', message => {
   if(message.content.includes('תודה')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
-    .setTitle(message.author +'\xa0\xa0'+ 'בכיף נשמה יקרה')
+    .setTitle('בכיף נשמה יקרה')
     .setColor("#0000FF")
+    .setDescription(`<@${member.user.id}>`)
+    .setThumbnail(`${member.user.displayAvatarURL}`)
 
       message.channel.send(embed);
       
@@ -245,7 +247,7 @@ client.on('message', message => {
   
   if(message.content.includes('@everyone')) {
     if (message.author.bot) return;
-      message.channel.send("@everyone" +'\xa0\xa0'+ '<a:veri:691980333968785448>');
+      message.channel.send("@everyone" +'\xa0\xa0\xa0\xa0'+ '<a:veri:691980333968785448>');
       
   }
 });
