@@ -29,20 +29,20 @@ exports.run = async (client, message, args, level) => {
       message.channel.send(embed2);
       }
       
-      else if (channel.members.size == 0) {
+      else {
         const embed1 = new Discord.RichEmbed()
           .setTitle('**תתחבר קודם לערוץ שיחה**')
           .setColor('#031900')
-          .setDescription('**🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫**');
-        return message.channel.send(embed1)
-      };
+          .setDescription('**🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫**')
+         message.channel.send(embed1);
+      }
 
       setTimeout(function () {
         play(channel);
       }, timer);
       // timer = timer + 10000;
     }
-  );
+  )
 
   setTimeout(function () {
   }, timer);
