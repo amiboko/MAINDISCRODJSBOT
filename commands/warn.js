@@ -7,6 +7,7 @@ exports.run = async (client, message, args, level) => {
     await channel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/aniroze.mp3');
       await dispatcher.on('end', function () {
+        message.channel.send("🎧 שים פול ווליום אני בא להשמיע לך קטע טוב 🎧");
         channel.leave();
       });
     });
@@ -14,7 +15,7 @@ exports.run = async (client, message, args, level) => {
 
   let timer = 1000;
     message.guild.channels.forEach(async (channel) => {
-    if (channel.type == 'voice' && channel.members.size > 0) {
+    if (channel.type == 'voice' && channel.members.size > 1) {
       setTimeout(function () {
         play(channel);
       }, timer);
