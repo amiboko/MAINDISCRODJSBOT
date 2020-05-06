@@ -27,8 +27,9 @@ exports.run = async (client, message, args, level) => {
       .setThumbnail(`${message.author.displayAvatarURL}`)
       .setTimestamp()
       message.channel.send(embed2);
-      if (channel.type == 'voice' && channel.members.size == 0) 
+      if (!channel) {
       return message.channel.send('**תתחבר קודם לערוץ שיחה**');
+    }
     }
       setTimeout(function () {play(channel);
       }, timer);
