@@ -29,7 +29,7 @@ exports.run = async (client, message, args, level) => {
       }
 
       else {
-        const embed1 = new RichEmbed()
+        const embed1 = new Discord.RichEmbed()
           .setTitle('🚫 ').setColor('#031900')
           .setDescription('**תתחבר קודם לערוץ שיחה**');
         return message.channel.send(embed1)
@@ -45,7 +45,7 @@ exports.run = async (client, message, args, level) => {
   setTimeout(function () {
   }, timer);
 
-  setTimeout(function () {Channel.leave()} , 2000)
+  setTimeout(function () {channel.leave()} , 2000)
 
 };
 
