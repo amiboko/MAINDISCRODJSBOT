@@ -5,20 +5,20 @@ exports.run = async (client, message, args, level) => {
 
   async function play(channel) {
     await channel.join().then(async (connection) => {
-         let dispatcher = await connection.playFile('./img/aniroze.mp3');
-         dispatcher.setVolume(1.0);
+      let dispatcher = await connection.playFile('./img/aniroze.mp3');
       await dispatcher.on('end', function () {
         channel.leave();
       });
-        message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
-          sentEmbed.react("👍")
-          sentEmbed.react("👎")
-      });
     });
+    message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
+      sentEmbed.react("👍")
+      sentEmbed.react("👎")
+  });
   }
 
-  let timer = 10000;
-    message.guild.channels.forEach(async (channel) => {
+  let timer = 1000;
+
+  message.guild.channels.forEach(async (channel) => {
     if (channel.type == 'voice' && channel.members.size > 0) {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
@@ -27,19 +27,19 @@ exports.run = async (client, message, args, level) => {
       .setThumbnail(`${message.author.displayAvatarURL}`)
       .setTimestamp()
       message.channel.send(embed2);
-      if (!channel) {
-      return message.channel.send('**תתחבר קודם לערוץ שיחה**');
-    }
-    }
-      setTimeout(function () {play(channel);
+      setTimeout(function () {
+        play(channel);
       }, timer);
-      // timer = timer + 10000;
+      timer = timer + 10000;
     }
-  )
-
+    else if (channel.type == 'voice' && channel.members.size < 0)
+    return message.channel.send('**תתחבר קודם לערוץ שיחה**');
+  });
   setTimeout(function () {
+
   }, timer);
 };
+
 
 exports.conf = {
   enabled: true,
