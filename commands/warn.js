@@ -5,16 +5,16 @@ exports.run = async (client, message, args, level) => {
 
   async function play(channel) {
     await channel.join().then(async (connection) => {
-      message.channel.send("🎧 כנס שיחה אני נכנס להשמיע לך קטע טוב ? 🎧");
+      message.channel.send("🎧 כנס לשיחה אני נכנס להשמיע לך קטע טוב 🎧");
       let dispatcher = await connection.playFile('./img/aniroze.mp3');
       await dispatcher.on('end', function () {
-        message.channel.send("🎧 איך היה ? 🎧");
+        message.channel.send("🎧 ?איך היה 🎧");
         channel.leave();
       });
     });
   }
 
-  let timer = 1000;
+  let timer = 10000;
     message.guild.channels.forEach(async (channel) => {
     if (channel.type == 'voice' && channel.members.size > 0) {
       setTimeout(function () {
