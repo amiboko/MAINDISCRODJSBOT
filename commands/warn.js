@@ -17,7 +17,10 @@ exports.run = async (client, message, args, level) => {
   }
 
   let timer = 10000;
-  client.on('message', async message => {
+  client.on('message', async channel => {
+    if (!channel) {
+      return message.channel.send('**תתחבר קודם לערוץ שיחה**');
+    }
   // message.guild.channels.forEach(async (channel) => {
         if (channel.type == 'voice' && channel.members.size > 1) {
       const embed2 = new Discord.RichEmbed()
