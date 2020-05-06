@@ -6,16 +6,12 @@ exports.run = async (client, message, args, level) => {
   async function play(channel) {
     await channel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/aniroze.mp3');
-      await dispatcher.on('end', function () {
-        channel.leave();
-        setTimeout(function () {
+      await dispatcher.on('end', function () {channel.leave();});
 
-        }, timer);
-
-       await message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
+          message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
           sentEmbed.react("👍")
           sentEmbed.react("👎")
-      });
+      
       });
   });
   }
@@ -42,9 +38,6 @@ exports.run = async (client, message, args, level) => {
       }, timer);
       // timer = timer + 10000;
     }
-    // else (channel.type == 'voice' && channel.members.size == 0)
-    // return message.channel.send('**תתחבר קודם לערוץ שיחה**');
-
   });
   setTimeout(function () {
 
@@ -54,7 +47,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: [''],
+  aliases: ['פליימשה'],
   guildOnly: true,
   permLevel: 'User'
 }
