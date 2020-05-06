@@ -217,6 +217,19 @@ client.on('message', message => {
 
 client.on('message', message => {
   
+  if(message.content.includes('תודה')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle(message.author +'\xa0\xa0'+ 'בכיף נשמה יקרה')
+    .setColor("#0000FF")
+
+      message.channel.send(embed);
+      
+  }
+});
+
+client.on('message', message => {
+  
   if(message.content.includes('מלשין')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
