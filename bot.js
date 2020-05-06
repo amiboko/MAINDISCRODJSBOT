@@ -194,6 +194,46 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   }
 });
 
+client.on('message', async message => {
+  if (message.content === 'test') {
+  
+	// Join the same voice channel of the author of the message
+	if (message.member.voice.channel) {
+		const connection = await message.member.voice.channel.join();
+	}
+}
+// Create a dispatcher
+const dispatcher = connection.play('audio.mp3');
+
+dispatcher.on('start', () => {
+	console.log('audio.mp3 is now playing!');
+});
+
+dispatcher.on('finish', () => {
+	console.log('audio.mp3 has finished playing!');
+});
+
+// Always remember to handle errors appropriately!
+dispatcher.on('error', console.error);
+
+
+connection.play('./img/botsound.mp3', { volume: 1.0 });
+
+voiceChannel.leave();
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 client.on('message', message => {
   
