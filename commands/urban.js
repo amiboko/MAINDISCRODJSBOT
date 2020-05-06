@@ -27,12 +27,8 @@ exports.run = async (client, message, args, level) => {
     let quoteXD = quote[Math.floor(Math.random() * quote.length)];
     // message.delete().catch() //clear היי 
     
-    return message.channel.send(message.author     +   quoteXD).then(message => message.delete(21600000)).catch(console.error);  // clear reply 
+    return message.channel.send(message.author +'\xa0\xa0'+ quoteXD).then(message => message.delete(21600000)).catch(console.error);  // clear reply 
 }
-
-
-
-
 
 exports.conf = {
   enabled: true,
