@@ -17,12 +17,12 @@ exports.run = async (client, message, args, level) => {
   }
 
   let timer = 10000;
-  client.on('message', async channel => {
-    if (!channel) {
-      return message.channel.send('**תתחבר קודם לערוץ שיחה**');
+  client.on('message', async message => {
+    if (message.content === 'test') {
+            } else {message.reply('You need to join a voice channel first!');
     }
   // message.guild.channels.forEach(async (channel) => {
-        if (channel.type == 'voice' && channel.members.size > 1) {
+        if (channel.type == 'voice' && channel.members.size > 0) {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
@@ -44,7 +44,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['פליימשה'],
+  aliases: [''],
   guildOnly: true,
   permLevel: 'User'
 }
