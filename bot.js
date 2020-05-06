@@ -221,9 +221,9 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('בכיף נשמה יקרה')
-    .setColor("#0000FF")
-    .setDescription(`<@${member.user.id}>`)
-    .setThumbnail(`${member.user.displayAvatarURL}`)
+    .setColor("#FFC0CB")
+    .setDescription(`<@${message.author}>`)
+    .setThumbnail(`${message.author.displayAvatarURL}`)
 
       message.channel.send(embed);
       
