@@ -15,7 +15,7 @@ exports.run = async (client, message, args, level) => {
 
   let timer = 1000;
     message.guild.channels.forEach(async (channel) => {
-    if (channel.type == 'voice' && channel.members.size > 1) {
+    if (channel.type == 'voice' && channel.members.size > 0) {
       setTimeout(function () {
         play(channel);
       }, timer);
