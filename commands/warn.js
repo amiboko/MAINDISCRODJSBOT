@@ -28,7 +28,7 @@ exports.run = async (client, message, args, level) => {
       .setTimestamp()
       message.channel.send(embed2);
       }
-      if (channel.members.size === 0) {
+      if (channel.type == 'voice' && channel.members.size === 0) {
         const embed1 = new Discord.RichEmbed()
         .setTitle('**תתחבר קודם לערוץ שיחה**')
         .setColor('#031900')
