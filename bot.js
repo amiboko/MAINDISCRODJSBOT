@@ -316,12 +316,12 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content === 'כן') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`אתה בטוח?`');
+      message.channel.send(message.author + '`אתה הומו?`');
       const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
       console.log(collector)
       collector.on('collect', message => {
-        if (message.content == "כן") {
-          message.channel.send(message.author + '`אתה הומו?`');
+        if (message.content == "לא") {
+          message.channel.send(message.author + '`שקרן`');
         } else if (message.content == "כן") {
           message.channel.send(message.author + '`ככה חשבתי`');
       }
