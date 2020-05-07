@@ -17,7 +17,7 @@ exports.run = async (client, message, args, level) => {
   }
 
   let timer = 10000;
-       message.guild.channels.foreach(async (channel) => {
+       message.guild.channels.forEach(async (channel) => {
        if (channel.type == 'voice' && channel.members.size > 0) {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
