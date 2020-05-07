@@ -318,7 +318,6 @@ client.on('message', message => {
     if (message.author.bot) return;
       message.channel.send(message.author + '`אתה הומו?`');
       const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
-      console.log(collector)
       collector.on('collect', message => {
         if (message.content == "לא") {
           message.channel.send(message.author + '`שקרן`');
