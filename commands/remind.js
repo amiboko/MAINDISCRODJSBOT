@@ -8,8 +8,7 @@ exports.run = async (client, message, args) => {
     const embed = new Discord.RichEmbed()
       .setColor(colors.red)
       .setTitle('לא מדויק! קח דוגמה; תזכורת 10000 יאלה בוא משחק')
-      .setDescription("`10000 מייצג 10 שניות במאיות השניה, קח אתר שיעזור לך להמיר כל זמן למאיות`\n\n")
-      .setURL('http://www.unitconversion.org/unit_converter/time-ex.html')
+      .setDescription("`10000 מייצג 10 שניות במאיות השניה`\n\n")
 
     message.channel.send(embed)
   }
