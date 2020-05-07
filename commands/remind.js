@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
     const embed = new Discord.RichEmbed()
       .setColor(colors.red)
       .setTitle('לא מדויק! קח דוגמה; תזכורת 10000 יאלה בוא משחק')
-      .setDescription("`זכור! אם רושמים ערך של מספר ללא שום הגדרה כמו מאיות שניות שעות ימים\n...אני יקבל אוט' את הערך לפי מאיות כי אני בוט אתה יודע`\n\n")
+      .setDescription("`10000 מייצג 10 שניות במאיות השניה, קח אתר שיעזור לך להמיר כל זמן למאיות - http://www.unitconversion.org/unit_converter/time-ex.html`\n\n")
 
     message.channel.send(embed)
   }
@@ -18,8 +18,8 @@ exports.run = async (client, message, args) => {
   if (reminder) {
     const success = new Discord.RichEmbed()
       .setColor(colors.green)
-      .setTitle('**:בוצע**')
-      .setDescription(`שולח לך הודעה פרטית בעוד **${reminderTime}!**`)
+      .setTitle('**תזכורת התקבלה**')
+      .setDescription(`שולח לך הודעה פרטית בעוד **${reminderTime}מאיות השניה!**`)
       .setTimestamp()
 
     const fail = new Discord.RichEmbed()
@@ -55,5 +55,5 @@ exports.help = {
   name: 'תזכורת',
   category: 'כלים',
   description: 'תזכורת לכל מה שבא לך בכל זמן נתון',
-  usage: 'תזכורת | תזכיר _נושא | זמן'
+  usage: 'תזכורת 10000 כבה את הדוד'
 }
