@@ -22,7 +22,7 @@ exports.run = async (client, message, args, level) => {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
-      .setDescription(`${message.author}` + '\n\n' + 'התחבר לערוץ שיחה תוך 10 שניות' + '\n\n' + 'ואני בדרך אליך עם אחד הקטעים החזקים של **מתן האשדודי**')
+      .setDescription(`${message.author}` + '\n\n' + 'תתחבר לערוץ שיחה תוך 10 שניות' + '\n\n' + 'ואני בדרך אליך עם אחד הקטעים החזקים של **מתן האשדודי**')
       .setThumbnail(`${message.author.displayAvatarURL}`)
       .setTimestamp()
       message.channel.send(embed2);
