@@ -17,17 +17,8 @@ exports.run = async (client, message, args, level) => {
   }
 
   let timer = 10000;
-  client.on('message', async message => {
-    // Voice only works in guilds, if the message does not come from a guild,
-    // we ignore it
-    if (message.content === 'test') {
-      // Only try to join the sender's voice channel if they are in one themselves
-      if (message.guild.channels) {
-      } else {
-        message.reply('You need to join a voice channel first!');
-    
-  // message.guild.channels.forEach(async (channel) => {
-  // if (channel.type == 'voice' && channel.members.size > 0) {
+       message.guild.channels(async (channel) => {
+       if (channel.type == 'voice' && channel.members.size > 0) {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
@@ -39,14 +30,11 @@ exports.run = async (client, message, args, level) => {
         play(channel);
       }, timer);
       // timer = timer + 10000;
-    }
-  }
-  });
-  setTimeout(function () {
+    }});
 
+  setTimeout(function () {
   }, timer);
 };
-
 
 exports.conf = {
   enabled: true,
