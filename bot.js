@@ -317,6 +317,15 @@ client.on('message', message => {
   if(message.content === 'כן') {
     if (message.author.bot) return;
       message.channel.send(message.author + '`אתה בטוח?`');
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+      console.log(collector)
+      collector.on('collect', message => {
+        if (message.content == "כן") {
+          message.channel.send(message.author + '`אתה הומו?`');
+        } else if (message.content == "כן") {
+          message.channel.send(message.author + '`ככה חשבתי`');
+      }
+      })
   }
 });
 
