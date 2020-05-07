@@ -5,9 +5,9 @@ exports.run = async (client, message, args, level) => {
 
   async function play(channel) {
     await channel.join().then(async (connection) => {
-      let dispatcher = await connection.playFile('./img/aniroze.mp3');
+      let dispatcher = await connection.playFile('./img/matan.mp3');
       await dispatcher.on('end', function () {
-        message.channel.send("🎧 **?נו אז איך היה הקטע של משה** 🎧").then(sentEmbed => {
+        message.channel.send("🎧 **?נו אז איך היה הקטע של מתן האשדודי** 🎧").then(sentEmbed => {
           sentEmbed.react("👍")
           sentEmbed.react("👎")
         
@@ -17,12 +17,12 @@ exports.run = async (client, message, args, level) => {
   }
 
   let timer = 10000;
-       message.guild.channels.author(async (channel) => {
+       message.guild.channels.foreach(async (channel) => {
        if (channel.type == 'voice' && channel.members.size > 0) {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
-      .setDescription(`${message.author}` + '\n\n' + 'התחבר לערוץ שיחה תוך 10 שניות' + '\n\n' + 'ואני בדרך אליך עם אחד הקטעים החזקים של **משה השראוד**')
+      .setDescription(`${message.author}` + '\n\n' + 'התחבר לערוץ שיחה תוך 10 שניות' + '\n\n' + 'ואני בדרך אליך עם אחד הקטעים החזקים של **מתן האשדודי**')
       .setThumbnail(`${message.author.displayAvatarURL}`)
       .setTimestamp()
       message.channel.send(embed2);
@@ -38,7 +38,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['test'],
+  aliases: ['פליימתן'],
   guildOnly: true,
   permLevel: 'User'
 }
