@@ -14,16 +14,15 @@ exports.run = async (client, message, args, level) => {
   });
   }
 
-      let timer = 10000;
-      if (!voiceChannel) return message.reply('you are not in a voice channel')
+      let timer = 5000;
+      if (!voiceChannel) return message.reply('**אם אתה קורא לעצמך גבר.. כנס לערוץ שיחה ותרשום את זה שוב**')
       voiceChannel.join()
       const embed2 = new Discord.RichEmbed()
-      .setTitle('🎧 MASTERBOT-TUBE 🎧')
-      .setColor("#3498DB")
-      .setDescription(`${message.author}` + '\n\n' + 'אם אתה קורא לעצמך גבר' + '\n\n' + 'כנס זריז לשיחה יש לי משהו להגיד לך**')
+      .setTitle('לי ולך יש פיטפוט קטן, אני כמה שניות מחבר מיקרופון, שים פול ווליום')
+      .setColor("#FF0000")
       .setThumbnail(`${message.author.displayAvatarURL}`)
-      .setTimestamp()
-      message.channel.send(embed2);
+
+      message.channel.send(message.author + embed2);
       setTimeout(function () {
         play(voiceChannel);
       }, timer);
