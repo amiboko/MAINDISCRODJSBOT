@@ -309,7 +309,15 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content === 'לא') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`למה אתה שלילי`');
+      message.channel.send(message.author + '`אני בטוח שביחד נוכל לפתור את השליליות שלך, בן כמה אתה?`');
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+      collector.on('collect', message => {
+        if (message.content == "25" || "26" || "27" || "28"|| "29"|| "30"|| "24"|| "23") {
+          message.channel.send(message.author + '`הגיע הזמן שתשכב עם בחורה אחי והכל יסתדר`');
+        } else if (message.content == "31" || "32" || "33" || "34"|| "35"|| "36"|| "37"|| "38") {
+          message.channel.send(message.author + '`כנראה שאה נשוי וממורמר, צא לחופשי והכל יסתדר`');
+      }
+      })
   }
 });
 
@@ -320,18 +328,27 @@ client.on('message', message => {
       const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
       collector.on('collect', message => {
         if (message.content == "לא") {
-          message.channel.send(message.author + '`שקרן`');
-        } else if (message.content == "כן") {
-          message.channel.send(message.author + '`ככה חשבתי`');
+          message.channel.send(message.author + '`איזה שקרן!** זה בסדר אתה יכול לשתף אותנו...**`');
+        } else if (message.content == "לא") {
+          message.channel.send(message.author + '`אתה יכול להתכחש עד מחר, אני יודע את התשובה`');
       }
       })
   }
 });
 
+
 client.on('message', message => {
   if(message.content.includes('אחי')) {
     if (message.author.bot) return;
       message.channel.send(message.author + '`כולנו אחים`');
+  }
+});
+
+
+client.on('message', message => {
+  if(message.content.includes('כנס')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`אין מקום`');
   }
 });
 
