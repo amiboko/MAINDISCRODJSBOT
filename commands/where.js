@@ -23,14 +23,9 @@ exports.run = async (client, message, args, level) => {
       .setThumbnail(`${message.author.displayAvatarURL}`)
 
       message.channel.send(embed2);
-      setTimeout(function () {
-        play(voiceChannel);
-      }, timer);
-      // timer = timer + 10000;
-   
 
-  setTimeout(function () {
-  }, timer);
+      setTimeout(function () {play(voiceChannel)}, timer);
+      setTimeout(function () {voiceChannel.leave()}, timer);
 };
 
 
