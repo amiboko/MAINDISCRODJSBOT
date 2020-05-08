@@ -17,12 +17,12 @@ exports.run = async (client, message, args, level) => {
   }
 
       let timer = 5000;
-      if (!voiceChannel) return message.reply('**אם אתה קורא לעצמך גבר.. כנס לערוץ שיחה ותרשום את זה שוב**')
+      if (!voiceChannel) return message.reply('**אם אתה קורא לעצמך גבר... כנס לערוץ שיחה ותרשום את זה שוב**')
        voiceChannel.join().setTimeout(() => {
          
        }, timer);
       const embed2 = new Discord.RichEmbed()
-      .setTitle('לי ולך יש פיטפוט קטן, אני כמה שניות מחבר מיקרופון, שים פול ווליום')
+      .setTitle('לי ולך יש פיטפוט קטן\n אני כמה שניות מחבר מיקרופון\n !שים פול ווליום')
       .setColor("#FF0000")
       .setThumbnail(`${message.author.displayAvatarURL}`)
 
