@@ -309,7 +309,7 @@ client.on('message', message => {
   if(message.content === 'כלב') {
     if (message.author.bot) return;
       message.channel.send(message.author + 'לא יפה, נראה לי זה מגיע מבעיה נפשית עמוקה, בן כמה אתה?');
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 5000 });
       collector.on('collect', message => {
         if (message.content == "25" || "26" || "27" || "28"|| "29"|| "30"|| "24"|| "23") {
           message.channel.send(message.author + '`הגיע הזמן שתשכב עם בחורה אחי והכל יסתדר`');
@@ -321,10 +321,40 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+  // Command handler, seen previously
+  switch (command) {
+          case 'hi': {
+                  message.reply('The bot will now shut down.\n'
+                          + 'Confirm with `yes` or deny with `no`.');
+
+                  // First argument is a filter function - which is made of conditions
+                  // m is a 'Message' object
+                  message.channel.awaitMessages(m => m.author.id == message.author.id,
+                          {max: 1, time: 10000}).then(collected => {
+                                  // only accept messages by the user who sent the command
+                                  // accept only 1 message, and return the promise after 30000ms = 30s
+
+                                  // first (and, in this case, only) message of the collection
+                                  if (collected.first().content.toLowerCase() == 'bye') {
+                                          message.reply('Shutting down...');
+                                          client.destroy();
+                                  }
+
+                                  else
+                                          message.reply('Operation canceled.');      
+                          }).catch(() => {
+                                  message.reply('No answer after 30 seconds, operation canceled.');
+                          });
+                  break;
+          }  
+  }
+});
+
+client.on('message', message => {
   if(message.content === 'כן') {
     if (message.author.bot) return;
       message.channel.send(message.author + '`אתה הומו?`');
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1, time: 5000 });
       collector.on('collect', message => {
         if (message.content == "לא") {
           message.channel.send(message.author + '**שקרן**');
