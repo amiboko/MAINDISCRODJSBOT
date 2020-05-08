@@ -309,22 +309,20 @@ client.on('message', message => {
   if(message.content === 'כלב') {
     if (message.author.bot) return;
       message.channel.send(message.author + 'לא יפה, נראה לי זה מגיע מבעיה נפשית עמוקה, בן כמה אתה?');
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 5000 });
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 10000 });
       collector.on('collect', message => {
-        if (message.content == "25" || "26" || "27" || "28"|| "29"|| "30"|| "24"|| "23") {
+        if (message.content == "25" || message.content =="26" || message.content =="27" || message.content =="28"|| message.content =="29"|| message.content == "24"|| message.content == "23") {
           message.channel.send(message.author + '`הגיע הזמן שתשכב עם בחורה אחי והכל יסתדר`');
-        } else if (message.content == "31" || "32" || "33" || "34"|| "35"|| "36"|| "37"|| "38") {
-          message.channel.send(message.author + '`כנראה שאה נשוי וממורמר, צא לחופשי והכל יסתדר`');
+        } else return message.channel.send(message.author + '`כנראה שאה נשוי וממורמר, צא לחופשי והכל יסתדר`');
+        });
       }
-      })
-  }
-});
+  });
 
 client.on('message', message => {
   if(message.content === 'כן') {
     if (message.author.bot) return;
       message.channel.send(message.author + '`אתה הומו?`');
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1, time: 5000 });
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1, time: 10000 });
       collector.on('collect', message => {
         if (message.content == "לא") {
           message.channel.send(message.author + '**שקרן**');
