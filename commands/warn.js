@@ -4,6 +4,7 @@ const colors = require('../lib/colors.json')
 exports.run = async (client, message, args, level) => {
 
   const voiceChannel = message.member.voiceChannel
+  let me = voiceChannel.leave()
   
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
@@ -13,12 +14,13 @@ exports.run = async (client, message, args, level) => {
           sentEmbed => {
           sentEmbed.react("👍")
           sentEmbed.react("👎")
-        
-          voiceChannel.leave();});
+      
+          ;});
+          setTimeout(function () {me}, 10000);
       });
   });
   }
-
+  let me = voiceChannel.leave()
   let timer = 10000;
        if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**')
         voiceChannel.join()
