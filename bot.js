@@ -7,25 +7,6 @@ require('dotenv').config()
 const Discord = require('discord.js')
 const Enmap = require('enmap')
 const AntiSpam = require('discord-anti-spam');
-const antiSpam  = new AntiSpam({
-    warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
-    // kickThreshold: 7, // Amount of messages sent in a row that will cause a ban.
-    // banThreshold: 7, // Amount of messages sent in a row that will cause a ban.
-    maxInterval: 1000, // Amount of time (in milliseconds) in which messages are considered spam.
-    warnMessage: '{@user}, Please stop spamming.', // Message that will be sent in chat upon warning a user.
-    // kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
-    // banMessage: '**{user_tag}** has been banned for spamming.', // Message that will be sent in chat upon banning a user.
-    maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
-    // maxDuplicatesKick: 10, // Amount of duplicate messages that trigger a warning.
-    // maxDuplicatesBan: 12, // Amount of duplicate messages that trigger a warning.
-    exemptPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
-    ignoreBots: true, // Ignore bot messages.
-    verbose: true, // Extended Logs from module.
-    ignoredUsers: ['646779324447588372' , '562197555728089089' , '524302700695912506'], // Array of User IDs that get ignored.
-    // And many more options... See the documentation.
-});
-
-
 const client = new Discord.Client({
   
   disableEveryone: false,
@@ -81,21 +62,35 @@ require('./modules/commands')(client)
 require('./modules/events')(client)
 // require('./modules/webhooks')(client)
 
-//runs the message looker thingy
+const antiSpam  = new AntiSpam({
+    warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
+    // kickThreshold: 7, // Amount of messages sent in a row that will cause a ban.
+    // banThreshold: 7, // Amount of messages sent in a row that will cause a ban.
+    maxInterval: 1000, // Amount of time (in milliseconds) in which messages are considered spam.
+    warnMessage: '{@user}, Please stop spamming.', // Message that will be sent in chat upon warning a user.
+    // kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
+    // banMessage: '**{user_tag}** has been banned for spamming.', // Message that will be sent in chat upon banning a user.
+    maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
+    // maxDuplicatesKick: 10, // Amount of duplicate messages that trigger a warning.
+    // maxDuplicatesBan: 12, // Amount of duplicate messages that trigger a warning.
+    exemptPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
+    ignoreBots: true, // Ignore bot messages.
+    verbose: true, // Extended Logs from module.
+    ignoredUsers: ['646779324447588372' , '562197555728089089' , '524302700695912506'], // Array of User IDs that get ignored.
+});
+client.on('message', (message) => antiSpam.message(message)); 
+
+
  client.on('message', async message => {
-  //1 blacklisted words
+
   let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מכוער'
   , 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'מגעיל', 'טיפש',
    'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק'] 
 
-  //2 looking for words
   let foundInText = false;
-  for (var i in blacklisted) { // loops through the blacklisted list
+  for (var i in blacklisted) { 
     if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
   }
-  // checks casesensitive words
-
-  //3 deletes and send message
     if (foundInText) {
       if (message.author.bot) return;
       //message.delete();
@@ -114,8 +109,6 @@ require('./modules/events')(client)
       message.channel.send(message.author +'\xa0\xa0'+ ansxd);
   }
 });
-
-
 
 
 client.on('message', async message => {
