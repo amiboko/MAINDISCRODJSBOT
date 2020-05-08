@@ -19,7 +19,7 @@ exports.run = async (client, message, args, level) => {
        setTimeout(function () {}, timer);
 
       const embed2 = new Discord.RichEmbed()
-      .setTitle('חביבי\n תדליק רמקול / שים אוזניות ושים פול ווליום\n יש לנו שיחת נהלים קצרה!')
+      .setTitle('שים אוזניות ופול ווליום\n יש לנו שיחת נהלים קצרה...')
       .setColor("#FF0000")
       message.channel.send(embed2);
 
@@ -29,7 +29,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['שתוק'],
+  aliases: ['מפגר','טמבל','שתוק'],
   guildOnly: true,
   permLevel: 'User'
 }
