@@ -15,8 +15,7 @@ exports.run = async (client, message, args, level) => {
           sentEmbed.react("👍")
           sentEmbed.react("👎")
         
-          voiceChannel.leave();});
-          setTimeout(function () { }, 10000);
+          voiceChannel.leave();} );
       });
   });
   }
