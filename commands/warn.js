@@ -3,8 +3,10 @@ const colors = require('../lib/colors.json')
 
 exports.run = async (client, message, args, level) => {
 
-  async function play(channel) {
-    await channel.join().then(async (connection) => {
+  const voiceChannel = message.member.voiceChannel
+  
+  async function play(voiceChannel) {
+    await voiceChannel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/matan.mp3' , {volume: 0.9,});
       await dispatcher.on('end', function () {
         message.channel.send("🎧 **?נו אז איך היה הקטע של מתן האשדודי** 🎧").then(sentEmbed => {
@@ -26,13 +28,11 @@ exports.run = async (client, message, args, level) => {
       .setThumbnail(`${message.author.displayAvatarURL}`)
       .setTimestamp()
       message.channel.send(embed2);
-      setTimeout(function () {
-        play(channel);
-      }, timer);
+
+      setTimeout(function () { play(voiceChannel); }, timer);
+
       // timer = timer + 10000;
-   
-     setTimeout(function () {
-  }, timer);
+      setTimeout(function () { }, timer);
 };
 
 exports.conf = {
