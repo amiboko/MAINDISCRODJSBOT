@@ -18,7 +18,7 @@ exports.run = async (client, message, args, level) => {
 
   let timer = 10000;
        if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**')
-       await voiceChannel.join()
+        voiceChannel.join()
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
