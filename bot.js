@@ -102,7 +102,7 @@ client.on('message', async message => {
   let factsuseless = 
   [
 
-      "אתה בא לחלע?!",
+      "מי בא לחלע?!",
       "יש משחק?!",
       "אני חם!",
       "בוא נפרק!",
@@ -250,7 +250,6 @@ client.on('message', message => {
     .setTitle('בכיף נשמה יקרה')
     .setColor("#FFC0CB")
     .setDescription(`${message.author}`)
-    .setThumbnail(`${message.author.displayAvatarURL}`)
 
       message.channel.send(embed);
       
@@ -265,7 +264,7 @@ client.on('message', message => {
     .setTitle('<a:veri:691980334782218240>')
     .setColor("#0000FF")
 
-      message.channel.send(embed);
+      message.channel.send(message.author +'\xa0\xa0'+ embed);
       
   }
 });
@@ -307,9 +306,9 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if(message.content === 'לא') {
+  if(message.content === 'כלב') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`אני בטוח שביחד נוכל לפתור את השליליות שלך, בן כמה אתה?`');
+      message.channel.send(message.author + 'לא יפה, נראה לי זה מגיע מבעיה נפשית עמוקה, בן כמה אתה?');
       const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
       collector.on('collect', message => {
         if (message.content == "25" || "26" || "27" || "28"|| "29"|| "30"|| "24"|| "23") {
@@ -328,12 +327,10 @@ client.on('message', message => {
       const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
       collector.on('collect', message => {
         if (message.content == "לא") {
-          message.channel.send(message.author + '`איזה שקרן!** זה בסדר אתה יכול לשתף אותנו...**`');
-        } else if (message.content == "לא") {
-          message.channel.send(message.author + '`אתה יכול להתכחש עד מחר, אני יודע את התשובה`');
-      }
-      })
-  }
+          message.channel.send(message.author + '**שקרן**');
+        } else return message.channel.send(message.author + '`אתה יכול להתכחש עד מחר, אני יודע את התשובה`');
+      });
+     }
 });
 
 
