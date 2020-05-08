@@ -6,6 +6,26 @@ require('dotenv').config()
 
 const Discord = require('discord.js')
 const Enmap = require('enmap')
+const AntiSpam = require('discord-anti-spam');
+const AntiSpam = new AntiSpam({
+    warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
+    // kickThreshold: 7, // Amount of messages sent in a row that will cause a ban.
+    // banThreshold: 7, // Amount of messages sent in a row that will cause a ban.
+    maxInterval: 1000, // Amount of time (in milliseconds) in which messages are considered spam.
+    warnMessage: '{@user}, Please stop spamming.', // Message that will be sent in chat upon warning a user.
+    // kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
+    // banMessage: '**{user_tag}** has been banned for spamming.', // Message that will be sent in chat upon banning a user.
+    maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
+    // maxDuplicatesKick: 10, // Amount of duplicate messages that trigger a warning.
+    // maxDuplicatesBan: 12, // Amount of duplicate messages that trigger a warning.
+    exemptPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
+    ignoreBots: true, // Ignore bot messages.
+    verbose: true, // Extended Logs from module.
+    ignoredUsers: ['646779324447588372' , '562197555728089089' , '524302700695912506'], // Array of User IDs that get ignored.
+    // And many more options... See the documentation.
+});
+
+
 const client = new Discord.Client({
   
   disableEveryone: false,
@@ -205,7 +225,7 @@ client.on('message', message => {
    {
       message.channel.send('https://en.wikipedia.org/wiki/Shroud_(gamer)');
    }
-   if(message.content.includes('שראוד'))
+   if(message.content == 'שראוד')
    {
       message.channel.send('https://en.wikipedia.org/wiki/Shroud_(gamer)');
    }
