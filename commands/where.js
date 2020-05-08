@@ -5,14 +5,14 @@ exports.run = async (client, message, args, level) => {
 
   const voiceChannel = message.member.voiceChannel
 
-  async function play(channel) {
-    await channel.join().then(async (connection) => {
+  async function play(voiceChannel) {
+    await voiceChannel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/botsound.mp3');
       await dispatcher.on('end', function () {
-        channel.leave();
+        voiceChannel.leave();
       });
   });
-  
+  }
 
       let timer = 10000;
       if (!voiceChannel) return message.reply('you are not in a voice channel')
@@ -25,7 +25,7 @@ exports.run = async (client, message, args, level) => {
       .setTimestamp()
       message.channel.send(embed2);
       setTimeout(function () {
-        play(channel);
+        play(voiceChannel);
       }, timer);
       // timer = timer + 10000;
    
@@ -33,7 +33,7 @@ exports.run = async (client, message, args, level) => {
   setTimeout(function () {
   }, timer);
 };
-}
+
 
 exports.conf = {
   enabled: true,
