@@ -5,7 +5,7 @@ exports.run = async (client, message, args, level) => {
 
   async function play(channel) {
     await channel.join().then(async (connection) => {
-      let dispatcher = await connection.playFile('./img/matan.mp3');
+      let dispatcher = await connection.playFile('./img/matan.mp3' , {volume: 0.9,});
       await dispatcher.on('end', function () {
         message.channel.send("🎧 **?נו אז איך היה הקטע של מתן האשדודי** 🎧").then(sentEmbed => {
           sentEmbed.react("👍")
@@ -17,8 +17,8 @@ exports.run = async (client, message, args, level) => {
   }
 
   let timer = 10000;
-       message.guild.channels.forEach(async (channel) => {
-       if (channel.type == 'voice' && channel.members.size > 0) {
+       if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**')
+       await voiceChannel.join()
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
@@ -30,9 +30,8 @@ exports.run = async (client, message, args, level) => {
         play(channel);
       }, timer);
       // timer = timer + 10000;
-    }});
-
-  setTimeout(function () {
+   
+     setTimeout(function () {
   }, timer);
 };
 
