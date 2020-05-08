@@ -7,23 +7,27 @@ exports.run = async (client, message, args, level) => {
 
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
-      let dispatcher = await connection.playFile('./img/botsound.mp3', {volume: 0.9,});
-      await dispatcher.on('end', function () {voiceChannel.leave();setTimeout(function () {}, 10000);
+      let dispatcher = await connection.playFile('./img/botsound.mp3');
+      dispatcher.setVolume(0.5);
+      await dispatcher.on('end', function () {
+        voiceChannel.leave();
       });
   });
   }
 
-      let timer = 10000
+      
+      setTimeout(function(){ 
+        if (!voiceChannel) return message.reply('**אם אתה קורא לעצמך גבר... כנס לערוץ שיחה ותרשום את זה שוב**')(); 
+    }, 3000);
       if (!voiceChannel) return message.reply('**אם אתה קורא לעצמך גבר... כנס לערוץ שיחה ותרשום את זה שוב**')
        voiceChannel.join()
-       setTimeout(function () {}, timer);
-
+      
       const embed2 = new Discord.RichEmbed()
       .setTitle('שים אוזניות ופול ווליום\n יש לנו שיחת נהלים קצרה...')
       .setColor("#FF0000")
       message.channel.send(embed2);
 
-      setTimeout(function () { play(voiceChannel); }, timer);
+      setTimeout(function () { play(voiceChannel); }, 30000);
 
 };
 
