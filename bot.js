@@ -7,7 +7,7 @@ require('dotenv').config()
 const Discord = require('discord.js')
 const Enmap = require('enmap')
 const AntiSpam = require('discord-anti-spam');
-const AntiSpam = new AntiSpam({
+const antiSpam  = new AntiSpam({
     warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
     // kickThreshold: 7, // Amount of messages sent in a row that will cause a ban.
     // banThreshold: 7, // Amount of messages sent in a row that will cause a ban.
