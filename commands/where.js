@@ -3,6 +3,7 @@ const colors = require('../lib/colors.json');
 
 exports.run = async (client, message, args, level) => { 
 
+  const voiceChannel = message.member.voiceChannel
 
   async function play(channel) {
     await channel.join().then(async (connection) => {
@@ -11,13 +12,9 @@ exports.run = async (client, message, args, level) => {
         channel.leave();
       });
   });
-  }
+  
 
       let timer = 10000;
-      
-      const voiceChannel = message.member.voiceChannel
-      let dispatcher = await connection.playFile('./img/botsound.mp3');
-
       if (!voiceChannel) return message.reply('you are not in a voice channel')
       voiceChannel.join()
       const embed2 = new Discord.RichEmbed()
@@ -28,7 +25,7 @@ exports.run = async (client, message, args, level) => {
       .setTimestamp()
       message.channel.send(embed2);
       setTimeout(function () {
-        play(dispatcher);
+        play(channel);
       }, timer);
       // timer = timer + 10000;
    
@@ -36,7 +33,7 @@ exports.run = async (client, message, args, level) => {
   setTimeout(function () {
   }, timer);
 };
-
+}
 
 exports.conf = {
   enabled: true,
