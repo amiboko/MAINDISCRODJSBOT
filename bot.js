@@ -313,7 +313,7 @@ client.on('message', message => {
       collector.on('collect', message => {
         if (message.content == "25" || message.content =="26" || message.content =="27" || message.content =="28"|| message.content =="29"|| message.content == "24"|| message.content == "23") {
           message.channel.send(message.author + '`הגיע הזמן שתשכב עם בחורה אחי והכל יסתדר`');
-        } else return message.channel.send(message.author + '`כנראה שאה נשוי וממורמר, צא לחופשי והכל יסתדר`');
+        } else return message.channel.send(message.author + '`טוב כנראה שאתה לא בריא בנפשך זה מלידה`');
         });
       }
   });
