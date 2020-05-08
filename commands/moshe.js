@@ -8,13 +8,15 @@ exports.run = async (client, message, args, level) => {
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/aniroze.mp3' , {volume: 0.8,});
-      await dispatcher.on('end', function () {
+      await dispatcher.on('end', function () { 
+
         message.channel.send("🎧 **?נו אז איך היה הקטע של משה השראוד** 🎧").then(
           sentEmbed => {
           sentEmbed.react("👍")
           sentEmbed.react("👎")
         
           voiceChannel.leave();});
+          setTimeout(function () { }, 10000);
       });
   });
   }
