@@ -36,53 +36,21 @@ exports.run = async (client, message, args, level) => {
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 exports.conf = {
   enabled: true,
-  aliases: [''],
-  guildOnly: false,
-  permLevel: ''
-};
+  aliases: ['שתוק'],
+  guildOnly: true,
+  permLevel: 'User'
+}
 
 exports.help = {
-  name: '',
-  category: '',
-  description: '',
-  usage: ''
+  name: 'שתוק',
+  category: 'כיף',
+  description: 'מצטרף אליך לשיחה ומשמיע לך קצת כללים',
+  usage: 'שתוק'
 }
+
+
   
 //   if (!args[0]) return message.channel.send('You need to specify a channel ID')
 //   if (!client.channels.get(args[0])) return message.channel.send('Couldn\'t find a channel with that ID')
