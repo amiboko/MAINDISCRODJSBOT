@@ -15,7 +15,8 @@ exports.run = async (client, message, args, level) => {
 
       let timer = 10000
       if (!voiceChannel) return message.reply('**אם אתה קורא לעצמך גבר... כנס לערוץ שיחה ותרשום את זה שוב**')
-       voiceChannel.join().setTimeout(function () {}, timer);
+       voiceChannel.join()
+       setTimeout(function () {}, timer);
 
       const embed2 = new Discord.RichEmbed()
       .setTitle('חביבי\n תדליק רמקול / שים אוזניות ושים פול ווליום\n יש לנו שיחת נהלים קצרה!')
