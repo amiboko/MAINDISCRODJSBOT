@@ -331,6 +331,12 @@ client.on('message', message => {
      }
 });
 
+client.on('message', message => {
+  if(message.content.includes('מתן')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author +'\xa0\xa0'+ 'אם התכוונת לשמוע את השיר של מתן אז תרשום פליימתן');
+  }
+});
 
 client.on('message', message => {
   if(message.content.includes('אחי')) {
