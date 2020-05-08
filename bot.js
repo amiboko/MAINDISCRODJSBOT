@@ -308,12 +308,12 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content === 'כלב') {
     if (message.author.bot) return;
-      message.channel.send(message.author + 'לא יפה, נראה לי זה מגיע מבעיה נפשית עמוקה, בן כמה אתה?');
+      message.channel.send(message.author + 'אתה בן אדם רע או שאתה ילד קטן, בן כמה אתה?');
       const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 10000 });
       collector.on('collect', message => {
-        if (message.content == "25" || message.content =="26" || message.content =="27" || message.content =="28"|| message.content =="29"|| message.content == "24"|| message.content == "23") {
+        if (message.content == "25" || message.content == "26" || message.content == "27" || message.content == "28"|| message.content == "29"|| message.content == "24"|| message.content == "23") {
           message.channel.send(message.author + '`הגיע הזמן שתשכב עם בחורה אחי והכל יסתדר`');
-        } else return message.channel.send(message.author + '`טוב כנראה שאתה לא בריא בנפשך זה מלידה`');
+        } else return message.channel.send(message.author + '`כנראה שאתה פשוט בן אדם רע`');
         });
       }
   });
