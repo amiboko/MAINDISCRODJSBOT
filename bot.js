@@ -6,7 +6,7 @@ require('dotenv').config()
 
 const Discord = require('discord.js')
 const Enmap = require('enmap')
-const AntiSpam = require('discord-anti-spam');
+
 const client = new Discord.Client({
   
   disableEveryone: false,
@@ -62,13 +62,16 @@ require('./modules/commands')(client)
 require('./modules/events')(client)
 // require('./modules/webhooks')(client)
 
-const antiSpam  = new AntiSpam({
+
+const AntiSpam = require('discord-anti-spam');
+
+const antiSpam = new AntiSpam({
 	warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
 	kickThreshold: 7, // Amount of messages sent in a row that will cause a kick.
 	banThreshold: 7, // Amount of messages sent in a row that will cause a ban.
 	muteThreshold: 5, // Amount of messages sent in a row that will cause a mute.
 	maxInterval: 2000, // Amount of time (in milliseconds) in which messages are considered spam.
-	warnMessage: '{@user}, חלאס עם הספאם', // Message that will be sent in chat upon warning a user.
+	warnMessage: '{@user}, עקב ספאם הוספתי אותך לרשימה השחורה, במידה ותמשיך להספים תעוף אוטומטית,', // Message that will be sent in chat upon warning a user.
 	kickMessage: '**{user_tag}** קיבל קיק בעקבות ספאם', // Message that will be sent in chat upon kicking a user.
 	banMessage: '**{user_tag}** קיבל באן בעקבות ספאם', // Message that will be sent in chat upon banning a user.
 	muteMessage: '**{user_tag}** הושתק בעקבות ספאם', // Message that will be sent in chat upon muting a user.
@@ -82,12 +85,14 @@ const antiSpam  = new AntiSpam({
 	ignoredUsers: [], // Array of User IDs that get ignored.
 	removeMessages: true, // Array of User IDs that get ignored.
 });
+
 client.on('ready', () => console.log(`Logged in as ${client.user.tag}.`));
 antiSpam.on("spamThresholdWarn", (member) => console.log(`${member.user.tag} has reached the warn threshold.`));
 antiSpam.on("warnAdd", (member) => console.log(`${member.user.tag} has been warned.`));
 client.on('message', (msg) => {
 	antiSpam.message(msg);
 });
+
 
 
  client.on('message', async message => {
@@ -250,6 +255,7 @@ client.on('message', message => {
 });
 
 
+
 client.on('message', message => {
   
   if(message.content.includes('חזק')) {
@@ -259,7 +265,6 @@ client.on('message', message => {
     .setColor("#F0F0F0")
 
       message.channel.send(embed);
-      
   }
 });
 
@@ -314,6 +319,33 @@ client.on('message', message => {
   if(message.content.includes('זורם')) {
     if (message.author.bot) return;
       message.channel.send(message.author +'\xa0\xa0'+ '`אני זורם`');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('אמין')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`אני מאמין לך`');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('מבין')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`אני מבין אותך`');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('בוט')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`כן בבקשה`');
       
   }
 });
