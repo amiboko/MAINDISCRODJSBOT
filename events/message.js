@@ -85,14 +85,14 @@ module.exports = async (client, message) => {
 
       if (message.content.toLowerCase().indexOf(prefix.toLowerCase()) !== 0) return
 
-    if (cooled.get(message.author.id)) return message.react('⏳')
-    if (client.permlevel(message) < 6) {
-      cooled.set(message.author.id, true)
-      setTimeout(async () => {
-        cooled.delete(message.author.id)
-      }, 3000)
+      if (cooled.get(message.author.id)) return message.channel.send(message.author + 'משתמש יקר אתה מציק! אתה תקבל קיק על ספאם')
+      if (client.permlevel(message) < 6) {
+        cooled.set(message.author.id, true)
+        setTimeout(async () => {
+          cooled.delete(message.author.id)
+        }, 1000)
+      }
     }
-  }
 
   try {
     cmd.run(client, message, args, level)
