@@ -4,38 +4,40 @@ const colors = require('../lib/colors.json')
 exports.run = async (client, message, args, level) => {
 
   const voiceChannel = message.member.voiceChannel
-  let me = voiceChannel.leave()
+  message.delete();
   
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
-      let dispatcher = await connection.playFile('./img/matan.mp3', connection.setVolume(0.5));
-      await dispatcher.on('end', function () {
-        message.channel.send("🎧 **?נו אז איך היה הקטע של מתן האשדודי** 🎧").then(
-          sentEmbed => {
-          sentEmbed.react("👍")
-          sentEmbed.react("👎")
-      
-          ;});
-          setTimeout(function () {me}, 10000);
+      let dispatcher = await connection.playFile('./img/matan.mp3', {volume: 0.9,});
+      await dispatcher.on('end', function () { 
+
+          setTimeout(function () { voiceChannel.leave();}, 5000);
+
+          for (let member of voiceChannel.members) {member[1].setMute(false)}
       });
-  });
+
+      });
+
   }
-  let me = voiceChannel.leave()
-  let timer = 10000;
+  
+       let timer = 10000;
        if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**')
-        voiceChannel.join()
+       for (let member of voiceChannel.members) {member[1].setMute(true)}
+       for (let member of voiceChannel.members) {member[1].setDeaf(false)}
+
+       voiceChannel.join()
+       
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
-      .setDescription(`${message.author}` + '\n\n' + 'תתחבר לערוץ שיחה תוך 10 שניות' + '\n\n' + 'ואני בדרך אליך עם אחד הקטעים החזקים של **מתן האשדודי**')
-      .setThumbnail(`${message.author.displayAvatarURL}`)
+      .addField('הערוץ 🔇 זמנית לניגון הקטע', 'האזנה נעימה')
+      .setDescription(`${message.author}` +'\xa0' + 'ברוך הבא לנגן שלי' + '\n\n' + '`🔊 10 שניות לניגון הלהיט של מתן האשדודי 🔊`' + '\n\n')
       .setTimestamp()
-      message.channel.send(embed2);
-
+      
+      message.channel.send(embed2).then(message => message.delete(500000)).catch(console.error);
+     
       setTimeout(function () { play(voiceChannel); }, timer);
 
-      // timer = timer + 10000;
-      setTimeout(function () { }, timer);
 };
 
 exports.conf = {
