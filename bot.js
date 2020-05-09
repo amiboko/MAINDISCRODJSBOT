@@ -63,22 +63,31 @@ require('./modules/events')(client)
 // require('./modules/webhooks')(client)
 
 const antiSpam  = new AntiSpam({
-    warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
-    // kickThreshold: 7, // Amount of messages sent in a row that will cause a ban.
-    // banThreshold: 7, // Amount of messages sent in a row that will cause a ban.
-    maxInterval: 1000, // Amount of time (in milliseconds) in which messages are considered spam.
-    warnMessage: '{@user}, Please stop spamming.', // Message that will be sent in chat upon warning a user.
-    // kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
-    // banMessage: '**{user_tag}** has been banned for spamming.', // Message that will be sent in chat upon banning a user.
-    maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
-    // maxDuplicatesKick: 10, // Amount of duplicate messages that trigger a warning.
-    // maxDuplicatesBan: 12, // Amount of duplicate messages that trigger a warning.
-    exemptPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
-    ignoreBots: true, // Ignore bot messages.
-    verbose: true, // Extended Logs from module.
-    ignoredUsers: ['646779324447588372' , '562197555728089089' , '524302700695912506'], // Array of User IDs that get ignored.
+	warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
+	kickThreshold: 7, // Amount of messages sent in a row that will cause a kick.
+	banThreshold: 7, // Amount of messages sent in a row that will cause a ban.
+	muteThreshold: 5, // Amount of messages sent in a row that will cause a mute.
+	maxInterval: 2000, // Amount of time (in milliseconds) in which messages are considered spam.
+	warnMessage: '{@user}, חלאס עם הספאם', // Message that will be sent in chat upon warning a user.
+	kickMessage: '**{user_tag}** קיבל קיק בעקבות ספאם', // Message that will be sent in chat upon kicking a user.
+	banMessage: '**{user_tag}** קיבל באן בעקבות ספאם', // Message that will be sent in chat upon banning a user.
+	muteMessage: '**{user_tag}** הושתק בעקבות ספאם', // Message that will be sent in chat upon muting a user.
+	maxDuplicatesWarning: 7, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesKick: 10, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesBan: 12, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesMute: 9, // Amount of duplicate messages that trigger a warning.
+	exemptPermissions: [ 'ADMINISTRATOR'], 
+	ignoreBots: true, // Ignore bot messages.
+	verbose: true, // Extended Logs from module.
+	ignoredUsers: [], // Array of User IDs that get ignored.
+	removeMessages: true, // Array of User IDs that get ignored.
 });
-client.on('message', (message) => antiSpam.message(message)); 
+client.on('ready', () => console.log(`Logged in as ${client.user.tag}.`));
+antiSpam.on("spamThresholdWarn", (member) => console.log(`${member.user.tag} has reached the warn threshold.`));
+antiSpam.on("warnAdd", (member) => console.log(`${member.user.tag} has been warned.`));
+client.on('message', (msg) => {
+	antiSpam.message(msg);
+});
 
 
  client.on('message', async message => {
