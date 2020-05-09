@@ -8,7 +8,7 @@ exports.run = async (client, message, args, level) => {
   
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
-      let dispatcher = await connection.playFile('./img/matan.mp3' , {volume: 0.8,});
+      let dispatcher = await connection.playFile('./img/matan.mp3', connection.setVolume(0.5));
       await dispatcher.on('end', function () {
         message.channel.send("🎧 **?נו אז איך היה הקטע של מתן האשדודי** 🎧").then(
           sentEmbed => {
