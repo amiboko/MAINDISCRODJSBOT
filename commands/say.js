@@ -10,7 +10,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['1','שלח'],
+  aliases: ['שלחהודעה'],
   guildOnly: true,
   permLevel: 'Moderator'
 }
