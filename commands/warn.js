@@ -2,54 +2,59 @@ const Discord = require('discord.js')
 const colors = require('../lib/colors.json')
 
 exports.run = async (client, message, args, level) => {
+  try {
+    const user = message.mentions.users.first()
+    const settings = client.getSettings(message.guild.id)
 
-  const voiceChannel = message.member.voiceChannel
-  message.delete();
-  
-  async function play(voiceChannel) {
-    await voiceChannel.join().then(async (connection) => {
-      let dispatcher = await connection.playFile('./img/matan.mp3', {volume: 0.9,});
-      await dispatcher.on('end', function () { 
+    if (user) {
+      const member = message.guild.member(user)
+      if (member) {
+        if (!client.warns.get(message.guild.id)) client.warns.set(message.guild.id, {})
+        if (!client.warns.get(message.guild.id)[member.id]) client.warns.get(message.guild.id)[member.id] = 0
 
-          setTimeout(function () { voiceChannel.leave();}, 5000);
+        client.warns.get(message.guild.id)[member.id] += 1
+        message.reply(`אזהרה התקבלה ${user.tag}`)
 
-          for (let member of voiceChannel.members) {member[1].setMute(false)}
-      });
+        const modLogChannel = settings.modLogChannel
+        if (modLogChannel && message.guild.channels.find(c => c.name === settings.modLogChannel)) {
+          const embed = new Discord.RichEmbed()
+            .setTitle('אזהרה למשתמש')
+            .setColor(colors.red)
+            .setDescription(`Name: ${user.username}\nID: ${user.id}\nModerator: ${message.author.username}`)
 
-      });
+          message.guild.channels.find(c => c.name === settings.modLogChannel).send(embed)
+        }
 
+        if (client.warns.get(message.guild.id)[member.id] == 3) {
+          member.ban(args.slice(1).join(' ')).then(() => {
+            message.reply(`Successfully banned ${user.tag}`)
+
+            client.warns.get(message.guild.id)[member.id] = 0
+          }).catch(err => {
+            message.reply('I was unable to ban the member for exeding the max amount of warns')
+          })
+        }
+      } else {
+        message.reply('That user isn\'t in this guild!')
+      }
+    } else {
+      message.reply('You didn\'t mention the user to warn!')
+    }
+  } catch (err) {
+    message.channel.send('There was an error!\n' + err).catch()
   }
-  
-       let timer = 10000;
-       if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**')
-       for (let member of voiceChannel.members) {member[1].setMute(true)}
-       for (let member of voiceChannel.members) {member[1].setDeaf(false)}
-
-       voiceChannel.join()
-       
-      const embed2 = new Discord.RichEmbed()
-      .setTitle('🎧 MASTERBOT-TUBE 🎧')
-      .setColor("#3498DB")
-      .addField('הערוץ 🔇 זמנית לניגון הקטע', 'האזנה נעימה')
-      .setDescription(`${message.author}` +'\xa0' + 'ברוך הבא לנגן שלי' + '\n\n' + '`🔊 10 שניות לניגון הלהיט של מתן האשדודי 🔊`' + '\n\n')
-      .setTimestamp()
-      
-      message.channel.send(embed2).then(message => message.delete(500000)).catch(console.error);
-     
-      setTimeout(function () { play(voiceChannel); }, timer);
-
-};
+}
 
 exports.conf = {
   enabled: true,
-  aliases: ['פליימתן'],
+  aliases: [],
   guildOnly: true,
-  permLevel: 'User'
+  permLevel: 'Moderator'
 }
 
 exports.help = {
-  name: 'פליי',
-  category: 'כיף',
-  description: 'משמיע שיר בערוץ',
-  usage: 'פליי'
+  name: 'warn',
+  category: 'Moderation',
+  description: 'Warns a member for an optional reason.',
+  usage: 'warn <user>'
 }
