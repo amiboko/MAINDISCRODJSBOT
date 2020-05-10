@@ -1,45 +1,43 @@
-const Discord = require('discord.js')
 const colors = require('../lib/colors.json')
+const Discord = require('discord.js')
 
-exports.run = async (client, message, args, level) => {
-  try {
-    const user = args[0]
-    const settings = client.getSettings(message.guild.id)
+exports.run = async (client, message, args) => {
+  const prefix = message.guild === null ? ';;' : client.getSettings(message.guild.id).prefix
+  
+message.delete(120000);
 
-    if (user) {
-      message.guild.unban(args.slice(1).join(' ')).then(() => {
-        message.reply(`Successfully unbanned ${user.tag}`)
+  const embed = new Discord.RichEmbed()
+    .setTitle('🎵MASTERBOT-TUBE🎵')
+    .setDescription(` \`${prefix} רצועות ניגון\``)
+    .setColor(colors.default)
+    .addField('1',  '**פליימשה**', true)
+    .addField('2', '**פליירוס**', true)
+    .addField('3', '**פליימתן**', true)
+    .addField('4',  '**פלייאורן**', true)
+    .addField('5', '**בקרוב**', true)
+    .setFooter(`${message.author.tag}`, message.author.avatarURL)
+    .setTimestamp()
+  
+  message.channel.send(embed)
+  .then((msg)=> { 
+    setTimeout(function(){
+      msg.edit(message.author + 'אם תרצה אוכל להוסיף גם את שלך, תעלה אותם ותתייג אותי').then(msg.delete(60000));
+    }, 60000)
+  }); 
 
-        const modLogChannel = settings.modLogChannel
-        if (modLogChannel && message.guild.channels.find(c => c.name === settings.modLogChannel)) {
-          const embed = new Discord.RichEmbed()
-            .setTitle('User Unban')
-            .setColor(colors.green)
-            .setDescription(`Reason: ${args.slice(1).join(' ')}\nModerator: ${message.author.username}`)
 
-          message.guild.channels.find(c => c.name === settings.modLogChannel).send(embed)
-        }
-      }).catch(err => {
-        message.reply('I was unable to unban the member')
-      })
-    } else {
-      message.reply('You didn\'t give the UserID to unban!')
-    }
-  } catch (err) {
-    message.channel.send('Their was an error!\n' + err + '').catch()
-  }
 }
 
 exports.conf = {
   enabled: true,
-  aliases: ['b'],
+  aliases: ['שירים'],
   guildOnly: true,
-  permLevel: 'Moderator'
+  permLevel: 'User'
 }
 
 exports.help = {
-  name: 'unban',
-  category: 'Moderation',
-  description: 'Unbans a member for an optional reason.',
-  usage: 'unban <userid> [reason]'
+  name: 'שירים',
+  category: 'כיף',
+  description: 'רשימת השירים שלי',
+  usage: 'שירים'
 }
