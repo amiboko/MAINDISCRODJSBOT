@@ -17,11 +17,11 @@ module.exports = (client, message, messageNew) => {
 				if (!modLogChannel.permissionsFor(message.guild.me).has('SEND_MESSAGES')) return
 				
 			const embed = new Discord.RichEmbed()
-				.setAuthor('📝 Message updated')
+				.setAuthor('📝')
 				.setColor(colors.default)
-				.setDescription(`Message edited by <@${messageNew.author.id}> in ${message.channel}`)
-				.addField('Old message:', `${message}`, true)
-				.addField('New message:', `${messageNew}`, true)
+				.setDescription(`<@${messageNew.author.id}> נערך ע"י ${message.channel}ב`)
+				// .addField('Old message:', `${message}`, true)
+				// .addField('New message:', `${messageNew}`, true)
 				
 
 			if (message.guild.channels.find(channel => channel.name == settings.modLogChannel)) {
