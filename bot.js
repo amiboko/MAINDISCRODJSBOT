@@ -67,10 +67,10 @@ const AntiSpam = require('discord-anti-spam');
 
 const antiSpam = new AntiSpam({
 	warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
-	kickThreshold: 7, // Amount of messages sent in a row that will cause a kick.
-	banThreshold: 7, // Amount of messages sent in a row that will cause a ban.
+	kickThreshold: 10, // Amount of messages sent in a row that will cause a kick.
+	banThreshold: 12, // Amount of messages sent in a row that will cause a ban.
 	muteThreshold: 5, // Amount of messages sent in a row that will cause a mute.
-	maxInterval: 2000, // Amount of time (in milliseconds) in which messages are considered spam.
+	maxInterval: 1000, // Amount of time (in milliseconds) in which messages are considered spam.
 	warnMessage: '{@user}, עקב ספאם הוספתי אותך לרשימה השחורה, במידה ותמשיך להספים תעוף אוטומטית,', // Message that will be sent in chat upon warning a user.
 	kickMessage: '**{user_tag}** קיבל קיק בעקבות ספאם', // Message that will be sent in chat upon kicking a user.
 	banMessage: '**{user_tag}** קיבל באן בעקבות ספאם', // Message that will be sent in chat upon banning a user.
@@ -343,9 +343,40 @@ client.on('message', message => {
 
 client.on('message', message => {
   
+  if(message.content.includes('שחור')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`❔`');
+      
+  }
+});
+
+
+
+
+client.on('message', message => {
+  
   if(message.content.includes('בוט')) {
     if (message.author.bot) return;
       message.channel.send(message.author + '`כן בבקשה`');
+      
+  }
+});
+
+
+client.on('message', message => {
+  
+  if(message.content.includes('מייי')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`🐱`');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('3..')) {
+    if (message.author.bot) return;
+      message.channel.send('`2️...1...`');
       
   }
 });
@@ -375,15 +406,24 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content === 'כן') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`אתה הומו?`');
+      message.channel.send(message.author + '` כמה זה 1 + 1 ?`');
       const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1, time: 10000 });
       collector.on('collect', message => {
-        if (message.content == "לא") {
-          message.channel.send(message.author + '**שקרן**');
-        } else return message.channel.send(message.author + '`אתה יכול להתכחש עד מחר, אני יודע את התשובה`');
+        if (message.content == "2") {
+          message.channel.send(message.author + '**למדת משהו בחיים המסכנים שלך**');
+        } else return message.channel.send('`⛔`');
       });
      }
 });
+
+
+client.on('message', message => {
+  if(message.content.includes('שיר')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`תרשום שירים תקבל שירים,`');
+  }
+});
+
 
 client.on('message', message => {
   if(message.content == 'מתן') {
@@ -406,6 +446,14 @@ client.on('message', message => {
       message.channel.send(message.author + '`אין מקום`');
   }
 });
+
+client.on('message', message => {
+  if(message.content.includes('סבבה')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`סבמבה`');
+  }
+});
+
 
 client.on('message', message => {
   if(message.content.includes('סבבה')) {
