@@ -13,11 +13,13 @@ module.exports = (client, message) => {
 				if (!modLogChannel.permissionsFor(message.guild.me).has('SEND_MESSAGES')) return
 
 				const embed = new Discord.RichEmbed()
-					.setAuthor('הודעה נמחקה 🗑️')
+					.setAuthor('🗑️ הודעה נמחקה 🗑️')
 					.setColor(colors.default)
-					.setDescription(`נמחק ע"י <@${message.author.id}> בערוץ ${message.channel}`)
+					.setDescription(`${message.channel}נמחק ב`)
 					
 				modLogChannel.send(embed)
 			}
   	}
 }
+
+// נמחק ע"י <@${message.author.id}> בערוץ 
