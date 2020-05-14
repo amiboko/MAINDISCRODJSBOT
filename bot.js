@@ -96,7 +96,7 @@ client.on('message', (msg) => {
 client.on('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
-  const channel = client.channels.find(chan => chan.name === 'general');
+  const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
 
   var job = new CronJob({
       // cronTime: '00 03 00 * * 1-7', // 00:03:00
@@ -119,7 +119,7 @@ client.on('ready', () => {
 client.on('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
-  const channel = client.channels.find(chan => chan.name === 'general');
+  const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
 
   var job = new CronJob({
       cronTime: '00 00 08 * * *', //* * * * * every minute
