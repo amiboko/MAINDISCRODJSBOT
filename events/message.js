@@ -84,15 +84,13 @@ module.exports = async (client, message) => {
       }
 
       if (message.content.toLowerCase().indexOf(prefix.toLowerCase()) !== 0) return
-
-      if (cooled.get(message.author.id))
-      
+  
       if (cooled.get(message.author.id)) return message.delete(1000).then(message.channel.send(message.author + ', אני לא עובד אצלך, תרגיע עם הבקשות').then(message => message.delete(5000)));
       if (client.permlevel(message) < 2) {
         cooled.set(message.author.id, true)
         setTimeout(async () => {
           cooled.delete(message.author.id)
-        }, 20000)
+        }, 25000)
       }
     }
 
