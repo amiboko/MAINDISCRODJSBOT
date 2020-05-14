@@ -393,12 +393,13 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content.includes('ואללק')) {
     if (message.author.bot) return;
-      message.channel.send('ההורים שך אחים?' +'\xa0\xa0'+  message.author +'\xa0\xa0'+ 'תגיד');
+      message.channel.send('ואללק' +'\xa0\xa0'+  message.author +'\xa0\xa0'+ 'אתה רוצה שהמנוולת תרקוד ותסגוד או שתשתוק?');
       const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 20000 });
       collector.on('collect', message => {
-        if (message.content.includes('שתוק')) {
-          message.channel.send(message.author + '`אני ידאג שהמנוולת תרקד ותסגוד בשבילך`');
-        } else return message.channel.send(message.author + '`שתווווווק!`');
+        if (message.content.includes('תרקוד')) {
+          message.channel.send(message.author + '`היא כבר רוקדת וסוגדת לך יסוטה`');
+        } else if (message.content.includes('שתוק'))
+        return message.channel.send(message.author +'\xa0\xa0'+ '`שתווווווווווווק יזין`');
         });
       }
   });
