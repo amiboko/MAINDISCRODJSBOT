@@ -99,7 +99,7 @@ client.on('message', (msg) => {
 
   let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מכוער'
   , 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'מגעיל', 'טיפש',
-   'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק'] 
+   'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק', 'מנוול' , 'מנוולת' , 'זין'] 
 
   let foundInText = false;
   for (var i in blacklisted) { 
@@ -391,10 +391,24 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+  if(message.content.includes('ואללק')) {
+    if (message.author.bot) return;
+      message.channel.send('ההורים שך אחים?' +'\xa0\xa0'+  message.author +'\xa0\xa0'+ 'תגיד');
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 20000 });
+      collector.on('collect', message => {
+        if (message.content.includes('שתוק')) {
+          message.channel.send(message.author + '`אני ידאג שהמנוולת תרקד ותסגוד בשבילך`');
+        } else return message.channel.send(message.author + '`שתווווווק!`');
+        });
+      }
+  });
+
+
+client.on('message', message => {
   if(message.content === 'כלב') {
     if (message.author.bot) return;
       message.channel.send(message.author + 'אתה בן אדם רע או שאתה ילד קטן, בן כמה אתה?');
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 10000 });
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 20000 });
       collector.on('collect', message => {
         if (message.content == "25" || message.content == "26" || message.content == "27" || message.content == "28"|| message.content == "29"|| message.content == "24"|| message.content == "23") {
           message.channel.send(message.author + '`הגיע הזמן שתשכב עם בחורה אחי והכל יסתדר`');
@@ -407,7 +421,7 @@ client.on('message', message => {
   if(message.content === 'כן') {
     if (message.author.bot) return;
       message.channel.send(message.author + '` כמה זה 1 + 1 ?`');
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1, time: 10000 });
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1, time: 20000 });
       collector.on('collect', message => {
         if (message.content == "2") {
           message.channel.send(message.author + '**למדת משהו בחיים המסכנים שלך**');
