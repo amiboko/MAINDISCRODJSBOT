@@ -3,9 +3,12 @@ const colors = require('../lib/colors.json')
 
 exports.run = async (client, message) => {
 
+
+  if (message.content.toLowerCase().includes(client.aliases.toLowerCase())) foundInText = true;
+
   const voiceChannel = message.member.voiceChannel
 
-  message.delete(35000);
+  message.delete(300000);
 
   async function play(voiceChannel) {
         await voiceChannel.join().then(async (connection) => {
@@ -26,7 +29,7 @@ exports.run = async (client, message) => {
       .setColor("#FF0000")
       .setFooter(`${message.author.tag}`, message.author.avatarURL)
       .setTimestamp()
-      message.channel.send(embed2).then(message => message.delete(35000));
+      message.channel.send(embed2).then(message => message.delete(300000));
 
       setTimeout(function () {play(voiceChannel);}, 3000);
       for (let member of voiceChannel.members) {
@@ -36,7 +39,7 @@ exports.run = async (client, message) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['שתוק','טמבל','סתום','מפגר'],
+  aliases: ['שתוק','טמבל','סתום','מפגר','דביל'],
   guildOnly: true,
   permLevel: 'User'
 }
