@@ -367,7 +367,7 @@ client.on('message', message => {
   
   if(message.content.includes('מייי')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`🐱`');
+      message.channel.send('`🐱 מיאאאההווו חתולההההה 🐱`');
       
   }
 });
@@ -432,7 +432,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if(message.content.includes('שיר')) {
+  if(message.content == 'שירי') {
     if (message.author.bot) return;
       message.channel.send(message.author + '`תרשום שירים תקבל שירים,`');
   }
@@ -460,14 +460,6 @@ client.on('message', message => {
       message.channel.send(message.author + '`אין מקום`');
   }
 });
-
-client.on('message', message => {
-  if(message.content.includes('סבבה')) {
-    if (message.author.bot) return;
-      message.channel.send(message.author + '`סבמבה`');
-  }
-});
-
 
 client.on('message', message => {
   if(message.content.includes('סבבה')) {

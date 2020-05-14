@@ -10,9 +10,9 @@ module.exports = (client, channel) => {
       if (!modLogChannel.permissionsFor(channel.guild.me).has('SEND_MESSAGES')) return
 
       const embed = new Discord.RichEmbed()
-        .setAuthor('🗑️ Channel deleted')
+        .setAuthor('🗑️ ערוץ נמחק 🗑️')
         .setColor(colors.red)
-        .setDescription(`Deleted channel \`${channel.name}\``)
+        .setDescription(`\`${channel.name}\``)
         .setTimestamp()
 
       modLogChannel.send(embed)

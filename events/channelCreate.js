@@ -10,9 +10,9 @@ module.exports = (client, channel) => {
       if (!modLogChannel.permissionsFor(channel.guild.me).has('VIEW_CHANNEL')) return
       if (!modLogChannel.permissionsFor(channel.guild.me).has('SEND_MESSAGES')) return
       const embed = new Discord.RichEmbed()
-        .setAuthor('🔨 Channel created')
+        .setAuthor('🔨 ערוץ נוצר 🔨')
         .setColor(colors.green)
-        .setDescription(`Created channel ${channel}`)
+        .setDescription(`${channel}`)
         .setTimestamp()
 
       modLogChannel.send(embed)
