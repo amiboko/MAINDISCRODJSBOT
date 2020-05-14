@@ -17,7 +17,7 @@ exports.run = async (client, message) => {
       });
   }
   
-       if (!voiceChannel) return message.reply('**ככה אתה מקלל, אתה יודע מה, אם אתה כזה גבר כנס לשיחה ותכתוב את זה שוב**')
+       if (!voiceChannel) return message.reply('**ככה אתה מקלל, אם אתה כזה גבר כנס לשיחה ותכתוב את זה שוב**')
        voiceChannel.join();
               
       const embed2 = new Discord.RichEmbed()
