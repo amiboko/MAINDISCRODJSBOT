@@ -93,6 +93,54 @@ client.on('message', (msg) => {
 	antiSpam.message(msg);
 });
 
+client.on('ready', () => {
+  const moment = require('moment');
+  const CronJob = require('cron').CronJob;
+  const channel = client.channels.find(chan => chan.name === 'general');
+
+  var job = new CronJob({
+      // cronTime: '00 03 00 * * 1-7', // 00:03:00
+      cronTime: '00 59 23 * * *', //* * * * * every minute
+      onTick: function() {
+        const embed = new Discord.RichEmbed()
+        .setColor('#F0F0F0')
+        .setTitle('לילה טוב גיימרים יקרים\nאשמח אם תחלמו עליי :zany_face:')
+        .setImage('https://img.ifunny.co/images/2d510a8e25ef74cb1687319e3a488fc6c07cd7b4af62c83a3506dec9a67d695e_1.gif')
+        .setTimestamp()
+        channel.send('@everyone', embed);
+        console.log(moment.tz('Israel').format('HH:mm:ss'))
+      },
+      start: false,
+      timeZone: 'Israel'
+ });
+  job.start();
+});
+
+client.on('ready', () => {
+  const moment = require('moment');
+  const CronJob = require('cron').CronJob;
+  const channel = client.channels.find(chan => chan.name === 'general');
+
+  var job = new CronJob({
+      cronTime: '00 00 08 * * *', //* * * * * every minute
+      onTick: function() {
+        const embed = new Discord.RichEmbed()
+        .setColor('#FFFF00')
+        .setTitle('בוקר טוב גיימרים יקרים\nשיהיה לכם אחלה יום')
+        .setImage('https://res.cloudinary.com/teepublic/image/private/s--xYRu_bko--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1564835655/production/designs/5499185_0.jpg')
+        .setTimestamp()
+        channel.send('@everyone', embed);
+        console.log(moment.tz('Israel').format('HH:mm:ss'))
+      },
+      start: false,
+      timeZone: 'Israel'
+ });
+  job.start();
+});
+
+
+
+
 
 
  client.on('message', async message => {
@@ -291,7 +339,7 @@ client.on('message', message => {
     .setTitle('<a:veri:691980334782218240>')
     .setColor("#0000FF")
 
-      message.channel.send(message.author +'\xa0\xa0'+ embed);
+      message.channel.send(embed);
       
   }
 });
