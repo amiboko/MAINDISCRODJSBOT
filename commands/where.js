@@ -3,9 +3,6 @@ const colors = require('../lib/colors.json')
 
 exports.run = async (client, message) => {
 
-
-  if (message.content.toLowerCase().includes(client.aliases.toLowerCase())) foundInText = true;
-
   const voiceChannel = message.member.voiceChannel
 
   message.delete(300000);
@@ -39,7 +36,7 @@ exports.run = async (client, message) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['שתוק','טמבל','סתום','מפגר','דביל'],
+  aliases: ['טמבל','סתום','מפגר','דביל'],
   guildOnly: true,
   permLevel: 'User'
 }
