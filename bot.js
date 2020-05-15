@@ -106,6 +106,7 @@ client.on('ready', () => {
         .setColor('#F0F0F0')
         .setTitle('לילה טוב גיימרים יקרים\nאשמח אם תחלמו עליי :zany_face:')
         .setImage('https://img.ifunny.co/images/2d510a8e25ef74cb1687319e3a488fc6c07cd7b4af62c83a3506dec9a67d695e_1.gif')
+        .setFooter('הודעה אוטומטית')
         .setTimestamp()
         channel.send('@everyone', embed);
         console.log(moment.tz('Israel').format('HH:mm:ss'))
@@ -127,6 +128,7 @@ client.on('ready', () => {
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
         .setTitle('בוקר טוב גיימרים יקרים\nשיהיה לכם אחלה יום')
+        .setFooter('הודעה אוטומטית')
         .setImage('https://res.cloudinary.com/teepublic/image/private/s--xYRu_bko--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1564835655/production/designs/5499185_0.jpg')
         .setTimestamp()
         channel.send('@everyone', embed);
@@ -161,7 +163,7 @@ client.on('ready', () => {
       '`סליחה! רק לי מותר לקלל פה יזיין`'
             , '`אתה מקלל הרבה לאחרונה... הכל בסדר בבית?`' 
             ,'**מה יהיה עם הקללות**'
-            ,'**הלו תרגיע עם הקללות שלך**'
+            ,'**⚠️ תרגיע עם הקללות שלך ⚠️**'
             ,'**חבל!**'
             ,'**חלאס לקלל יבור של חרא**'
           ]
@@ -302,7 +304,45 @@ client.on('message', message => {
   }
 });
 
+client.on('message', message => {
+  
+  if(message.content.includes('מת')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`משהוא מת !?!`')
+    .setColor("#000000")
 
+      message.channel.send(embed);
+      
+  }
+});
+
+
+client.on('message', message => {
+  
+  if(message.content.includes('ילד')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`למי קראת ילד ?!`')
+    .setColor("#000000")
+
+      message.channel.send(embed);
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('קללות')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`🔞`')
+    .setColor("#000000")
+
+      message.channel.send(embed);
+      
+  }
+});
 
 client.on('message', message => {
   
