@@ -15,7 +15,8 @@ module.exports = (client, message) => {
 				const embed = new Discord.RichEmbed()
 					.setAuthor('🗑️ הודעה נמחקה 🗑️')
 					.setColor(colors.default)
-					.setDescription(`${message.channel}נמחק ב`)
+					.setDescription(`נמחק ב${message.channel}`)
+					.setFooter('הודעה אוטומטית')
 					
 				modLogChannel.send(embed)
 			}
