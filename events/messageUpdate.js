@@ -17,9 +17,10 @@ module.exports = (client, message, messageNew) => {
 				if (!modLogChannel.permissionsFor(message.guild.me).has('SEND_MESSAGES')) return
 				
 			const embed = new Discord.RichEmbed()
-				.setAuthor('📝')
+				.setAuthor('✍🏼 הודעה נערכה ✍🏼')
 				.setColor(colors.default)
-				.setDescription(`<@${messageNew.author.id}> נערך ע"י ${message.channel}ב`)
+				.setDescription(`נערך ב${message.channel}`)
+				.setFooter('הודעה אוטומטית')
 				// .addField('Old message:', `${message}`, true)
 				// .addField('New message:', `${messageNew}`, true)
 				
