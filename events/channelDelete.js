@@ -13,6 +13,7 @@ module.exports = (client, channel) => {
         .setAuthor('🗑️ ערוץ נמחק 🗑️')
         .setColor(colors.red)
         .setDescription(`\`${channel.name}\``)
+        .setFooter('הודעה אוטומטית')
         .setTimestamp()
 
       modLogChannel.send(embed)
