@@ -271,6 +271,52 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   }
 });
 
+client.on('message', message => {
+  if(message.content.includes(`${client.user.id}`)) {
+    const embed2 = new Discord.RichEmbed()
+    .setTitle('אתה אוהב לתייג בוטים אה')
+    .setDescription(`
+       שאלה קטנה
+
+        **מה אתה מרגיש כלפיי?**
+        `)
+    .addField(`אפשרות 2`   ,  `אוהב יותר מאח`, true)
+    .addField(`אפשרות 1`   ,  `שונא אמן תקרוס`, true)
+    .setTimestamp()
+    .setFooter('1 או 2')
+    .setColor('#0094FB')
+    if (message.author.bot) return;
+      message.channel.send(embed2).then(message => message.delete(30000).catch());
+
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {maxMatches: 1 , time: 30000 });
+      collector.on('collect', message => {
+
+				const embed = new Discord.RichEmbed()
+          .setColor('#800000')
+          .setTitle(' 😍 גם אני אוהב אותך 😍 ')
+          .setImage('https://www.beithillel.org.il/wp-content/uploads/2018/07/189-8820141611.jpg')
+          .setDescription(`${message.author}`)
+          
+          const embed1 = new Discord.RichEmbed()
+          .setColor('#800000')
+          .setTitle(' 🤬 גם אני שונא אותך אמן תמות 🤬 ')
+          .setImage('https://i1.pngguru.com/preview/376/476/885/rad-s-64-i-hate-you-text-png-clipart.jpg')
+          .setDescription(`${message.author}`)
+
+
+        if (message.content.includes('2')) {
+          message.channel.send(embed);
+        } else if (message.content.includes('1'))
+        return message.channel.send(embed1);
+        });
+     
+        collector.on('end', collected => {
+          if (collected.size === 0) {
+            message.channel.send(message.author+'לא ענית לי \n  😭  😭  😭  😭 ');
+          }
+        });
+      }
+  });
 
 client.on('message', message => {
   
