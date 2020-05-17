@@ -7,19 +7,19 @@ module.exports = async (client, message) => {
   if (client.config.blacklisted.includes(message.author.id)) return
   const prefix = message.guild === null ? '' : client.getSettings(message.guild.id).prefix
 
-  const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`)
-  if (message.content.match(prefixMention)) {
-    const embed = new Discord.RichEmbed()
-      .setTitle('איך אתה מעז לתייג אותי?')
-      .setColor(colors.default)
+  // const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`)
+  // if (message.content.match(prefixMention)) {
+  //   const embed = new Discord.RichEmbed()
+  //     .setTitle('איך אתה מעז לתייג אותי?')
+  //     .setColor(colors.default)
 
-      if (message.guild !== null) {
-        if (!message.channel.permissionsFor(client.user).has('SEND_MESSAGES')) return
-        return message.channel.send(embed)
-      }
+  //     if (message.guild !== null) {
+  //       if (!message.channel.permissionsFor(client.user).has('SEND_MESSAGES')) return
+  //       return message.channel.send(embed)
+  //     }
     
-      return message.channel.send(embed)
-  }
+  //     return message.channel.send(embed)
+  // }
   
   const pingwords = require('../modules/pingwords.js')
   pingwords(client, message)
