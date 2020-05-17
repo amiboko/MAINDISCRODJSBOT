@@ -27,13 +27,13 @@ module.exports = (client, oldMember, newMember) => {
 
   	if (oldMember.user.name !== newMember.user.name) {
     const embed = new Discord.RichEmbed()
-      .setAuthor('👤 Username changed')
+      .setAuthor('👤 זיהוי עריכת שם 👤')
       .setColor(colors.default)
-      .setDescription(`<@${newMember.id}> changed their username`)
-      .addField('Old username', `${oldMember.username}`, true)
-      .addField('New username:', `${newMember.username}`, true)
+      .setDescription(`<@${newMember.id}>`)
+      .addField('ישן:', `${oldMember.username}`, true)
+      .addField('חדש:', `${newMember.username}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
-     
+      .setFooter('הודעה אוטומטית')
 
       modLogChannel.send(embed).catch()
     }
