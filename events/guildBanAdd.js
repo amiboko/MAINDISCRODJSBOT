@@ -14,10 +14,11 @@ module.exports = (client, guild, user) => {
 	  if (!modLogChannel.permissionsFor(guild.me).has('SEND_MESSAGES')) return
 
 	  const embed = new Discord.RichEmbed()
-        .setTitle('🔨 Member banned')
+        .setTitle('משתמש קיבל באן')
         .setColor(colors.red)
-        .setDescription(`**Total member count:** \`${guild.memberCount}\`\n<@${user.id}> was banned from the Discord.`)
+        .setDescription(`**סהכ משתמשים** \`${guild.memberCount}\` \n\n <@${user.id}>`)
         .setThumbnail(user.displayAvatarURL)
+        .setFooter('הודעה אוטומטית')
         .setTimestamp()
 
 		modLogChannel.send(embed)
