@@ -54,8 +54,10 @@ module.exports = (client, member) => {
       const embed = new Discord.RichEmbed()
         .setAuthor('𝒲𝐸𝐿𝒞𝒪𝑀𝐸')
         .setColor(colors.green)
-        .setDescription(`\n <a:pica:693846940743499846> \xa0\xa0 <@${member.user.id}> שלום לך \n\n **סהכ משתמשים** \`${member.guild.memberCount}\``)
+        .setDescription(`\n <a:pica:693846940743499846> \xa0\xa0 <@${member.user.id}> \n\n **סהכ משתמשים** \`${member.guild.memberCount}\``)
         .setThumbnail(`${member.user.displayAvatarURL}`)
+        .setFooter('הודעה אוטומטית')
+        
       modLogChannel.send(embed)
  		}
   }
