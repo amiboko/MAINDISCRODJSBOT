@@ -12,8 +12,9 @@ module.exports = (client, member) => {
       const embed = new Discord.RichEmbed()
         .setAuthor('𝓑𝓨𝓔 𝓑𝓨𝓔')
         .setColor(colors.red)
-        .setDescription(`\n**סהכ משתמשים** \`${member.guild.memberCount}\`\n\n<a:pica:693846940743499846> \xa0\xa0 עזב אותנו <@${member.user.id}>`)
+        .setDescription(`\n**סהכ משתמשים** \`${member.guild.memberCount}\`\n\n<a:pica:693846940743499846> \xa0\xa0 <@${member.user.id}>`)
         .setThumbnail(`${member.user.displayAvatarURL}`)
+        .setFooter('הודעה אוטומטית')
         
 
       modLogChannel.send(embed)
