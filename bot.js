@@ -142,9 +142,6 @@ client.on('ready', () => {
 
 
 
-
-
-
  client.on('message', async message => {
 
   let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מכוער'
@@ -174,9 +171,68 @@ client.on('ready', () => {
   }
 });
 
+client.on('message', async message => {
+  let orenuseless = 
+  [
+
+      "מי זורם למשחק ללא חילועים",
+      "משהוא מעונין ברכיבה על סוס אולי?",
+      "איך הסוס שלי?",
+      "RED DEAD משהוא?",
+      "מי עייף מקוד וזורם על קצת רכיבת סוסים",
+      "איזה נוף אחי!",
+
+  ];
+
+  let factnum = Math.floor((Math.random() * orenuseless.length));
+
+  let factembed = new Discord.RichEmbed()
+  .setColor("#790000")
+  .setTitle(orenuseless[factnum])
+  .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/oren.gif')
+
+  if(message.content === 'אורן')
+  
+   {
+      message.channel.send(factembed);
+   }
+
+  if(message.content === 'oren')
+  
+   {
+      message.channel.send(factembed);
+   }
+
+   if(message.content.includes('Blackprop'))
+ 
+   {
+      message.channel.send(factembed);
+   }
+   
+   if(message.content.includes('RED'))
+  
+   {
+      message.channel.send(factembed);
+   }
+
+   if(message.content.includes('red'))
+  
+   {
+      message.channel.send(factembed);
+   }
+
+   if(message.content.includes('DEAD'))
+  
+   {
+      message.channel.send(factembed);
+   }
+
+   if (message.author.bot) return;
+});
+
 
 client.on('message', async message => {
-  let factsuseless = 
+  let orenuseless = 
   [
 
       "מי בא לחלע?!",
@@ -188,11 +244,11 @@ client.on('message', async message => {
 
   ];
 
-  let factnum = Math.floor((Math.random() * factsuseless.length));
+  let factnum = Math.floor((Math.random() * orenuseless.length));
 
   let factembed = new Discord.RichEmbed()
   .setColor("#000000")
-  .setTitle(factsuseless[factnum])
+  .setTitle(orenuseless[factnum])
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
 
   if(message.content === 'קוד')
@@ -271,28 +327,28 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   }
 });
 
+
 client.on('message', message => {
   if(message.content.includes(`${client.user.id}`)) {
     const embed2 = new Discord.RichEmbed()
-    .setTitle('אתה אוהב לתייג בוטים אה')
-    .setDescription(`
-       שאלה קטנה
-
+    .setTitle('שלום גם לך')
+    .setDescription(message.author + `
+    מכיוון שתייגת אותי, יש לי שאלה קטנה
         **מה אתה מרגיש כלפיי?**
         `)
-    .addField(`אפשרות 2`   ,  `אוהב יותר מאח`, true)
-    .addField(`אפשרות 1`   ,  `שונא אמן תקרוס`, true)
+        .addField(`רשום 2`   , 'אוהב אותי?', true)
+        .addField(`רשום 1`   , 'שונא אותי?', true)
     .setTimestamp()
-    .setFooter('1 או 2')
+    .setFooter('רשום 1 או 2')
     .setColor('#0094FB')
     if (message.author.bot) return;
       message.channel.send(embed2).then(message => message.delete(30000).catch());
 
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {maxMatches: 1 , time: 30000 });
-      collector.on('collect', message => {
-
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {maxMatches: 1 , time: 50000 });
+      collector.on('collect', message  => {
+      
 				const embed = new Discord.RichEmbed()
-          .setColor('#800000')
+          .setColor('#EE82EE')
           .setTitle(' 😍 גם אני אוהב אותך 😍 ')
           .setImage('https://www.beithillel.org.il/wp-content/uploads/2018/07/189-8820141611.jpg')
           .setDescription(`${message.author}`)
@@ -304,15 +360,26 @@ client.on('message', message => {
           .setDescription(`${message.author}`)
 
 
-        if (message.content.includes('2')) {
-          message.channel.send(embed);
+          if (message.content.includes('2')) {
+          message.channel.send(embed).then(message => message.delete(30000).catch());
+          message.delete(50000);
         } else if (message.content.includes('1'))
-        return message.channel.send(embed1);
+          return message.channel.send(embed1).then(message => message.delete(30000).catch());
+          message.delete(50000);
         });
      
         collector.on('end', collected => {
+
+          const embed3 = new Discord.RichEmbed()
+          .setColor('#54FF9F')
+          .setTitle('לא ענית לשאלה שלי ...')
+          .setImage('https://www.reactiongifs.com/wp-content/uploads/2012/11/crying-man.gif')
+          .setDescription(`${message.author}`)
+
+          if (collected.first().content != '1' && collected.first().content != '2')
+          message.channel.send(message.author +'כזה קשה לרשום 1 או 2?').then(message => message.delete(60000).catch());
           if (collected.size === 0) {
-            message.channel.send(message.author+'לא ענית לי \n  😭  😭  😭  😭 ');
+            message.channel.send(embed3).then(message => message.delete(60000).catch());
           }
         });
       }
@@ -352,16 +419,18 @@ client.on('message', message => {
 
 client.on('message', message => {
   
-  if(message.content.includes('מת')) {
+  if(message.content === 'מת') {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
-    .setTitle('`משהוא מת !?!`')
+    .setTitle(':skull: :skull: :skull: :skull: :skull: :skull: :skull: :skull: :skull: :skull: ')
     .setColor("#000000")
+    .setImage('https://media.tenor.com/images/d3b2659d7a550f43db3d6546924e6d71/tenor.gif')
 
       message.channel.send(embed);
       
   }
 });
+
 
 
 client.on('message', message => {
@@ -479,7 +548,7 @@ client.on('message', message => {
   
   if(message.content.includes('שחור')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`❔`');
+      message.channel.send(message.author + '`זה הצבע שאתה אוהב?`');
       
   }
 });
@@ -491,7 +560,7 @@ client.on('message', message => {
   
   if(message.content.includes('בוט')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`כן בבקשה`');
+      message.channel.send(message.author + '`קראת לי?`');
       
   }
 });
@@ -519,7 +588,12 @@ client.on('message', message => {
   
   if(message.content.includes('לשחק')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`יאלה אני בא`');
+
+    const embed = new Discord.RichEmbed()
+    .setColor("#0000FF")
+    .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
+
+      message.channel.send(embed);
       
   }
 });
@@ -560,7 +634,7 @@ client.on('message', message => {
       collector.on('collect', message => {
         if (message.content == "2") {
           message.channel.send(message.author + '**למדת משהו בחיים המסכנים שלך**');
-        } else return message.channel.send('`⛔`');
+        } else return message.channel.send('`⛔שמעעע אתה טמבל⛔`');
       });
      }
 });
