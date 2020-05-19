@@ -23,14 +23,14 @@ exports.run = (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['בוט'],
+  aliases: ['MASTERBOT','BOT','masterbot','bot'],
   guildOnly: false,
   permLevel: 'User'
 }
 
 exports.help = {
-  name: 'בוט',
+  name: 'מאסטרבוט',
   category: 'עזרים',
   description: 'קצת פרטים על הבוט',
-  usage: 'רשום בוט'
+  usage: 'רשום את שמי'
 }
