@@ -520,6 +520,18 @@ client.on('message', message => {
   }
 });
 
+
+client.on('message', message => {
+  
+  if(message.content.includes('Ami')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author +'\xa0\xa0'+ 'לא תשא את שמו של יוצרי לשווא');
+      
+  }
+});
+
+
+
 client.on('message', message => {
   
   if(message.content.includes('זורם')) {
@@ -683,7 +695,7 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content === '?') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`תרשום עזרה תקבל עזרה`');
+      message.channel.send(message.author + '`תרשום פקודה תקבל פקודות`');
   }
 });
 
