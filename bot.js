@@ -334,17 +334,20 @@ client.on('message', message => {
     .setTitle('שלום גם לך')
     .setDescription(message.author + `
     מכיוון שתייגת אותי, יש לי שאלה קטנה
+
         **מה אתה מרגיש כלפיי?**
         `)
-        .addField(`רשום 2`   , 'אוהב אותי?', true)
-        .addField(`רשום 1`   , 'שונא אותי?', true)
+        .addField(`רשום 2 אם אתה`   , 'אוהב אותי', true)
+        .addField(`רשום 1 אם אתה`   , 'שונא אותי', true)
     .setTimestamp()
-    .setFooter('רשום 1 או 2')
+    .setFooter('תגיב ב 1 או 2')
     .setColor('#0094FB')
     if (message.author.bot) return;
-      message.channel.send(embed2).then(message => message.delete(30000).catch());
 
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {maxMatches: 1 , time: 50000 });
+      message.channel.send(embed2).then(message => message.delete(60000).catch());
+
+      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {maxMatches: 1 , time: 60000 });
+
       collector.on('collect', message  => {
       
 				const embed = new Discord.RichEmbed()
@@ -359,14 +362,16 @@ client.on('message', message => {
           .setImage('https://i1.pngguru.com/preview/376/476/885/rad-s-64-i-hate-you-text-png-clipart.jpg')
           .setDescription(`${message.author}`)
 
-
-          if (message.content.includes('2')) {
-          message.channel.send(embed).then(message => message.delete(30000).catch());
-          message.delete(50000);
-        } else if (message.content.includes('1'))
-          return message.channel.send(embed1).then(message => message.delete(30000).catch());
-          message.delete(50000);
-        });
+          if (message.content === '2') {
+          message.channel.send(embed)
+          message.delete(message.author), 1000;
+        } 
+          else if (message.content === '1'){
+          message.channel.send(embed1)
+          message.delete(message.author), 1000;
+        }
+          
+});
      
         collector.on('end', collected => {
 
@@ -376,11 +381,9 @@ client.on('message', message => {
           .setImage('https://www.reactiongifs.com/wp-content/uploads/2012/11/crying-man.gif')
           .setDescription(`${message.author}`)
 
-          if (collected.first().content != '1' && collected.first().content != '2')
-          message.channel.send(message.author +'כזה קשה לרשום 1 או 2?').then(message => message.delete(60000).catch());
           if (collected.size === 0) {
             message.channel.send(embed3).then(message => message.delete(60000).catch());
-          }
+          } 
         });
       }
   });
