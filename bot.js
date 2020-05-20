@@ -104,7 +104,7 @@ client.on('ready', () => {
       onTick: function() {
         const embed = new Discord.RichEmbed()
         .setColor('#F0F0F0')
-        .setTitle('לילה טוב גיימרים יקרים\nאשמח אם תחלמו עליי :zany_face:')
+        .setTitle('לילה טוב גיימרים יקרים')
         .setImage('https://img.ifunny.co/images/2d510a8e25ef74cb1687319e3a488fc6c07cd7b4af62c83a3506dec9a67d695e_1.gif')
         .setFooter('הודעה אוטומטית')
         .setTimestamp()
@@ -191,6 +191,30 @@ client.on('message', async message => {
   .setTitle(orenuseless[factnum])
   .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/oren.gif')
 
+
+  if(message.content.includes('סוס'))
+  
+   {
+      message.channel.send(factembed);
+   }
+
+   if(message.content === 'Red')
+  
+   {
+      message.channel.send(factembed);
+   }
+
+   if(message.content === 'dead')
+  
+   {
+      message.channel.send(factembed);
+   }
+
+   if(message.content === 'אהרון')
+  
+   {
+      message.channel.send(factembed);
+   }
   if(message.content === 'אורן')
   
    {
@@ -451,7 +475,7 @@ client.on('message', message => {
 
 client.on('message', message => {
   
-  if(message.content.includes('קללות')) {
+  if(message.content.includes('קלל')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('`🔞`')
@@ -461,6 +485,22 @@ client.on('message', message => {
       
   }
 });
+
+
+client.on('message', message => {
+  
+  if(message.content.includes('חלע')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`💣💣💣💣💣💣💣💣💣💣💣💣💣💣💣💣💣💣💣💣`')
+    .setColor("#D61F1F")
+    .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/rambo.gif')
+
+      message.channel.send(embed);
+      
+  }
+});
+
 
 client.on('message', message => {
   
@@ -606,7 +646,7 @@ client.on('message', message => {
 
     const embed = new Discord.RichEmbed()
     .setColor("#0000FF")
-    .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
+    .setImage('https://media.giphy.com/media/d8i1XJjV2Ym53KK0Dn/giphy.gif')
 
       message.channel.send(embed);
       
@@ -654,6 +694,13 @@ client.on('message', message => {
      }
 });
 
+client.on('message', message => {
+  if(message.content == 'לא') {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`אתה בטוח?`');
+  }
+});
+
 
 client.on('message', message => {
   if(message.content == 'שירי') {
@@ -673,7 +720,7 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content.includes('אחי')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`כולנו אחים`');
+      message.channel.send(message.author +'\xa0\xa0'+  '`כולנו אחים`');
   }
 });
 
@@ -681,49 +728,49 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content.includes('כנס')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`אין מקום`');
+      message.channel.send(message.author +'\xa0\xa0'+ '`תזמין קודם`');
   }
 });
 
 client.on('message', message => {
   if(message.content.includes('סבבה')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`סבמבה`');
+      message.channel.send(message.author +'\xa0\xa0'+ '`סבמבה`');
   }
 });
 
 client.on('message', message => {
   if(message.content === '?') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`תרשום פקודה תקבל פקודות`');
+      message.channel.send(message.author +'\xa0\xa0'+ '`תרשום פקודה תקבל פקודות`');
   }
 });
 
 client.on('message', message => {
   if(message.content === '??') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`מה הסיפור שלך?`');
+      message.channel.send(message.author +'\xa0\xa0'+ '`מה הסיפור שלך?`');
   }
 });
 
 client.on('message', message => {
   if(message.content === '???') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`יש מצב שאתה גיי?`');
+      message.channel.send(message.author +'\xa0\xa0'+ '`יש מצב שאתה גיי?`');
   }
 });
 
 client.on('message', message => {
   if(message.content === '????') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`טוב מה נסגר איתך?`');
+      message.channel.send(message.author +'\xa0\xa0'+ '`טוב מה נסגר איתך?`');
   }
 });
 
 client.on('message', message => {
   if(message.content === '?????') {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`מה אתה רוצה?`');
+      message.channel.send(message.author +'\xa0\xa0'+ '`מה אתה רוצה?`');
   }
 });
 
