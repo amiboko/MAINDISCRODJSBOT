@@ -117,6 +117,25 @@ client.on('ready', () => {
   job.start();
 });
 
+client.on('message', message => {
+  
+  if(message.content.includes('לילה טוב')) {
+    if (message.author.bot) return;
+      message.channel.send('לילה טוב גם לך' + message.author);
+      
+  }
+});
+client.on('message', message => {
+  
+  if(message.content.includes('בוקר טוב')) {
+    if (message.author.bot) return;
+      message.channel.send('בוקר טוב גם לך' + message.author);
+      
+  }
+});
+
+
+
 client.on('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
@@ -538,11 +557,18 @@ client.on('message', message => {
   }
 });
 
+
 client.on('message', message => {
   
   if(message.content.includes('323057908654931968')) {
     if (message.author.bot) return;
-      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/alusin.gif');
+
+    const embed = new Discord.RichEmbed()
+    .setTitle('`🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓🤓`')
+    .setColor("#FFC0CB")
+    .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/alusin.gif')
+
+      message.channel.send(embed);
       
   }
 });
@@ -588,6 +614,14 @@ client.on('message', message => {
   }
 });
 
+client.on('message', message => {
+  
+  if(message.content.includes('סעמק')) {
+    if (message.author.bot) return;
+      message.channel.send('ערס');
+      
+  }
+});
 
 
 client.on('message', message => {
