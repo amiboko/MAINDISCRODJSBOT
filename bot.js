@@ -340,6 +340,15 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   if (!oldGame && newGame) {         
     newMember.addRole(playingRole)
 
+      if(newMember.presence.game.name === 'ROBLOX') {  
+          console.log('ROBLOX detected!');
+          client.channels.get('583575179880431616').send(newMember.user + '\xa0\xa0\xa0' + '**\n ?אתה אמיתי שאתה משחק בחרא הזה \n**', {
+              files: [
+                  "https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/ROBLOX.jpg"
+                  ]
+              });
+          }
+
     // .then(() => client.channels.get(`689067371843158026`)
     // .send(embed1))
 
@@ -350,19 +359,6 @@ client.on('presenceUpdate', (oldMember, newMember) => {
     // .send(embed2))
   }
 });
-
-client.on("presenceUpdate", (oldMember, newMember) => {
-  if(newMember.id === '539020416178454540') {
-      if(newMember.presence.game === 'ROBLOX') {  
-          console.log('ROBLOX detected!');
-          client.channels.get('583575179880431616').send(newMember.user + '\xa0\xa0\xa0' + '**\n ?אתה אמיתי שאתה משחק בחרא הזה \n**', {
-              files: [
-                  "https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/ROBLOX.jpg"
-                  ]
-              });
-          }
-      }
-  });
 
 
 client.on('message', message => {
@@ -538,6 +534,15 @@ client.on('message', message => {
     .setDescription(`${message.author}`)
 
       message.channel.send(embed);
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('323057908654931968')) {
+    if (message.author.bot) return;
+      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/alusin.gif');
       
   }
 });
