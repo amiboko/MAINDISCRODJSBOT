@@ -12,13 +12,13 @@ module.exports = (client, message) => {
 				if (!modLogChannel.permissionsFor(message.guild.me).has('VIEW_CHANNEL')) return
 				if (!modLogChannel.permissionsFor(message.guild.me).has('SEND_MESSAGES')) return
 
-				const embed = new Discord.RichEmbed()
-					.setAuthor('🗑️ הודעה נמחקה 🗑️')
-					.setColor(colors.default)
-					.setDescription(`נמחק ב${message.channel}`)
-					.setFooter('הודעה אוטומטית')
+				// const embed = new Discord.RichEmbed()
+				// 	.setAuthor('🗑️ הודעה נמחקה 🗑️')
+				// 	.setColor(colors.default)
+				// 	.setDescription(`נמחק ב${message.channel}`)
+				// 	.setFooter('הודעה אוטומטית')
 					
-				modLogChannel.send(embed)
+				// modLogChannel.send(embed)
 			}
   	}
 }
