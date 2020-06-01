@@ -159,13 +159,40 @@ client.on('ready', () => {
   job.start();
 });
 
+client.on('message', async message => {
 
+  let botlist = ['bot', 'ב ו ט', 'בוט'] 
+
+  let foundInText = false;
+  for (var i in botlist) { 
+    if (message.content.toLowerCase().includes(botlist[i].toLowerCase())) foundInText = true;
+  }
+    if (foundInText) {
+      if (message.author.bot) return;
+      //message.delete();
+
+      let answerlist = [
+              '`קראת לי?`'
+            , '`איך אוכל לעזור לך?`' 
+            ,'**כן זה אני**'
+            ,'**לא תשא את שמי לשווא**'
+            ,'**מה הקטע שך סתם לקרוא לי?**'
+            ,'**שלום**'
+            ,'**היי?**'
+            ,'**מה אתה רוצה?**'
+          ]
+      
+      let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+
+      message.channel.send(message.author +'\xa0\xa0'+ ansxd);
+  }
+});
 
  client.on('message', async message => {
 
   let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מכוער'
   , 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'מגעיל', 'טיפש',
-   'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק', 'מנוול' , 'מנוולת' , 'זין'] 
+   'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק', 'מנוול' , 'מנוולת' , 'זין','ז י ן','דבע'] 
 
   let foundInText = false;
   for (var i in blacklisted) { 
@@ -480,6 +507,29 @@ client.on('message', message => {
 
 client.on('message', message => {
   
+  if(message.content.includes('דור'))
+   {
+      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif');
+   }
+   if(message.content.includes('334670838496231426'))
+   {
+      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif');
+   }
+   if(message.content.includes('dor'))
+   {
+      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif');
+   }
+   if(message.content == 'DOR')
+   {
+      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif');
+   }
+
+  if (message.author.bot) return;
+  
+});
+
+client.on('message', message => {
+  
   if(message.content.includes('רוני')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
@@ -681,17 +731,6 @@ client.on('message', message => {
 
 
 
-
-client.on('message', message => {
-  
-  if(message.content.includes('בוט')) {
-    if (message.author.bot) return;
-      message.channel.send(message.author + '`קראת לי?`');
-      
-  }
-});
-
-
 client.on('message', message => {
   
   if(message.content.includes('מייי')) {
@@ -774,9 +813,9 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if(message.content == 'שירי') {
+  if(message.content.includes('שיר')) {
     if (message.author.bot) return;
-      message.channel.send(message.author + '`תרשום שירים תקבל שירים,`');
+      message.channel.send(message.author + '`הלו! תרשום שירים תקבל תפלייליסט שלי! אני לא זמר חתונות!`');
   }
 });
 
