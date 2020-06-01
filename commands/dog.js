@@ -7,7 +7,7 @@ exports.run = async (client, message, args, level) => {
     var result = JSON.parse(body.body)
     const embed = new Discord.RichEmbed()
       .setColor(colors.default)
-      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/MORIS.jpg')
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/morismoris1.jpg')
 
     message.channel.send(embed)
   })
