@@ -505,27 +505,24 @@ client.on('message', message => {
   
 });
 
-client.on('message', message => {
-  
-  if(message.content.includes('דור'))
-   {
-      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif');
-   }
-   if(message.content.includes('334670838496231426'))
-   {
-      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif');
-   }
-   if(message.content.includes('dor'))
-   {
-      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif');
-   }
-   if(message.content == 'DOR')
-   {
-      message.channel.send('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif');
-   }
+client.on('message', async message => {
 
-  if (message.author.bot) return;
+  let dorlist = ['dor', 'ד ו ר', 'DOR', '334670838496231426', 'דור'] 
+
+  let foundInText = false;
+  for (var i in dorlist) { 
+    if (message.content.toLowerCase().includes(dorlist[i].toLowerCase())) foundInText = true;
+  }
+    if (foundInText) {
+      if (message.author.bot) return;
+      //message.delete();
+      const embed = new Discord.RichEmbed()
+      .setTitle('🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️')
+      .setColor("#E7A847")
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif')
   
+        message.channel.send(embed);
+  }
 });
 
 client.on('message', message => {
