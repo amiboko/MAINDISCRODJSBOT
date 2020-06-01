@@ -3,18 +3,20 @@ const request = require('request')
 module.exports = async client => {
   const statusList = [
     { msg: 'WIYH MAURICE', type: 'PLAYING' },
+    { msg: 'FL STUDIO', type: 'PLAYING' },
+    { msg: 'CUBASE', type: 'PLAYING' },
     { msg: 'WITH ALEX', type: 'PLAYING' },
-    { msg: 'פקודות', type: 'PLAYING' },
+    { msg: 'פקודות', type: 'WATCHING' },
     { msg: 'WITH MATAN', type: 'PLAYING' },
     { msg: `WITH ROSLANA`, type: 'PLAYING' },
     { msg: 'Battlefield V', type: 'PLAYING' },
-    { msg: 'עזרה', type: 'PLAYING' },
+    { msg: 'עזרה', type: 'WATCHING' },
     { msg: 'YOU', type: 'WATCHING' },
     { msg: 'NETFLIX', type: 'WATCHING' },
     { msg: 'משה מתקלח', type: 'WATCHING' },
     { msg: 'WITH MOSHE', type: 'PLAYING' },
     { msg: `PORN`, type: 'WATCHING' },
-    { msg: 'YOU', type: 'LISTENING' }
+    { msg: '2YOU', type: 'LISTENING' }
   ]
 
   setInterval(async () => {
