@@ -182,6 +182,10 @@ client.on('ready', () => {
             ,'**⚠️ תרגיע עם הקללות שלך ⚠️**'
             ,'**חבל!**'
             ,'**חלאס לקלל יבור של חרא**'
+            ,'**אני באמת לא מבין למה אתה צריך להשתמש בשפה כה בוטה כל הזמן**'
+            ,'**למה לקלל למה**'
+            ,'**אזהרה אחרונה!**'
+            ,'**ההורים שלך בדוק אחים, צור קשר עם צופית גרנט**'
           ]
       
       let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
@@ -197,6 +201,7 @@ client.on('message', async message => {
       "מי זורם למשחק ללא חילועים",
       "משהוא מעונין ברכיבה על סוס אולי?",
       "איך הסוס שלי?",
+      "אני אהרון/אורן ואני אוהב סוסים",
       "RED DEAD משהוא?",
       "מי עייף מקוד וזורם על קצת רכיבת סוסים",
       "איזה נוף אחי!",
@@ -279,7 +284,9 @@ client.on('message', async message => {
   [
 
       "מי בא לחלע?!",
+      "אני רוני ולאחרונה אני מקולקל , בבקשה תוציאו אותי מהLOL",
       "יש משחק?!",
+      "רק לא LOL בבקשה",
       "אני חם!",
       "בוא נפרק!",
       "WARZONE?",
@@ -367,6 +374,18 @@ client.on('presenceUpdate', (oldMember, newMember) => {
                   ]
               });
           }
+          if(newMember.presence.game.name === 'League of Legends') {  
+            const random = [
+              'https://sd.keepcalms.com/i-w600/be-gay-and-play-league-of-legends.jpg',
+              'https://i.imgur.com/MihhDQi.jpg',
+              ]
+            console.log('League of Legends detected!');
+            client.channels.get('583575179880431616').send(newMember.user + '\n\n', {
+                file: random[Math.floor(Math.random() * random.length)
+
+                    ]
+                });
+            }
 
     // .then(() => client.channels.get(`689067371843158026`)
     // .send(embed1))
