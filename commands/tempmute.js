@@ -14,7 +14,6 @@ exports.run = async (client, message, args, level) => {
                  "אני תאנוס",
                  "אני מוריס",
                  "שתוק",
-                 "`ימים ושעות שרפתי בשביל הבוט המזדיין הזה ועוד הפכתי אותו לסי שארפ ובזה אתה משחק 🤦‍♂️`",
                  "שלום גם לך",
                  "קח אותי לקיר",
                  "אני בלי טיטול",
@@ -38,7 +37,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['שלום','היי','hey','hi','הי','וואלק','HEY','HI','ה','הלו'],
+  aliases: ['שלום','היי','hey','hi','הי','HEY','HI','הלו'],
   guildOnly: true,
   permLevel: 'User'
 }
