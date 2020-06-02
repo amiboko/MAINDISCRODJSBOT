@@ -42,7 +42,7 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'פליי',
+  name: 'תקלל נראה אותך',
   category: 'כיף',
   description: 'כנס לשיחה ותרשום  אם אתה גבר',
   usage: 'שתוק'
