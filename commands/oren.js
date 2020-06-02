@@ -45,7 +45,7 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'פליי',
+  name: 'פלייאורן',
   category: 'כיף',
   description: 'משמיע שיר בערוץ',
   usage: 'פלייאורן'
