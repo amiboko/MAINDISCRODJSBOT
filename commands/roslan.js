@@ -44,7 +44,7 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'פליי',
+  name: 'פליירוס',
   category: 'כיף',
   description: 'משמיע שיר בערוץ',
   usage: 'פליי'
