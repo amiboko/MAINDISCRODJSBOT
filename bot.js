@@ -801,20 +801,23 @@ client.on('message', message => {
      }
 });
 
-client.on('message', message => {
-  if(message.content == 'לא') {
-    if (message.author.bot) return;
-      message.channel.send(message.author + '`אתה בטוח?`');
+
+client.on('message', async message => {
+
+  let songlist = ['תשיר', 'ש י ר', 'ישיר', 'נשיר', 'שירי'] 
+
+  let foundInText = false;
+  for (var i in songlist) { 
+    if (message.content.toLowerCase().includes(songlist[i].toLowerCase())) foundInText = true;
+  }
+    if (foundInText) {
+      if (message.author.bot) return;
+      //message.delete();
+ 
+        message.channel.send(message.author + '`הלו! תרשום שירים תקבל תפלייליסט שלי! אני לא זמר חתונות!`');
   }
 });
 
-
-client.on('message', message => {
-  if(message.content.includes('שיר')) {
-    if (message.author.bot) return;
-      message.channel.send(message.author + '`הלו! תרשום שירים תקבל תפלייליסט שלי! אני לא זמר חתונות!`');
-  }
-});
 
 
 client.on('message', message => {
