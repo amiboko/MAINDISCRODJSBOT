@@ -15,7 +15,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['הודי', 'dog', 'puppy' ,'moris', 'morris', 'maurice' ,'מוריס','BLACK'],
+  aliases: ['כושי'],
   guildOnly: false,
   permLevel: 'User'
 }
