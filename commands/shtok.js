@@ -27,7 +27,7 @@ exports.conf = {
 }
 
 exports.help = {
-  name: 'פליי',
+  name: 'שתוק',
   category: 'כיף',
   description: 'כנס לשיחה ותרשום  אם אתה גבר',
   usage: 'שתוק'

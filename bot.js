@@ -134,8 +134,6 @@ client.on('message', message => {
   }
 });
 
-
-
 client.on('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
@@ -507,6 +505,58 @@ client.on('message', message => {
 
 client.on('message', async message => {
 
+  let botlist = ['Maurice', 'מ ו ר י ס', 'maurice', 'מוריס', 'maurice', '539020416178454540', 'maurice'] 
+
+  let foundInText = false;
+  for (var i in botlist) { 
+    if (message.content.toLowerCase().includes(botlist[i].toLowerCase())) foundInText = true;
+  }
+    if (foundInText) {
+      if (message.author.bot) return;
+
+      const embed1 = new Discord.RichEmbed()
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/moris0.jpg')
+      const embed2 = new Discord.RichEmbed()
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/morismoris1.jpg')
+      const embed3 = new Discord.RichEmbed()
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/morisblack.jpg')
+
+      const answerlist = [embed1,embed2,embed3]
+      
+      let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+
+      message.channel.send(ansxd);
+  }
+});
+
+client.on('message', async message => {
+
+  let botlist = ['משה', 'מושה', 'מ ש ה', 'MOSHE', 'Moshe', '228555337542664192', 'moshe'] 
+
+  let foundInText = false;
+  for (var i in botlist) { 
+    if (message.content.toLowerCase().includes(botlist[i].toLowerCase())) foundInText = true;
+  }
+    if (foundInText) {
+      if (message.author.bot) return;
+
+      const embed1 = new Discord.RichEmbed()
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/MOSHE2.gif')
+      const embed2 = new Discord.RichEmbed()
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/MOSHED-2020-3-7-10-43-13.gif')
+      const embed3 = new Discord.RichEmbed()
+      .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/moshe.gif')
+
+      const answerlist = [embed1,embed2,embed3]
+      
+      let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+
+      message.channel.send(ansxd);
+  }
+});
+
+client.on('message', async message => {
+
   let dorlist = ['dor', 'ד ו ר', 'DOR', '334670838496231426', 'דור'] 
 
   let foundInText = false;
@@ -801,20 +851,23 @@ client.on('message', message => {
      }
 });
 
-client.on('message', message => {
-  if(message.content == 'לא') {
-    if (message.author.bot) return;
-      message.channel.send(message.author + '`אתה בטוח?`');
+
+client.on('message', async message => {
+
+  let songlist = ['תשיר', 'ש י ר', 'ישיר', 'נשיר', 'שירי'] 
+
+  let foundInText = false;
+  for (var i in songlist) { 
+    if (message.content.toLowerCase().includes(songlist[i].toLowerCase())) foundInText = true;
+  }
+    if (foundInText) {
+      if (message.author.bot) return;
+      //message.delete();
+ 
+        message.channel.send(message.author + '`הלו! תרשום שירים תקבל תפלייליסט שלי! אני לא זמר חתונות!`');
   }
 });
 
-
-client.on('message', message => {
-  if(message.content.includes('שיר')) {
-    if (message.author.bot) return;
-      message.channel.send(message.author + '`הלו! תרשום שירים תקבל תפלייליסט שלי! אני לא זמר חתונות!`');
-  }
-});
 
 
 client.on('message', message => {
