@@ -833,13 +833,6 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if(message.content.includes('כנס')) {
-    if (message.author.bot) return;
-      message.channel.send(message.author +'\xa0\xa0'+ '`תזמין קודם`');
-  }
-});
-
-client.on('message', message => {
   if(message.content.includes('סבבה')) {
     if (message.author.bot) return;
       message.channel.send(message.author +'\xa0\xa0'+ '`סבמבה`');
