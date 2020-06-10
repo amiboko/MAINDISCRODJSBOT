@@ -108,7 +108,7 @@ client.on('ready', () => {
         .setImage('https://img.ifunny.co/images/2d510a8e25ef74cb1687319e3a488fc6c07cd7b4af62c83a3506dec9a67d695e_1.gif')
         .setFooter('הודעה אוטומטית')
         .setTimestamp()
-        channel.send('@everyone', embed);
+        channel.send(embed).then(message => message.delete(21600000));
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
@@ -138,17 +138,25 @@ client.on('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
   const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
-
+  let answerlist = [
+  ,'**בוקר טוב נשמות**'
+  ,'**איזה בוקר! יאלה מי בא לים?!**'
+  ,'**ואי קמתי מאוחר חיב לפתוח את הגולג**'
+  ,'**בוקר טוב לכם גיימרים יקרים**'
+  ,'**קמתי!**'
+  ,'**🌅🌅🌅בוקר!🌅🌅🌅**'
+]
+let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
   var job = new CronJob({
-      cronTime: '00 00 08 * * *', //* * * * * every minute
+      cronTime: '00 00 09 * * *', //* * * * * every minute
       onTick: function() {
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
-        .setTitle('בוקר טוב גיימרים יקרים\nשיהיה לכם אחלה יום')
+        .setTitle(ansxd)
         .setFooter('הודעה אוטומטית')
-        .setImage('https://res.cloudinary.com/teepublic/image/private/s--xYRu_bko--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1564835655/production/designs/5499185_0.jpg')
+        .setImage('https://media.giphy.com/media/TDLOCATcExXAm24MPm/source.gif')
         .setTimestamp()
-        channel.send('@everyone', embed);
+        channel.send(embed).then(message => message.delete(21600000));
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
@@ -201,7 +209,7 @@ client.on('message', async message => {
       //message.delete();
 
       let answerlist = [
-      '`סליחה! רק לי מותר לקלל פה יזיין`'
+              '`סליחה! רק לי מותר לקלל פה יזיין`'
             , '`אתה מקלל הרבה לאחרונה... הכל בסדר בבית?`' 
             ,'**מה יהיה עם הקללות**'
             ,'**⚠️ תרגיע עם הקללות שלך ⚠️**'
@@ -282,19 +290,19 @@ client.on('message', async message => {
       message.channel.send(factembed);
    }
    
-   if(message.content.includes('RED'))
+   if(message.content === 'RED')
   
    {
       message.channel.send(factembed);
    }
 
-   if(message.content.includes('red'))
+   if(message.content === 'red')
   
    {
       message.channel.send(factembed);
    }
 
-   if(message.content.includes('DEAD'))
+   if(message.content === 'DEAD')
   
    {
       message.channel.send(factembed);
@@ -397,9 +405,10 @@ client.on('presenceUpdate', (oldMember, newMember) => {
               files: [
                   "https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/ROBLOX.jpg"
                   ]
-              });
+              }).then(message => message.delete(3600000));
           }
           if(newMember.presence.game.name === 'League of Legends') {  
+            
             const random = [
               'https://sd.keepcalms.com/i-w600/be-gay-and-play-league-of-legends.jpg',
               'https://i.imgur.com/MihhDQi.jpg',
@@ -409,7 +418,9 @@ client.on('presenceUpdate', (oldMember, newMember) => {
                 file: random[Math.floor(Math.random() * random.length)
 
                     ]
-                });
+                    
+                }).then(message => message.delete(3600000));
+                
             }
 
     // .then(() => client.channels.get(`689067371843158026`)
@@ -494,7 +505,7 @@ client.on('message', message => {
    {
       message.channel.send('https://en.wikipedia.org/wiki/Shroud_(gamer)');
    }
-   if(message.content == 'שראוד')
+   if(message.content === 'שראוד')
    {
       message.channel.send('https://en.wikipedia.org/wiki/Shroud_(gamer)');
    }
@@ -702,14 +713,6 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
-  
-  if(message.content.includes('@everyone')) {
-    if (message.author.bot) return;
-      message.channel.send("@everyone" +'\xa0\xa0\xa0\xa0'+ '<a:veri:691980333968785448>');
-      
-  }
-});
 
 client.on('message', message => {
   
@@ -723,9 +726,9 @@ client.on('message', message => {
 
 client.on('message', message => {
   
-  if(message.content.includes('Ami')) {
+  if(message.content.includes('524302700695912506')) {
     if (message.author.bot) return;
-      message.channel.send(message.author +'\xa0\xa0'+ 'לא תשא את שמו של יוצרי לשווא');
+      message.channel.send(message.author +'\xa0\xa0'+ 'לא תתייג את שמו של יוצרי לשווא');
       
   }
 });
@@ -798,32 +801,17 @@ client.on('message', message => {
 
 client.on('message', message => {
   
-  if(message.content.includes('לשחק')) {
+  if(message.content.includes('שחק')) {
     if (message.author.bot) return;
 
     const embed = new Discord.RichEmbed()
     .setColor("#0000FF")
-    .setImage('https://media.giphy.com/media/d8i1XJjV2Ym53KK0Dn/giphy.gif')
+    .setImage('https://media.giphy.com/media/wAnaCmLF1ByF2/source.gif')
 
       message.channel.send(embed);
       
   }
 });
-
-client.on('message', message => {
-  if(message.content.includes('ואללק')) {
-    if (message.author.bot) return;
-      message.channel.send('ואללק' +'\xa0\xa0'+  message.author +'\xa0\xa0'+ 'אתה רוצה שהמנוולת תרקוד ותסגוד או שתשתוק?');
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 20000 });
-      collector.on('collect', message => {
-        if (message.content.includes('תרקוד')) {
-          message.channel.send(message.author + '`היא כבר רוקדת וסוגדת לך יסוטה`');
-        } else if (message.content.includes('שתוק'))
-        return message.channel.send(message.author +'\xa0\xa0'+ '`שתווווווווווווק יזין`');
-        });
-      }
-  });
-
 
 client.on('message', message => {
   if(message.content === 'כלב') {
@@ -837,20 +825,6 @@ client.on('message', message => {
         });
       }
   });
-
-client.on('message', message => {
-  if(message.content === 'כן') {
-    if (message.author.bot) return;
-      message.channel.send(message.author + '` כמה זה 1 + 1 ?`');
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1, time: 20000 });
-      collector.on('collect', message => {
-        if (message.content == "2") {
-          message.channel.send(message.author + '**למדת משהו בחיים המסכנים שלך**');
-        } else return message.channel.send('`⛔שמעעע אתה טמבל⛔`');
-      });
-     }
-});
-
 
 client.on('message', async message => {
 
