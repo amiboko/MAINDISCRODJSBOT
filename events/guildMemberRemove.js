@@ -10,13 +10,11 @@ module.exports = (client, member) => {
       if (!modLogChannel.permissionsFor(member.guild.me).has('SEND_MESSAGES')) return
 
       const embed = new Discord.RichEmbed()
-        .setAuthor('𝓑𝓨𝓔 𝓑𝓨𝓔')
-        .setColor(colors.red)
-        .setDescription(`\n**סהכ משתמשים** \`${member.guild.memberCount}\`\n\n<a:pica:693846940743499846> \xa0\xa0 <@${member.user.id}>`)
-        .setThumbnail(`${member.user.displayAvatarURL}`)
-        .setFooter('הודעה אוטומטית')
+      .setColor(colors.red)
+      .setDescription(`\n\n<@${member.user.id}>`)
+      .setThumbnail('https://media.giphy.com/media/3ohs7MNbaPYwc5mKOc/200w_d.gif')
+      .setFooter('הודעה אוטומטית')
         
-
       modLogChannel.send(embed)
     }
   }
