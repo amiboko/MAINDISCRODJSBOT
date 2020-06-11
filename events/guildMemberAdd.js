@@ -52,11 +52,11 @@ module.exports = (client, member) => {
       if (!modLogChannel.permissionsFor(member.guild.me).has('SEND_MESSAGES')) return
 
       const embed = new Discord.RichEmbed()
-        .setAuthor('𝒲𝐸𝐿𝒞𝒪𝑀𝐸')
-        .setColor(colors.green)
-        .setDescription(`\n <a:pica:693846940743499846> \xa0\xa0 <@${member.user.id}> \n\n **סהכ משתמשים** \`${member.guild.memberCount}\``)
-        .setThumbnail(`${member.user.displayAvatarURL}`)
-        .setFooter('הודעה אוטומטית')
+      .setColor(colors.green)
+      .setDescription(`<@${member.user.id}> \n\n **אתה משתמש מספר** \`#${member.guild.memberCount}\``)
+      .setThumbnail(`${member.user.displayAvatarURL}`)
+      .setImage('https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
+      .setFooter('הודעה אוטומטית')
         
       modLogChannel.send(embed)
  		}
