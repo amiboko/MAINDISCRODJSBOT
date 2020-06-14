@@ -93,20 +93,26 @@ client.on('message', (msg) => {
 	antiSpam.message(msg);
 });
 
-client.on('ready', () => {
+client.once('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
   const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
-
+  let answerlist = [
+    '**לילה טוב נשמות**' 
+    ,'**ואי אני גמור יאלה לילה טוב **'  
+    ,'**אני עיייייף זזתי לישון**'  
+    ,'**הגיע הזמן לישון, נא לא להפריע לי**'  
+    ,'**לילה!**'  
+    ,'**💤💤💤 לילה טובבב 💤💤💤**']
+let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
   var job = new CronJob({
-      // cronTime: '00 03 00 * * 1-7', // 00:03:00
       cronTime: '00 59 23 * * *', //* * * * * every minute
       onTick: function() {
         const embed = new Discord.RichEmbed()
-        .setColor('#F0F0F0')
-        .setTitle('לילה טוב גיימרים יקרים')
-        .setImage('https://img.ifunny.co/images/2d510a8e25ef74cb1687319e3a488fc6c07cd7b4af62c83a3506dec9a67d695e_1.gif')
+        .setColor('#FFFF00')
+        .setTitle(ansxd)
         .setFooter('הודעה אוטומטית')
+        .setImage('https://media.giphy.com/media/cAuwW15e54lFGXoMyc/giphy.gif')
         .setTimestamp()
         channel.send(embed).then(message => message.delete(21600000));
         console.log(moment.tz('Israel').format('HH:mm:ss'))
@@ -134,18 +140,11 @@ client.on('message', message => {
   }
 });
 
-client.on('ready', () => {
+client.once('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
   const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
-  let answerlist = [
-  ,'**בוקר טוב נשמות**'
-  ,'**איזה בוקר! יאלה מי בא לים?!**'
-  ,'**ואי קמתי מאוחר חיב לפתוח את הגולג**'
-  ,'**בוקר טוב לכם גיימרים יקרים**'
-  ,'**קמתי!**'
-  ,'**🌅🌅🌅בוקר!🌅🌅🌅**'
-]
+  let answerlist = ['**בוקר טוב נשמות**'  ,'**איזה בוקר! יאלה מי בא לים?!**'  ,'**ואי קמתי מאוחר חיב לפתוח את הגולג**'  ,'**בוקר טוב לכם גיימרים יקרים**'  ,'**קמתי!**'  ,'**🌅🌅🌅בוקר!🌅🌅🌅**']
 let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
   var job = new CronJob({
       cronTime: '00 00 09 * * *', //* * * * * every minute
