@@ -180,9 +180,9 @@ client.on('message', async message => {
               '`קראת לי?`'
             , '`איך אוכל לעזור לך?`' 
             ,'**כן זה אני**'
-            ,'**לא תשא את שמי לשווא**'
+            ,'**לא תתייג את שמי לשווא**'
             ,'**מה הקטע שך סתם לקרוא לי?**'
-            ,'**שלום**'
+            ,'**אני חכם אתה טיפש**'
             ,'**היי?**'
             ,'**מה אתה רוצה?**'
           ]
@@ -193,11 +193,13 @@ client.on('message', async message => {
   }
 });
 
+
+
  client.on('message', async message => {
 
   let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מכוער'
   , 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'מגעיל', 'טיפש',
-   'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק', 'מנוול' , 'מנוולת' , 'זין','ז י ן','דבע'] 
+   'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק', 'מנוול' , 'מנוולת' , 'זין','ז י ן','דבע','ינעל','גרוע'] 
 
   let foundInText = false;
   for (var i in blacklisted) { 
@@ -435,7 +437,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 
 client.on('message', message => {
-  if(message.content.includes(`${client.user.id}`)) {
+  if(message.content === (`${client.user.id}`)) {
     const embed2 = new Discord.RichEmbed()
     .setTitle('שלום גם לך')
     .setDescription(message.author + `
@@ -541,7 +543,7 @@ client.on('message', async message => {
 
 client.on('message', async message => {
 
-  let botlist = ['משה', 'מושה', 'מ ש ה', 'MOSHE', 'Moshe', '228555337542664192', 'moshe'] 
+  let botlist = ['מושה', 'מ ש ה', 'MOSHE', 'Moshe', '228555337542664192', 'moshe'] 
 
   let foundInText = false;
   for (var i in botlist) { 
@@ -722,16 +724,6 @@ client.on('message', message => {
   }
 });
 
-
-client.on('message', message => {
-  
-  if(message.content.includes('524302700695912506')) {
-    if (message.author.bot) return;
-      message.channel.send(message.author +'\xa0\xa0'+ 'לא תתייג את שמו של יוצרי לשווא');
-      
-  }
-});
-
 client.on('message', message => {
   
   if(message.content.includes('סעמק')) {
@@ -827,7 +819,7 @@ client.on('message', message => {
 
 client.on('message', async message => {
 
-  let songlist = ['תשיר', 'ש י ר', 'ישיר', 'נשיר', 'שירי'] 
+  let songlist = ['תשיר', 'ש י ר', 'ישיר', 'נשיר','נגן','מנגינה'] 
 
   let foundInText = false;
   for (var i in songlist) { 
