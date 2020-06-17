@@ -820,19 +820,20 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
-  
-  if(message.content.includes('שחק')) {
-    if (message.author.bot) return;
+client.on("message", message => {
+  message.guild.roles.get('671635962228637696').members.map(m=>`<@${m.user.id}>`);
 
-    const embed = new Discord.RichEmbed()
-    .setColor("#0000FF")
-    .setImage('https://media.giphy.com/media/wAnaCmLF1ByF2/source.gif')
-
-      message.channel.send(embed);
-      
+  if(message.content == 'שחק') {
+      const ListEmbed = new Discord.RichEmbed()
+          .setTitle('תייגתי בשבילך את מי שמשחק')
+          .setColor("#0000FF")
+          .addField('תזמינו אל תיהיו קקות', ':video_game::video_game::video_game::video_game::video_game::video_game:')
+          .setImage('https://media.giphy.com/media/wAnaCmLF1ByF2/source.gif')
+          .setDescription(message.guild.roles.get('671635962228637696').members.map(m=>`<@${m.user.id}>`).join('\n'));
+      message.channel.send(ListEmbed);                    
   }
 });
+
 
 client.on('message', message => {
   if(message.content === 'כלב') {
