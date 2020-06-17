@@ -823,7 +823,7 @@ client.on('message', message => {
 client.on("message", message => {
   message.guild.roles.get('671635962228637696').members.map(m=>`<@${m.user.id}>`);
 
-  if(message.content == 'שחק') {
+  if(message.content.includes('שחק')) {
       const ListEmbed = new Discord.RichEmbed()
           .setTitle('תייגתי בשבילך את מי שמשחק')
           .setColor("#0000FF")
