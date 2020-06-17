@@ -166,6 +166,36 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
 
 client.on('message', async message => {
 
+  let botlist = ['noob', 'אייל גולן', 'יא הומו','נוב','גיי'] 
+
+  let foundInText = false;
+  for (var i in botlist) { 
+    if (message.content.toLowerCase().includes(botlist[i].toLowerCase())) foundInText = true;
+  }
+    if (foundInText) {
+      if (message.author.bot) return;
+      //message.delete();
+
+      let answerlist = [            '**גילית כבר שאתה הומו?**'
+            ,'**קוקסינל מטומטם**'
+            ,'**עכשיו אתה מבין למה אין לך חברים?**'
+            ,'**לפי החישובים שלי נמצא כי אתה 100% גיי**'
+            ,'**אתה צריך טיפול נשמה**'
+            ,'**יש לי פסיכיאטרית מקצועית להביא לך מספר?**'
+          ]
+      
+      let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+
+      message.channel.send(message.author +'\xa0\xa0'+ ansxd);
+  }
+});
+
+
+
+
+
+client.on('message', async message => {
+
   let botlist = ['bot', 'ב ו ט', 'בוט'] 
 
   let foundInText = false;
@@ -398,29 +428,29 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   if (!oldGame && newGame) {         
     newMember.addRole(playingRole)
 
-      if(newMember.presence.game.name === 'ROBLOX') {  
-          console.log('ROBLOX detected!');
-          client.channels.get('583575179880431616').send(newMember.user + '\xa0\xa0\xa0' + '**\n ?אתה אמיתי שאתה משחק בחרא הזה \n**', {
-              files: [
-                  "https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/ROBLOX.jpg"
-                  ]
-              }).then(message => message.delete(3600000));
-          }
-          if(newMember.presence.game.name === 'League of Legends') {  
+      // if(newMember.presence.game.name === 'ROBLOX') {  
+      //     console.log('ROBLOX detected!');
+      //     client.channels.get('583575179880431616').send(newMember.user + '\xa0\xa0\xa0' + '**\n ?אתה אמיתי שאתה משחק בחרא הזה \n**', {
+      //         files: [
+      //             "https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/ROBLOX.jpg"
+      //             ]
+      //         }).then(message => message.delete(3600000));
+      //     }
+      //     if(newMember.presence.game.name === 'League of Legends') {  
             
-            const random = [
-              'https://sd.keepcalms.com/i-w600/be-gay-and-play-league-of-legends.jpg',
-              'https://i.imgur.com/MihhDQi.jpg',
-              ]
-            console.log('League of Legends detected!');
-            client.channels.get('583575179880431616').send(newMember.user + '\n\n', {
-                file: random[Math.floor(Math.random() * random.length)
+      //       const random = [
+      //         'https://sd.keepcalms.com/i-w600/be-gay-and-play-league-of-legends.jpg',
+      //         'https://i.imgur.com/MihhDQi.jpg',
+      //         ]
+      //       console.log('League of Legends detected!');
+      //       client.channels.get('583575179880431616').send(newMember.user + '\n\n', {
+      //           file: random[Math.floor(Math.random() * random.length)
 
-                    ]
+      //               ]
                     
-                }).then(message => message.delete(3600000));
+      //           }).then(message => message.delete(3600000));
                 
-            }
+      //       }
 
     // .then(() => client.channels.get(`689067371843158026`)
     // .send(embed1))
