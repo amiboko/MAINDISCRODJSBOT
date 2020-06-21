@@ -90,7 +90,7 @@ module.exports = async (client, message) => {
         cooled.set(message.author.id, true)
         setTimeout(async () => {
           cooled.delete(message.author.id)
-        }, 60000)
+        }, 10000)
       }
     }
 
