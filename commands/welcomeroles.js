@@ -40,3 +40,10 @@ exports.conf = {
     guildOnly: true,
     permLevel: 'Administrator'
   }
+
+  exports.help = {
+    name: 'רול',
+    category: 'Administrator',
+    description: 'מייצר רולים',
+    usage: 'רול'
+  }
