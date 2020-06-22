@@ -3,6 +3,7 @@
 const config = {
   owners: ['524302700695912506'],
   managers: [],
+  movers: ['323057908654931968'],
   admins: [],
   devs:[],
   mods:[],
@@ -17,7 +18,7 @@ const config = {
     prefix: '',
   language: 'en-US',
     modLogChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
-    modRole: 'Moderator',
+    modRole: '',
     adminRole: 'Administrator',
     muteRole: 'Muted',
     noPermissionNotice: 'true',
@@ -51,17 +52,24 @@ const config = {
 
     {
       level: 2,
-      name: 'Moderator',
+      name: 'MOVER',
 
-      check: (message) => {
-        try {
-          const modRole = message.guild.roles.find(r => r.name.toLowerCase() === client.getSettings(message.guild.id).modRole.toLowerCase())
-          if (modRole && message.member.roles.has(modRole.id) || message.member.hasPermission('MANAGE_MESSAGES')) return true
-        } catch (e) {
-          return false
-        }
-      }
+      check: (message) => config.movers.includes(message.author.id)
     },
+
+    // {
+    //   level: 2,
+    //   name: 'Moderator',
+
+    //   check: (message) => {
+    //     try {
+    //       const modRole = message.guild.roles.find(r => r.name.toLowerCase() === client.getSettings(message.guild.id).modRole.toLowerCase())
+    //       if (modRole && message.member.roles.has(modRole.id) || message.member.hasPermission('MANAGE_MESSAGES')) return true
+    //     } catch (e) {
+    //       return false
+    //     }
+    //   }
+    // },
 
     {
       level: 3,
