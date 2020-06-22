@@ -166,7 +166,7 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
 
 client.on('message', async message => {
 
-  let botlist = ['noob', 'אייל גולן', 'יא הומו','נוב','גיי'] 
+  let botlist = ['noob', 'אייל גולן', 'יא הומו','נוב','גיי','בוט הומו','בוט זיין','בוט זין', 'בוט מוצץ', 'בוט מסריח', 'בוט מזדיין'] 
 
   let foundInText = false;
   for (var i in botlist) { 
@@ -190,38 +190,32 @@ client.on('message', async message => {
   }
 });
 
+// client.on('message', async message => {
 
+//   let botlist = [''] 
 
+//   let foundInText = false;
+//   for (var i in botlist) { 
+//     if (message.content.toLowerCase().includes(botlist[i].toLowerCase())) foundInText = true;
+//   }
+//     if (foundInText) {
+//       if (message.author.bot) return;
+//       //message.delete();
 
+//       let answerlist = [
 
-client.on('message', async message => {
-
-  let botlist = ['bot', 'ב ו ט', 'בוט'] 
-
-  let foundInText = false;
-  for (var i in botlist) { 
-    if (message.content.toLowerCase().includes(botlist[i].toLowerCase())) foundInText = true;
-  }
-    if (foundInText) {
-      if (message.author.bot) return;
-      //message.delete();
-
-      let answerlist = [
-              '`קראת לי?`'
-            , '`איך אוכל לעזור לך?`' 
-            ,'**כן זה אני**'
-            ,'**לא תתייג את שמי לשווא**'
-            ,'**מה הקטע שך סתם לקרוא לי?**'
-            ,'**אני חכם אתה טיפש**'
-            ,'**היי?**'
-            ,'**מה אתה רוצה?**'
-          ]
+//             ,'**כן זה אני**'
+//             ,'**לא תתייג את שמי לשווא**'
+//             ,'**מה הקטע שך סתם לקרוא לי?**'
+//             ,'**אני חכם אתה טיפש**'
+//             ,'**מה אתה רוצה?**'
+//           ]
       
-      let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+//       let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
 
-      message.channel.send(message.author +'\xa0\xa0'+ ansxd);
-  }
-});
+//       message.channel.send(message.author +'\xa0\xa0'+ ansxd);
+//   }
+// });
 
 
 
@@ -229,7 +223,7 @@ client.on('message', async message => {
 
   let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מכוער'
   , 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'מגעיל', 'טיפש',
-   'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק', 'מנוול' , 'מנוולת' , 'זין','ז י ן','דבע','ינעל','גרוע'] 
+   'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק', 'מנוול' , 'מנוולת' , 'זין','ז י ן','דבע','ינעל','גרוע','ימיזדיין','ז ו נ ה',' ש ר מ ו ט ה','ב י צ י ם'] 
 
   let foundInText = false;
   for (var i in blacklisted) { 
@@ -255,6 +249,21 @@ client.on('message', async message => {
       let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
 
       message.channel.send(message.author +'\xa0\xa0'+ ansxd);
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('שיחה')) {
+    if (message.author.bot) return;
+
+    const embed = new Discord.RichEmbed()
+    .setColor("#0000FF")
+    .setTitle('תלחץ על הגויסטיק')
+    .setDescription('[🎮](https://discordapp.com/channels/583574396686434304/724579671403921459/724601371134918666)')
+
+      message.channel.send(embed);
+      
   }
 });
 
@@ -467,9 +476,9 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 
 
 client.on('message', message => {
-  if(message.content === (`${client.user.id}`)) {
+  const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`)
+  if (message.content.match(prefixMention)) {
     const embed2 = new Discord.RichEmbed()
-    .setTitle('שלום גם לך')
     .setDescription(message.author + `
     מכיוון שתייגת אותי, יש לי שאלה קטנה
 
@@ -749,7 +758,7 @@ client.on('message', message => {
   
   if(message.content.includes('חכם')) {
     if (message.author.bot) return;
-      message.channel.send(message.author +'\xa0\xa0'+ '<a:veri:691980335235334155>');
+      message.channel.send('<a:veri:691980335235334155>');
       
   }
 });
@@ -763,6 +772,23 @@ client.on('message', message => {
   }
 });
 
+client.on('message', message => {
+  
+  if(message.content.includes('דופק אותך')) {
+    if (message.author.bot) return;
+      message.channel.send('איפה לדפוק אותך?');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('אמא שלך')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author +'\xa0\xa0'+'אמא שלך **אוהבת** את השירותים שלי');
+      
+  }
+});
 
 client.on('message', message => {
   
@@ -820,8 +846,6 @@ client.on('message', message => {
   }
 });
 
-
-
 client.on('message', message => {
   if(message.content === 'כלב') {
     if (message.author.bot) return;
@@ -847,11 +871,9 @@ client.on('message', async message => {
       if (message.author.bot) return;
       //message.delete();
  
-        message.channel.send(message.author + '`הלו! תרשום שירים תקבל תפלייליסט שלי! אני לא זמר חתונות!`');
+        message.channel.send(message.author + '`הלו! תכתוב **שירים** תקבל תפלייליסט שלי! אני לא זמר חתונות!`');
   }
 });
-
-
 
 client.on('message', message => {
   if(message.content == 'מתן') {
@@ -871,7 +893,7 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content.includes('סבבה')) {
     if (message.author.bot) return;
-      message.channel.send(message.author +'\xa0\xa0'+ '`סבמבה`');
+      message.channel.send('`סבמבה`');
   }
 });
 
