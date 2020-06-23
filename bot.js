@@ -509,12 +509,13 @@ client.on('message', (message) => {
           member[1].setMute(false)
           message.channel.send('🔇').then(message => message.delete(10000).catch());
       }
+      if (message.author.bot) return
    }
 });
 
 client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
-  const Role = newGuildMember.guild.roles.get('671631357725638656');
-  if (!Role) {return console.error('524302700695912506' + 'שגיאה presenceUpdate')};
+  const Role = newGuildMember.guild.roles.get('671635962228637696');
+  if (!Role) {return console.error('671635962228637696' + 'שגיאה presenceUpdate')};
 
   if (newGuildMember.presence.status === 'offline') {
       newGuildMember.removeRole(Role).catch(e => {console.error(e)});
