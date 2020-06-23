@@ -36,14 +36,14 @@ exports.run = async (client, message) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['טמבל','סתום','מפגר','דביל','מסריח','דבע','זבל'],
+  aliases: [''],
   guildOnly: true,
   permLevel: 'User'
 }
 
 exports.help = {
-  name: 'תקלל נראה אותך',
+  name: '',
   category: 'כיף',
-  description: 'כנס לשיחה ותרשום  אם אתה גבר',
+  description: 'כנס לשיחה ותקלל אם אתה גבר',
   usage: 'שתוק'
 }
