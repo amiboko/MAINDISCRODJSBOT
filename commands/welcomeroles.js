@@ -13,14 +13,12 @@ exports.run = async (client, message, args) => {
         .setDescription(`
        
          יקירים, רול זה נועד לעשות קצת סדר בכל חדרי המשחק בערוץ
-         קבלת הרול כידוע תעשה אוט' בעזרת האפשרות **Game Activity** שבהגדרות שלכם
+         קבלת הרול כידוע תעשה אוט' בעזרת האפשרות **Game Activity**
          
-         בנוסף תתאפשר ידני לכאלה שלא הפעילו את האופציה בהגדרות או שחקני קונסולה
+         בנוסף תתאפשר ידני לכאלה שהאפשרות לא פעילה או לשחקני קונסולה
                   כל מה שנשאר לעשות זה פשוט ללחוץ על-🎮 לקבלת הרול 
-        
+
         ${a.toString()}
-
-
        `)
         .setColor(0xdd9323)
         .setThumbnail(client.user.avatarURL)
@@ -36,7 +34,7 @@ exports.run = async (client, message, args) => {
 
 exports.conf = {
     enabled: true,
-    aliases: ['רול'],
+    aliases: ['playingrole'],
     guildOnly: true,
     permLevel: 'Administrator'
   }
@@ -45,5 +43,5 @@ exports.conf = {
     name: 'רול',
     category: 'Administrator',
     description: 'מייצר רולים',
-    usage: 'רול'
+    usage: 'playingrole'
   }
