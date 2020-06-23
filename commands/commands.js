@@ -21,8 +21,7 @@ exports.run = (client, message, args, level) => {
       const embed = new Discord.RichEmbed()
 	  .setTitle('תפריט פקודות')
 	  .setColor(colors.default)
-    .addField(` רשימת פקודות לפי קטגוריות ${prefix}`, '\n \n `הימורים`  `כיף`  `כלים`    ')
-    .setDescription('דוגמה לבקשת פקודות, "פקודות הימורים" תקבל את כל הפקודות שקשורות להימורים')
+    .addField(` רשימת פקודות לפי קטגוריות ${prefix}`, '\n \n `פקודות הימורים` \n `פקודות כיף` \n `פקודות כלים`')
 
       message.channel.send(embed)
     } else {
@@ -49,7 +48,7 @@ exports.run = (client, message, args, level) => {
           const cat = c.help.category.toLowerCase()
           if (cat == args[0].toLowerCase()) {
             if (level < client.levelCache[c.conf.permLevel]) return
-            output += '`' + '\n' + c.help.name + '\n' + '` '
+            output += '`' + c.help.name + '\n' + '` '
           }
         })
 
