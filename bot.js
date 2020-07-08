@@ -119,35 +119,35 @@ client.on('raw', packet => {
   });
 });
 
-client.once('ready', () => {
-  const moment = require('moment');
-  const CronJob = require('cron').CronJob;
-  const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
-  let answerlist = [
-    '**לילה טוב נשמות**' 
-    ,'**ואי אני גמור יאלה לילה טוב **'  
-    ,'**אני עיייייף זזתי לישון**'  
-    ,'**הגיע הזמן לישון, נא לא להפריע לי**'  
-    ,'**לילה!**'  
-    ,'**💤💤💤 לילה טובבב 💤💤💤**']
-let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
-  var job = new CronJob({
-      cronTime: '00 59 23 * * *', //* * * * * every minute
-      onTick: function() {
-        const embed = new Discord.RichEmbed()
-        .setColor('#FFFF00')
-        .setTitle(ansxd)
-        .setFooter('הודעה אוטומטית')
-        .setImage('https://media.giphy.com/media/cAuwW15e54lFGXoMyc/giphy.gif')
-        .setTimestamp()
-        channel.send(embed).then(message => message.delete(21600000));
-        console.log(moment.tz('Israel').format('HH:mm:ss'))
-      },
-      start: false,
-      timeZone: 'Israel'
- });
-  job.start();
-});
+// client.once('ready', () => {
+//   const moment = require('moment');
+//   const CronJob = require('cron').CronJob;
+//   const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
+//   let answerlist = [
+//     '**לילה טוב נשמות**' 
+//     ,'**ואי אני גמור יאלה לילה טוב **'  
+//     ,'**אני עיייייף זזתי לישון**'  
+//     ,'**הגיע הזמן לישון, נא לא להפריע לי**'  
+//     ,'**לילה!**'  
+//     ,'**💤💤💤 לילה טובבב 💤💤💤**']
+// let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+//   var job = new CronJob({
+//       cronTime: '00 59 23 * * *', //* * * * * every minute
+//       onTick: function() {
+//         const embed = new Discord.RichEmbed()
+//         .setColor('#FFFF00')
+//         .setTitle(ansxd)
+//         .setFooter('הודעה אוטומטית')
+//         .setImage('https://media.giphy.com/media/cAuwW15e54lFGXoMyc/giphy.gif')
+//         .setTimestamp()
+//         channel.send(embed).then(message => message.delete(21600000));
+//         console.log(moment.tz('Israel').format('HH:mm:ss'))
+//       },
+//       start: false,
+//       timeZone: 'Israel'
+//  });
+//   job.start();
+// });
 
 client.on('message', message => {
   
@@ -166,29 +166,29 @@ client.on('message', message => {
   }
 });
 
-client.once('ready', () => {
-  const moment = require('moment');
-  const CronJob = require('cron').CronJob;
-  const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
-  let answerlist = ['**בוקר טוב נשמות**'  ,'**איזה בוקר! יאלה מי בא לים?!**'  ,'**ואי קמתי מאוחר חיב לפתוח את הגולג**'  ,'**בוקר טוב לכם גיימרים יקרים**'  ,'**קמתי!**'  ,'**🌅🌅🌅בוקר!🌅🌅🌅**']
-let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
-  var job = new CronJob({
-      cronTime: '00 00 09 * * *', //* * * * * every minute
-      onTick: function() {
-        const embed = new Discord.RichEmbed()
-        .setColor('#FFFF00')
-        .setTitle(ansxd)
-        .setFooter('הודעה אוטומטית')
-        .setImage('https://media.giphy.com/media/TDLOCATcExXAm24MPm/source.gif')
-        .setTimestamp()
-        channel.send(embed).then(message => message.delete(21600000));
-        console.log(moment.tz('Israel').format('HH:mm:ss'))
-      },
-      start: false,
-      timeZone: 'Israel'
- });
-  job.start();
-});
+// client.once('ready', () => {
+//   const moment = require('moment');
+//   const CronJob = require('cron').CronJob;
+//   const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
+//   let answerlist = ['**בוקר טוב נשמות**'  ,'**איזה בוקר! יאלה מי בא לים?!**'  ,'**ואי קמתי מאוחר חיב לפתוח את הגולג**'  ,'**בוקר טוב לכם גיימרים יקרים**'  ,'**קמתי!**'  ,'**🌅🌅🌅בוקר!🌅🌅🌅**']
+// let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+//   var job = new CronJob({
+//       cronTime: '00 00 09 * * *', //* * * * * every minute
+//       onTick: function() {
+//         const embed = new Discord.RichEmbed()
+//         .setColor('#FFFF00')
+//         .setTitle(ansxd)
+//         .setFooter('הודעה אוטומטית')
+//         .setImage('https://media.giphy.com/media/TDLOCATcExXAm24MPm/source.gif')
+//         .setTimestamp()
+//         channel.send(embed).then(message => message.delete(21600000));
+//         console.log(moment.tz('Israel').format('HH:mm:ss'))
+//       },
+//       start: false,
+//       timeZone: 'Israel'
+//  });
+//   job.start();
+// });
 
 client.on('message', async message => {
 
@@ -650,7 +650,26 @@ client.on('message', async message => {
       
       let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
 
-      message.channel.send(ansxd);
+      message.react('🖼️').then(() => message.react('⛔'))
+    
+      const filter = (reaction, user) => {
+          return ['🖼️', '⛔'].includes(reaction.emoji.name) && user.id === message.author.id;
+      };
+
+      message.awaitReactions(filter, { max: 1, time: 120000, errors: ['time'] }).then(collected => {const reaction = collected.first();
+      
+              if (reaction.emoji.name === '🖼️') {
+                  message.reply(ansxd).then(message.delete(300000))
+              }
+              else {
+                  message.reply('לא רוצה לא צריך');
+              }
+          })
+          .catch(collected => {
+              console.log(`${collected.size}`);
+              message.reply('אין לי כח');
+              
+          });
   }
 });
 
@@ -664,14 +683,33 @@ client.on('message', async message => {
   }
     if (foundInText) {
       if (message.author.bot) return;
-      //message.delete();
+      
       const embed = new Discord.RichEmbed()
       .setTitle('🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️🏋️‍♂️')
       .setColor("#E7A847")
       .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/dor.gif')
-  
-        message.channel.send(embed);
-  }
+
+      message.react('🖼️').then(() => message.react('⛔'))
+    
+      const filter = (reaction, user) => {
+          return ['🖼️', '⛔'].includes(reaction.emoji.name) && user.id === message.author.id;
+      };
+
+      message.awaitReactions(filter, { max: 1, time: 120000, errors: ['time'] }).then(collected => {const reaction = collected.first();
+      
+              if (reaction.emoji.name === '🖼️') {
+                  message.reply(embed).then(message.delete(300000))
+              }
+              else {
+                  message.reply('לא רוצה לא צריך');
+              }
+          })
+          .catch(collected => {
+              console.log(`${collected.size}`);
+              message.reply('אין לי כח');
+              
+          });
+    }
 });
 
 client.on('message', message => {
@@ -775,7 +813,7 @@ client.on('message', message => {
 
 client.on('message', message => {
   
-  if(message.content.includes('323057908654931968')) {
+  if(message.content.includes('668791173216731136')) {
     if (message.author.bot) return;
 
     const embed = new Discord.RichEmbed()
@@ -783,9 +821,28 @@ client.on('message', message => {
     .setColor("#FFC0CB")
     .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/alusin.gif')
 
-      message.channel.send(embed);
+      message.react('🖼️').then(() => message.react('⛔'))
+    
+      const filter = (reaction, user) => {
+          return ['🖼️', '⛔'].includes(reaction.emoji.name) && user.id === message.author.id;
+      };
+
+      message.awaitReactions(filter, { max: 1, time: 120000, errors: ['time'] }).then(collected => {const reaction = collected.first();
       
-  }
+              if (reaction.emoji.name === '🖼️') {
+                  message.reply(embed).then(message.delete(300000))
+              }
+              else {
+                  message.reply('לא רוצה לא צריך');
+              }
+          })
+          .catch(collected => {
+              console.log(`${collected.size}`);
+              message.reply('אין לי כח');
+              
+          });
+        }
+
 });
 
 client.on('message', message => {
@@ -894,19 +951,6 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
-  if(message.content === 'כלב') {
-    if (message.author.bot) return;
-      message.channel.send(message.author + 'אתה בן אדם רע או שאתה ילד קטן, בן כמה אתה?');
-      const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max: 1 , time: 20000 });
-      collector.on('collect', message => {
-        if (message.content == "25" || message.content == "26" || message.content == "27" || message.content == "28"|| message.content == "29"|| message.content == "24"|| message.content == "23") {
-          message.channel.send(message.author + '`הגיע הזמן שתשכב עם בחורה אחי והכל יסתדר`');
-        } else return message.channel.send(message.author + '`כנראה שאתה פשוט בן אדם רע`');
-        });
-      }
-  });
-
 client.on('message', async message => {
 
   let songlist = ['תשיר', 'ש י ר', 'ישיר', 'נשיר','נגן','מנגינה'] 
@@ -927,13 +971,6 @@ client.on('message', message => {
   if(message.content == 'מתן') {
     if (message.author.bot) return;
       message.channel.send(message.author +'\xa0\xa0'+ 'אם התכוונת לשמוע את השיר של מתן אז תרשום פליימתן');
-  }
-});
-
-client.on('message', message => {
-  if(message.content.includes('אחי')) {
-    if (message.author.bot) return;
-      message.channel.send(message.author +'\xa0\xa0'+  '`כולנו אחים`');
   }
 });
 
