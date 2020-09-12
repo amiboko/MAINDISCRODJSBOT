@@ -43,7 +43,7 @@
     "moment-duration-format": "^2.2.2",
     "ms": "^2.1.2",
     "new-dblapi": "^2.2.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-opus": "^0.3.3",
     "numeral": "^2.0.6",
     "one-liner-joke": "^1.2.0",
