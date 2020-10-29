@@ -489,8 +489,8 @@ client.on('presenceUpdate', (oldMember, newMember) => {
                 
       //       }
 
-    // .then(() => client.channels.get(`689067371843158026`)
-    // .send(embed1))
+     .then(() => client.channels.get(`689067371843158026`)
+    .send(embed1))
 
   } else if (oldGame && !newGame) {  
     newMember.removeRole(playingRole)
