@@ -513,16 +513,6 @@ client.on('message', (message) => {
    }
 });
 
-client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
-  const Role = newGuildMember.guild.roles.get('671635962228637696');
-  if (!Role) {return console.error('671635962228637696' + 'שגיאה presenceUpdate')};
-
-  if (newGuildMember.presence.status === 'offline') {
-      newGuildMember.removeRole(Role).catch(e => {console.error(e)});
-  }
-});
-
-
 client.on('message', message => {
   const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`)
   if (message.content.match(prefixMention)) {
