@@ -448,33 +448,28 @@ client.on('message', async message => {
     });
 
 
-client.on('presenceUpdate', (oldMember, newMember) => {
-  const guild = newMember.guild;
-  const playingRole = guild.roles.find(role => role.id === '671635962228637696');
 
-// newMember.presence.clientStatus === 'mobile'
 
-  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
+    client.on('presenceUpdate', (oldMember, newMember) => {
+      const guild = newMember.guild;
+      const playingRole = guild.roles.find(role => role.id === '671635962228637696');
+    
+      if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
+    
+      const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
+      const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+    
+      if (!oldGame && newGame) {         // Started playing.
+        newMember.addRole(playingRole)
+          .then(() => console.log(`${playingRole.name} added to ${newMember.user.tag}.`))
+          .catch(console.error);
+      } else if (oldGame && !newGame) {  // Stopped playing.
+        newMember.removeRole(playingRole)
+          .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
+          .catch(console.error);
+      }
+    });
 
-  const oldGame = oldMember.presence.activites && [0, 1].includes(oldMember.presence.game.type) ? true : false;
-  const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
-
-  const embed1 = new Discord.RichEmbed()
-  .setTitle('New Status')
-  .setColor("#3498DB")
-  .setDescription(`${newMember.user}`  + '\n\n' + `${playingRole}` + '\n' + `${newMember.presence.game}` +  '\xa0\xa0'  +'<a:itsmine:691725601966391387>')
-  .setThumbnail(`${oldMember.user.displayAvatarURL}`)
-  .setTimestamp()
-
-  const embed2 = new Discord.RichEmbed()
-  .setTitle('New Status')
-  .setColor("#3498DB")
-  .setDescription(`${newMember.user}` + '\n\n' + 'Stopped' +  `${playingRole}` + '\xa0\xa0' + '<a:veri:693846904374689803>')
-  .setThumbnail(`${oldMember.user.displayAvatarURL}`)
-  .setTimestamp()
-
-  if (!oldGame && newGame) {         
-    newMember.addRole(playingRole)
 
       // if(newMember.presence.game.name === 'ROBLOX') {  
       //     console.log('ROBLOX detected!');
@@ -500,16 +495,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
                 
       //       }
 
-     .then(() => client.channels.get(`689067371843158026`)
-    .send(embed1))
 
-  } else if (oldGame && !newGame) {  
-    newMember.removeRole(playingRole)
-
-    // .then(() => client.channels.get(`689067371843158026`)
-    // .send(embed2))
-  }
-});
 
 client.on('message', (message) => {
   if (message.content == 'בטל השתק') {
