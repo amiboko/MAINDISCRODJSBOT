@@ -93,9 +93,21 @@ client.on('message', (msg) => {
 	antiSpam.message(msg);
 });
 
+
+Client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
+  if (newGuildMember.guild.id !== "GuildID") {return false};
+  const Role = newGuildMember.guild.roles.get("771450742070444042");
+  if (!Role) {return console.error("No role found.")};
+
+  if (newGuildMember.presence.status == "offline") {
+      newGuildMember.removeRole(Role).catch(e => {console.error(e)});
+  } 
+});
+
+
 client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
-  const playingRole = guild.roles.find(role => role.id === '687404928481886288');
+  const playingRole = guild.roles.find(role => role.id === '771450742070444042');
 
   if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
 
@@ -297,20 +309,20 @@ client.on('message', async message => {
   }
 });
 
-client.on('message', message => {
+// client.on('message', message => {
   
-  if(message.content.includes('שיחה')) {
-    if (message.author.bot) return;
+//   if(message.content.includes('שיחה')) {
+//     if (message.author.bot) return;
 
-    const embed = new Discord.RichEmbed()
-    .setColor("#0000FF")
-    .setTitle('תלחץ על הגויסטיק')
-    .setDescription('[🎮](https://discordapp.com/channels/583574396686434304/724579671403921459/724601371134918666)')
+//     const embed = new Discord.RichEmbed()
+//     .setColor("#0000FF")
+//     .setTitle('תלחץ על הגויסטיק')
+//     .setDescription('[🎮](https://discordapp.com/channels/583574396686434304/724579671403921459/724601371134918666)')
 
-      message.channel.send(embed);
+//       message.channel.send(embed);
       
-  }
-});
+//   }
+// });
 
 client.on('message', async message => {
   let orenuseless = 
