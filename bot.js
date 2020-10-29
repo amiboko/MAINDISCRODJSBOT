@@ -93,6 +93,25 @@ client.on('message', (msg) => {
 	antiSpam.message(msg);
 });
 
+client.on('presenceUpdate', (oldMember, newMember) => {
+  const guild = newMember.guild;
+  const playingRole = guild.roles.find(role => role.id === '687404928481886288');
+
+  if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
+
+  const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
+  const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
+
+  if (!oldGame && newGame) {         // Started playing.
+    newMember.addRole(playingRole)
+      .then(() => console.log(`${playingRole.name} added to ${newMember.user.tag}.`))
+      .catch(console.error);
+  } else if (oldGame && !newGame) {  // Stopped playing.
+    newMember.removeRole(playingRole)
+      .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
+      .catch(console.error);
+  }
+});
 
 // client.on('raw', packet => {
 //   // We don't want this to run on unrelated packets
@@ -436,39 +455,6 @@ client.on('message', async message => {
   client.channels.get(serverStats.botCount).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`)
     });
 
-
-
-    client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
-      const Role = newGuildMember.guild.roles.get('671635962228637696');
-      if (!Role) {return console.error('671635962228637696' + 'שגיאה presenceUpdate')};
-    
-      if (newGuildMember.presence.status === 'offline') {
-          newGuildMember.removeRole(Role).catch(e => {console.error(e)});
-      }
-    });
-
-
-
-
-    client.on('presenceUpdate', (oldMember, newMember) => {
-      const guild = newMember.guild;
-      const playingRole = guild.roles.find(role => role.id === '671635962228637696');
-    
-      if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
-    
-      const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
-      const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
-    
-      if (!oldGame && newGame) {         // Started playing.
-        newMember.addRole(playingRole)
-          .then(() => console.log(`${playingRole.name} added to ${newMember.user.tag}.`))
-          .catch(console.error);
-      } else if (oldGame && !newGame) {  // Stopped playing.
-        newMember.removeRole(playingRole)
-          .then(() => console.log(`${playingRole.name} removed from ${newMember.user.tag}.`))
-          .catch(console.error);
-      }
-    });
 
 
       // if(newMember.presence.game.name === 'ROBLOX') {  
