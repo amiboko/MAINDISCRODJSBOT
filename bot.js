@@ -103,7 +103,7 @@ client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
       newGuildMember.removeRole(Role).catch(e => {console.error(e)});
 
 
-  }  else return newGuildMember.removeRole(Role).catch(e => {console.error(e)});
+  }  else return oldGuildMember.removeRole(Role).catch(e => {console.error(e)});
 });
 
 
@@ -280,7 +280,7 @@ client.on('message', async message => {
 
  client.on('message', async message => {
 
-  let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'מוצץ', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מכוער'
+  let blacklisted = ['זיין', 'גאבנו', 'סוכה', 'זונה', 'שרמוטה', 'קוקסינל', 'תחת', 'חרא', 'בולבול', 'מכוער'
   , 'דפוק', 'אידיוט', 'חמור', 'מנייאק', 'מניאק', 'FUCK', 'fuck', 'מגעיל', 'טיפש',
    'pussy', 'PUSSY', 'ass', 'ASS', 'כוסרבאק', 'כוס', 'כוסאומו','כוסראבק', 'מנוול' , 'מנוולת' , 'זין','ז י ן','דבע','ינעל','גרוע','ימיזדיין','ז ו נ ה',' ש ר מ ו ט ה','ב י צ י ם'] 
 
