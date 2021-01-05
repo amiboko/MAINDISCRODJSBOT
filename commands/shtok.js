@@ -7,7 +7,8 @@ exports.run = async (client, message) => {
 
   message.delete(60000);
 
-  if (!voiceChannel) return
+  if (!voiceChannel) return message.reply('**אם אתה גבר כנס לערוץ שיחה ותרשום שוב את מה שרשמת . . .**')
+
   voiceChannel.join()
   .then(async (connection) => {
    let dispatcher = connection.playFile('./img/botsound.mp3', {volume: 1.0});
