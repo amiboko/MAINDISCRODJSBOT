@@ -70,7 +70,7 @@ const antiSpam = new AntiSpam({
 	kickThreshold: 10, // Amount of messages sent in a row that will cause a kick.
 	banThreshold: 12, // Amount of messages sent in a row that will cause a ban.
 	muteThreshold: 5, // Amount of messages sent in a row that will cause a mute.
-	maxInterval: 1000, // Amount of time (in milliseconds) in which messages are considered spam.
+	maxInterval: 3000, // Amount of time (in milliseconds) in which messages are considered spam.
 	warnMessage: '{@user}, עקב ספאם הוספתי אותך לרשימה השחורה, במידה ותמשיך להספים תעוף אוטומטית,', // Message that will be sent in chat upon warning a user.
 	kickMessage: '**{user_tag}** קיבל קיק בעקבות ספאם', // Message that will be sent in chat upon kicking a user.
 	banMessage: '**{user_tag}** קיבל באן בעקבות ספאם', // Message that will be sent in chat upon banning a user.
@@ -101,7 +101,9 @@ client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
 
   if (newGuildMember.presence.status == "offline") {
       newGuildMember.removeRole(Role).catch(e => {console.error(e)});
-  } 
+
+
+  }  else return newGuildMember.removeRole(Role).catch(e => {console.error(e)});
 });
 
 
@@ -109,7 +111,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
   const playingRole = guild.roles.find(role => role.id === '771450742070444042');
 
-  if (newMember.user.bot || newMember.presence.clientStatus === 'mobile' || oldMember.presence.status !== newMember.presence.status) return;
+  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
 
   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
@@ -502,7 +504,7 @@ client.on('message', (message) => {
       if(!channel) return message.channel.send('כנס קודם לערוץ שיחה יחמור').then(message => message.delete(10000).catch());
       for (let member of channel.members) {
           member[1].setMute(false)
-          message.channel.send('🔇').then(message => message.delete(10000).catch());
+          message.channel.send('🔇').then(message => message.delete(50000).catch());
       }
       if (message.author.bot) return
    }
@@ -652,7 +654,7 @@ client.on('message', async message => {
           })
           .catch(collected => {
               console.log(`${collected.size}`);
-              message.reply('אין לי כח');
+              message.reply('ואי איזה קרציה אתה');
               
           });
   }
@@ -691,7 +693,7 @@ client.on('message', async message => {
           })
           .catch(collected => {
               console.log(`${collected.size}`);
-              message.reply('אין לי כח');
+              message.reply('אין לי כח אליך');
               
           });
     }
@@ -823,7 +825,7 @@ client.on('message', message => {
           })
           .catch(collected => {
               console.log(`${collected.size}`);
-              message.reply('אין לי כח');
+              message.reply('אין לי כח אליך');
               
           });
         }
@@ -970,7 +972,7 @@ client.on('message', message => {
 client.on('message', message => {
   if(message.content === '?') {
     if (message.author.bot) return;
-      message.channel.send(message.author +'\xa0\xa0'+ '`תרשום פקודה תקבל פקודות`');
+      message.channel.send(message.author +'\xa0\xa0'+ '`מה אתה לא מבין?`');
   }
 });
 
