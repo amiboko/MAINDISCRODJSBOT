@@ -97,14 +97,11 @@ client.on('message', (msg) => {
 Client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
   if (newGuildMember.guild.id !== "GuildID") {return false};
   const Role = newGuildMember.guild.roles.get("771450742070444042");
-  const Role2 = newGuildMember.guild.roles.get("583574396686434304");
   if (!Role) {return console.error("No role found.")};
 
-  if (newGuildMember.presence.status == "offline") {
+  if (newGuildMember.presence.status === "offline") {
       newGuildMember.removeRole(Role).catch(e => {console.error(e)});
-  } else {
-      newGuildMember.addRole(Role2).catch(e => {console.error(e)});
-  };
+  } 
 });
 
 client.on('presenceUpdate', (oldMember, newMember) => {
