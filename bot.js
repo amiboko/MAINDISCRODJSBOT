@@ -94,7 +94,7 @@ client.on('message', (msg) => {
 });
 
 
-Client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
+client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
   if (newGuildMember.guild.id !== "GuildID") {return false};
   const Role = newGuildMember.guild.roles.get("771450742070444042");
   if (!Role) {return console.error("No role found.")};
