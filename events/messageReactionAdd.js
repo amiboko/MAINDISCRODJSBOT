@@ -10,9 +10,9 @@ module.exports = async (client, messageReaction, user) => {
     // const b = message.guild.roles.get('485987998165499914'); // Administrator
     // const c = message.guild.roles.get('482192667766423561'); // Developer
 
-    if (['🎮'].includes(messageReaction.emoji.name) && message.channel.id === channel.id) {
+    if (['🕹️'].includes(messageReaction.emoji.name) && message.channel.id === channel.id) {
         switch (messageReaction.emoji.name) {
-            case '🎮':
+            case '🕹️':
                 member.addRole(a).catch(console.error);
                 break;
             // case '🇧':
