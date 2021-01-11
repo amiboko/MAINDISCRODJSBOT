@@ -67,8 +67,8 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     aliases: ['botmenu'],
-    guildOnly: true,
-    permLevel: 'Administrator'
+    guildOnly: false,
+    permLevel: 'user'
   }
 
   exports.help = {
