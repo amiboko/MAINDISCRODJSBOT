@@ -17,14 +17,14 @@ const config = {
   defaultSettings: {
     prefix: '',
   language: 'en-US',
-    modLogChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
+    modLogChannel: '𝗥𝗘𝗣𝗢𝗥𝗧𝗦',
     modRole: '',
     adminRole: 'Administrator',
     muteRole: 'Muted',
     noPermissionNotice: 'true',
-    deniedChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
-		acceptedChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
-    welcomeChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼',
+    deniedChannel: '𝗥𝗘𝗣𝗢𝗥𝗧𝗦',
+		acceptedChannel: '𝗥𝗘𝗣𝗢𝗥𝗧𝗦',
+    welcomeChannel: '𝗥𝗘𝗣𝗢𝗥𝗧𝗦',
     welcomeMessage: '',
     welcomeEnabled: 'true',
     pointsEnabled: 'true',
@@ -32,7 +32,7 @@ const config = {
     logChannelUpdates: 'true',
     logEmojiUpdates: 'true',
     logMemberUpdates: 'true',
-    starboardChannel: '𝓡𝓮𝓹𝓸𝓻𝓽𝓼'
+    starboardChannel: '𝗥𝗘𝗣𝗢𝗥𝗧𝗦'
   },
 
   permLevels: [
