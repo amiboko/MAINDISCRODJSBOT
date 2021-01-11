@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
 
 
     const welcome = client.channels.find(c => c.name === '📋');
-    welcome.fetchMessages({ limit: 0 }).then(collected => console.log('Fetched ' + collected.size + ' messages.')).catch(console.error);
+    welcome.fetchMessages({ limit: 100 }).then(collected => console.log('Fetched ' + collected.size + ' messages.')).catch(console.error);
     const a = message.guild.roles.get('771450742070444042'); // PLAYING
 
     const embed = new Discord.RichEmbed()
