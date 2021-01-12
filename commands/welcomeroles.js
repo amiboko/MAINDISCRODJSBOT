@@ -28,7 +28,7 @@ exports.run = async (client, message, args) => {
     
         message.channel.send(embed).then(async msg => {
             
-        msg.react('⬅').then( r => {
+        await msg.react('⬅').then( r => {
             msg.react('➡')
     
             // Filters
