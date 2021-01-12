@@ -19,9 +19,13 @@ exports.run = (client, message, args, level) => {
       })
 
       const embed = new Discord.RichEmbed()
-	  .setTitle('תפריט פקודות')
-	  .setColor(colors.default)
-    .addField(` רשימת פקודות לפי קטגוריות ${prefix}`, '\n \n `פקודות הימורים` \n `פקודות כיף` \n `פקודות כלים`')
+      .setTitle('תפריט פקודות')
+      .setColor(colors.default)
+      .setFooter(`פקודה/פקודות/בוט "כלים"`)
+      .setThumbnail(client.user.avatarURL)
+      .addField(` ➖➖➖➖➖`, '`🔨 כלים 🔨`')
+      .addField(` ➖➖➖➖➖`, '` 💲 הימורים 💲`')
+      .addField(` ➖➖➖➖➖ `, '`🎲 כיף 🎲`')
 
       message.channel.send(embed)
     } else {
@@ -69,7 +73,7 @@ exports.run = (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['פקודות', 'פקודה'],
+  aliases: ['פקודות', 'פקודה','בוט'],
   guildOnly: false,
   permLevel: 'User'
 }
