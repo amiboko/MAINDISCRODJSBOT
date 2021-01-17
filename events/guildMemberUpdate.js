@@ -7,18 +7,18 @@ module.exports = (client, oldMember, newMember) => {
 
   if (!settings.logMemberUpdates == true) return
   if (!settings.modLogChannel) return
-  if (!oldMember.guild.channels.find(c => c.name == settings.modLogChannel)) return
-  const modLogChannel = oldMember.guild.channels.find(c => c.name == settings.modLogChannel)
+  if (!oldMember.guild.channels.find(c => c.name == settings.modLogChannel2)) return
+  const modLogChannel = oldMember.guild.channels.find(c => c.name == settings.modLogChannel2)
   if (!modLogChannel.permissionsFor(oldMember.guild.me).has('VIEW_CHANNEL')) return
   if (!modLogChannel.permissionsFor(oldMember.guild.me).has('SEND_MESSAGES')) return
 
   if (oldMember.nickname !== newMember.nickname) {
     const embed = new Discord.RichEmbed()
-      .setAuthor('👤 Nickname changed')
+      .setAuthor('👤 זיהוי עריכת שם 👤')
       .setColor(colors.default)
-      .setDescription(`<@${newMember.id}> changed their nickname`)
-      .addField('Old nickname:', `${oldMember.nickname !== undefined ? `${oldMember.nickname}` : oldMember.username}`, true)
-      .addField('New nickname:', `${newMember.nickname !== undefined ? `${newMember.nickname}` : oldMember.username}`, true)
+      .setDescription(`שינה את שמו <@${newMember.id}>`)
+      .addField('ישן', `${oldMember.nickname !== undefined ? `${oldMember.nickname}` : oldMember.username}`, true)
+      .addField('חדש', `${newMember.nickname !== undefined ? `${newMember.nickname}` : oldMember.username}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
       
 
@@ -29,38 +29,12 @@ module.exports = (client, oldMember, newMember) => {
     const embed = new Discord.RichEmbed()
       .setAuthor('👤 זיהוי עריכת שם 👤')
       .setColor(colors.default)
-      .setDescription(`<@${newMember.id}>`)
-      .addField('ישן:', `${oldMember.username}`, true)
-      .addField('חדש:', `${newMember.username}`, true)
+      .setDescription(`שינה את שמו <@${newMember.id}>`)
+      .addField('ישן', `${oldMember.username}`, true)
+      .addField('חדש', `${newMember.username}`, true)
       .setThumbnail(`${oldMember.user.displayAvatarURL}`)
       .setFooter('הודעה אוטומטית')
 
       modLogChannel.send(embed).catch()
     }
-    
-  	// if (oldMember.roles !== newMember.roles) {
-      
-    // 	let output = ''
-    // 	let outputNew = ''
-
-    // 	oldMember.roles.forEach(role => { 
-    //   	output = role.name
-    //   })
-      
-    // 	newMember.roles.forEach(role => {
-    //   	outputNew = role.name
-    //   })
-      
-
-    // 	if (!output && outputNew) return
-
-    // 	embed = new Discord.RichEmbed()
-    //   .setTitle('New Status')
-    //   .setColor("#3498DB")
-    //   .setDescription('\n\n' + `${newMember.user}` + ' ' + '\n\n' + 'Stopped Playing' + '\xa0\xa0' + '<a:itsmine:691725601966391387>')
-    //   .setThumbnail(`${oldMember.user.displayAvatarURL}`)
-    	
-
-    // 	modLogChannel.send(embed).catch()
-  	// }
 }
