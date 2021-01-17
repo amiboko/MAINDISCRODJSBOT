@@ -101,6 +101,10 @@ client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
 
   if (newGuildMember.presence.status === "offline") {
       newGuildMember.removeRole(Role).catch(e => {console.error(e)});
+  }
+
+     else if (oldGuildMember.presence.status === "offline") {
+      oldGuildMember.removeRole(Role).catch(e => {console.error(e)});
   } 
 });
 
