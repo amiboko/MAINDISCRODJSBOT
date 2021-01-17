@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 exports.run = async (client, message, args) => {
 
 
-    const welcome = client.channels.find(c => c.name === '📋');
+    const welcome = client.channels.find(c => c.name === '𝙄𝙉𝙁𝙊');
     welcome.fetchMessages({ limit: 0 }).then(collected => console.log('Fetched ' + collected.size + ' messages.')).catch(console.error);
     const a = message.guild.roles.get('771450742070444042'); 
 
