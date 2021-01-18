@@ -97,22 +97,24 @@ client.on('message', (msg) => {
 client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
   if (newGuildMember.guild.id !== "GuildID") {return false};
   const Role = newGuildMember.guild.roles.get("771450742070444042");
+  const team1members = Role.members;
   if (!Role) {return console.error("No role found.")};
-
-  if (newGuildMember.presence.status === "offline") {
-      newGuildMember.removeRole(Role).catch(e => {console.error(e)});
-  }
-
-     else if (oldGuildMember.presence.status === "offline") {
-      oldGuildMember.removeRole(Role).catch(e => {console.error(e)});
-  } 
+  // const chan1 = message.guild.channels.find((channel) => channel.name === "Team 1")
+  
+  if (newGuildMember.presence.status === 'offline')
+  team1members.forEach((member) => {
+    member.removeRole(Role);
+  });
+  
 });
+
 
 client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
   const playingRole = guild.roles.find(role => role.id === '771450742070444042');
 
-  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
+  if (newMember.user.bot) return;
+  // if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
 
   const oldGame = oldMember.presence.game && [0, 1].includes(oldMember.presence.game.type) ? true : false;
   const newGame = newMember.presence.game && [0, 1].includes(newMember.presence.game.type) ? true : false;
