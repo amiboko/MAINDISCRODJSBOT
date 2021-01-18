@@ -141,12 +141,12 @@ client.on('raw', packet => {
 
 client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
   if (newGuildMember.guild.id !== "GuildID")
-  const Role = newGuildMember.guild.roles.get("771450742070444042");
-  if (!Role) {return console.error("No role found.")};
+  const role = newGuildMember.guild.roles.get('771450742070444042');
+  if (!role) {return console.error("No role found.")};
 
   if (newGuildMember.presence.status == "offline") {
-      newGuildMember.removeRole(Role).catch(e => {console.error(e)});
-      Role.members.forEach((member, i) => { // Looping through the members of Role.
+      newGuildMember.removeRole(role).catch(e => {console.error(e)});
+      role.members.forEach((member, i) => { // Looping through the members of Role.
         setTimeout(() => {
             member.roles.remove(Role); // Removing the Role.
         }, i * 1000);
