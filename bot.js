@@ -140,7 +140,7 @@ client.on('raw', packet => {
 });
 
 client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
-  const role = newGuildMember.guild.roles.get('771450742070444042');
+  const role = newGuildMember.guild.roles.get("771450742070444042");
   if (!role) {return console.error("No role found.")};
 
   if (newGuildMember.presence.status == "offline") {
