@@ -145,9 +145,9 @@ client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
 
   if (newGuildMember.presence.status == "offline") {
       newGuildMember.removeRole(role).catch(e => {console.error(e)});
-      role.members.forEach((member, i) => { // Looping through the members of Role.
+      role.newGuildMember.forEach((newGuildMember, i) => { // Looping through the members of Role.
         setTimeout(() => {
-            member.roles.remove(role); // Removing the Role.
+          newGuildMember.removeRole(role); // Removing the Role.
         }, i * 1000);
     });
   } 
