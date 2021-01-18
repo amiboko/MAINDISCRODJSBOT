@@ -147,7 +147,7 @@ client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
       newGuildMember.removeRole(role).catch(e => {console.error(e)});
       role.members.forEach((member, i) => { // Looping through the members of Role.
         setTimeout(() => {
-            member.roles.remove(Role); // Removing the Role.
+            member.roles.remove(role); // Removing the Role.
         }, i * 1000);
     });
   } 
@@ -314,13 +314,13 @@ client.on('message', async message => {
 
 client.on('message', message => {
   
-  if(message.content.includes('שיחה')) {
+  if(message.content.includes('משחק')) {
     if (message.author.bot) return;
 
     const embed = new Discord.RichEmbed()
     .setColor("#0000FF")
     .setTitle('תלחץ על הגויסטיק')
-    .setDescription('[🎮](https://discordapp.com/channels/583574396686434304/724579671403921459/724601371134918666)')
+    .setDescription('[🎮](https://discord.com/channels/583574396686434304/797539666273370182/799558096765714453)')
 
       message.channel.send(embed);
       
