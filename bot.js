@@ -308,20 +308,20 @@ client.on('message', async message => {
   }
 });
 
-client.on('message', message => {
+// client.on('message', message => {
   
-  if(message.content.includes('משחק')) {
-    if (message.author.bot) return;
+//   if(message.content.includes('משחק')) {
+//     if (message.author.bot) return;
 
-    const embed = new Discord.RichEmbed()
-    .setColor("#0000FF")
-    .setTitle('תלחץ על הגויסטיק')
-    .setDescription('[🎮](https://discord.com/channels/583574396686434304/797539666273370182/799558096765714453)')
+//     const embed = new Discord.RichEmbed()
+//     .setColor("#0000FF")
+//     .setTitle('תלחץ על הגויסטיק')
+//     .setDescription('[🎮](https://discord.com/channels/583574396686434304/797539666273370182/799558096765714453)')
 
-      message.channel.send(embed);
+//       message.channel.send(embed);
       
-  }
-});
+//   }
+// });
 
 client.on('message', async message => {
   let orenuseless = 
@@ -412,14 +412,15 @@ client.on('message', async message => {
   let orenuseless = 
   [
 
-      "מי בא לחלע?!",
-      "אני רוני ולאחרונה אני מקולקל , בבקשה תוציאו אותי מהLOL",
-      "יש משחק?!",
-      "רק לא LOL בבקשה",
-      "אני חם!",
-      "בוא נפרק!",
-      "WARZONE?",
-      "BR כן?!",
+      "אני מעדיף לישון",
+      "עזוב משחק אחי צריך לקום מוקדם מחר",
+      "איך אני ישחק שאני ככה עייף",
+      "יש מצב שנדחה את המשחק למחר?",
+      "אני עייף!",
+      "אני כבר ישחק בחלום",
+      "מנמנם טיפה ובא",
+      "אני תיקתק אוכל ולא בא",
+      "יאלה אני זו....:zzz: :zzz: :zzz: :zzz: :zzz: :zzz: ",
 
   ];
 
@@ -428,9 +429,15 @@ client.on('message', async message => {
   let factembed = new Discord.RichEmbed()
   .setColor("#000000")
   .setTitle(orenuseless[factnum])
-  .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/RONICOD.gif')
+  .setImage('https://raw.githubusercontent.com/amiboko/MAINDISCRODJSBOT/master/img/MOSHESLEEP.gif')
 
   if(message.content === 'קוד')
+  
+   {
+      message.channel.send(factembed);
+   }
+
+   if(message.content.includes('משחק'))
   
    {
       message.channel.send(factembed);
