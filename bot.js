@@ -71,6 +71,7 @@ const antiSpam = new AntiSpam({
 	banThreshold: 15, // Amount of messages sent in a row that will cause a ban.
 	muteThreshold: 2, // Amount of messages sent in a row that will cause a mute.
 	maxInterval: 3000, // Amount of time (in milliseconds) in which messages are considered spam.
+  removeBotMessagesAfter: 10000, //remove time
 	warnMessage: '{@user}, עקב ספאם הוספתי אותך לרשימה השחורה, במידה ותמשיך להספים תעוף אוטומטית,', // Message that will be sent in chat upon warning a user.
 	kickMessage: '**{user_tag}** קיבל קיק בעקבות ספאם', // Message that will be sent in chat upon kicking a user.
 	banMessage: '**{user_tag}** קיבל באן בעקבות ספאם', // Message that will be sent in chat upon banning a user.
@@ -79,8 +80,9 @@ const antiSpam = new AntiSpam({
 	maxDuplicatesKick: 5, // Amount of duplicate messages that trigger a warning.
 	maxDuplicatesBan: 15, // Amount of duplicate messages that trigger a warning.
 	maxDuplicatesMute: 2, // Amount of duplicate messages that trigger a warning.
-  removeBotMessagesAfter: 10000, //remove time
-	exemptPermissions: [ 'ADMINISTRATOR'], 
+  modLogsChannelName: '𝙐𝙋𝘿𝘼𝙏𝙀𝙎',
+  muteRoleName: [ '839824774741098506','839826034140512296'],
+	exemptPermissions: [ 'Administrator'], 
   warnEnabled: true, //enable mute
   kickEnabled: true, //enable kick
 	ignoreBots: true, // Ignore bot messages.
@@ -88,6 +90,7 @@ const antiSpam = new AntiSpam({
 	ignoredUsers: [], // Array of User IDs that get ignored.
 	removeMessages: true, // Array of User IDs that get ignored.
   removeBotMessages: true, //remove bot msgs
+  modLogsEnabled: true,
 });
 
 client.on('ready', () => console.log(`Logged in as ${client.user.tag}.`));
