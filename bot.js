@@ -67,23 +67,24 @@ const AntiSpam = require('discord-anti-spam');
 
 const antiSpam = new AntiSpam({
 	warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
-	kickThreshold: 5, // Amount of messages sent in a row that will cause a kick.
+	kickThreshold: 7, // Amount of messages sent in a row that will cause a kick.
 	banThreshold: 15, // Amount of messages sent in a row that will cause a ban.
-	muteThreshold: 2, // Amount of messages sent in a row that will cause a mute.
-	maxInterval: 3000, // Amount of time (in milliseconds) in which messages are considered spam.
+	muteThreshold: 4, // Amount of messages sent in a row that will cause a mute.
+	maxInterval: 2000, // Amount of time (in milliseconds) in which messages are considered spam.
   removeBotMessagesAfter: 10000, //remove time
 	warnMessage: '{@user}, עקב ספאם הוספתי אותך לרשימה השחורה, במידה ותמשיך להספים תעוף אוטומטית,', // Message that will be sent in chat upon warning a user.
 	kickMessage: '**{user_tag}** קיבל קיק בעקבות ספאם', // Message that will be sent in chat upon kicking a user.
 	banMessage: '**{user_tag}** קיבל באן בעקבות ספאם', // Message that will be sent in chat upon banning a user.
 	muteMessage: '**{user_tag}** הושתק בעקבות ספאם', // Message that will be sent in chat upon muting a user.
-	maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
-	maxDuplicatesKick: 5, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesWarning: 6, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesKick: 10, // Amount of duplicate messages that trigger a warning.
 	maxDuplicatesBan: 15, // Amount of duplicate messages that trigger a warning.
-	maxDuplicatesMute: 2, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesMute: 8, // Amount of duplicate messages that trigger a warning.
   modLogsChannelName: '𝙐𝙋𝘿𝘼𝙏𝙀𝙎',
   muteRoleName: "⛔ MUTED", // Name of the role that will be given to muted users!
   ignoredPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
-  warnEnabled: true, //enable mute
+  muteEnabled: true, //enable mute
+  warnEnabled: true, //enable warn
   kickEnabled: true, //enable kick
 	ignoreBots: true, // Ignore bot messages.
 	verbose: true, // Extended Logs from module.
