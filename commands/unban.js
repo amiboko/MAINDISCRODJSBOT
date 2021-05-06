@@ -24,13 +24,11 @@ message.delete(120000);
       msg.edit(message.author + 'אם תרצה אוכל להוסיף גם את שלך, תעלה אותם ותתייג אותי').then(msg.delete(60000));
     }, 60000)
   }); 
-
-
 }
 
 exports.conf = {
   enabled: true,
-  aliases: ['שירים'],
+  aliases: ['שירים','play','playlist','נגן'],
   guildOnly: true,
   permLevel: 'User'
 }
