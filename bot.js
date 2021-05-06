@@ -82,7 +82,7 @@ const antiSpam = new AntiSpam({
 	maxDuplicatesMute: 2, // Amount of duplicate messages that trigger a warning.
   modLogsChannelName: '𝙐𝙋𝘿𝘼𝙏𝙀𝙎',
   muteRoleName: [ '839824774741098506','839826034140512296'],
-	exemptPermissions: [ 'Administrator'], 
+	// exemptPermissions: [ 'Administrator'], 
   warnEnabled: true, //enable mute
   kickEnabled: true, //enable kick
 	ignoreBots: true, // Ignore bot messages.
