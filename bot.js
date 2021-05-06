@@ -954,7 +954,7 @@ client.on('message', message => {
 
 client.on('message', async message => {
 
-  let songlist = ['תשיר', 'ש י ר', 'ישיר', 'נשיר','נגן','מנגינה'] 
+  let songlist = ['תנגן', 'נגן', 'ישיר', 'נשיר','פליי','מנגינה'] 
 
   let foundInText = false;
   for (var i in songlist) { 
@@ -964,7 +964,7 @@ client.on('message', async message => {
       if (message.author.bot) return;
       //message.delete();
  
-        message.channel.send(message.author + '`הלו! תכתוב **שירים** תקבל תפלייליסט שלי! אני לא זמר חתונות!`');
+        message.channel.send(message.author + '`הלו! תכתוב **שירים** או **playlist** תקבל תפלייליסט שלי! אני לא זמר חתונות!`');
   }
 });
 
