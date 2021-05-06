@@ -67,23 +67,27 @@ const AntiSpam = require('discord-anti-spam');
 
 const antiSpam = new AntiSpam({
 	warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
-	kickThreshold: 10, // Amount of messages sent in a row that will cause a kick.
-	banThreshold: 12, // Amount of messages sent in a row that will cause a ban.
+	kickThreshold: 5, // Amount of messages sent in a row that will cause a kick.
+	banThreshold: 15, // Amount of messages sent in a row that will cause a ban.
 	muteThreshold: 2, // Amount of messages sent in a row that will cause a mute.
-	maxInterval: 1500, // Amount of time (in milliseconds) in which messages are considered spam.
+	maxInterval: 3000, // Amount of time (in milliseconds) in which messages are considered spam.
 	warnMessage: '{@user}, עקב ספאם הוספתי אותך לרשימה השחורה, במידה ותמשיך להספים תעוף אוטומטית,', // Message that will be sent in chat upon warning a user.
 	kickMessage: '**{user_tag}** קיבל קיק בעקבות ספאם', // Message that will be sent in chat upon kicking a user.
 	banMessage: '**{user_tag}** קיבל באן בעקבות ספאם', // Message that will be sent in chat upon banning a user.
 	muteMessage: '**{user_tag}** הושתק בעקבות ספאם', // Message that will be sent in chat upon muting a user.
-	maxDuplicatesWarning: 2, // Amount of duplicate messages that trigger a warning.
-	maxDuplicatesKick: 10, // Amount of duplicate messages that trigger a warning.
-	maxDuplicatesBan: 12, // Amount of duplicate messages that trigger a warning.
-	maxDuplicatesMute: 1, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesKick: 5, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesBan: 15, // Amount of duplicate messages that trigger a warning.
+	maxDuplicatesMute: 2, // Amount of duplicate messages that trigger a warning.
+  removeBotMessagesAfter: 10000, //remove time
 	exemptPermissions: [ 'ADMINISTRATOR'], 
+  warnEnabled: true, //enable mute
+  kickEnabled: true, //enable kick
 	ignoreBots: true, // Ignore bot messages.
 	verbose: true, // Extended Logs from module.
 	ignoredUsers: [], // Array of User IDs that get ignored.
 	removeMessages: true, // Array of User IDs that get ignored.
+  removeBotMessages: true, //remove bot msgs
 });
 
 client.on('ready', () => console.log(`Logged in as ${client.user.tag}.`));
