@@ -157,35 +157,32 @@ client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
   } 
 });
 
-// client.once('ready', () => {
-//   const moment = require('moment');
-//   const CronJob = require('cron').CronJob;
-//   const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
-//   let answerlist = [
-//     '**לילה טוב נשמות**' 
-//     ,'**ואי אני גמור יאלה לילה טוב **'  
-//     ,'**אני עיייייף זזתי לישון**'  
-//     ,'**הגיע הזמן לישון, נא לא להפריע לי**'  
-//     ,'**לילה!**'  
-//     ,'**💤💤💤 לילה טובבב 💤💤💤**']
-// let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
-//   var job = new CronJob({
-//       cronTime: '00 59 23 * * *', //* * * * * every minute
-//       onTick: function() {
-//         const embed = new Discord.RichEmbed()
-//         .setColor('#FFFF00')
-//         .setTitle(ansxd)
-//         .setFooter('הודעה אוטומטית')
-//         .setImage('https://media.giphy.com/media/cAuwW15e54lFGXoMyc/giphy.gif')
-//         .setTimestamp()
-//         channel.send(embed).then(message => message.delete(21600000));
-//         console.log(moment.tz('Israel').format('HH:mm:ss'))
-//       },
-//       start: false,
-//       timeZone: 'Israel'
-//  });
-//   job.start();
-// });
+client.once('ready', () => {
+  const moment = require('moment');
+  const CronJob = require('cron').CronJob;
+  const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
+  let answerlist = [
+    'שבת שלום יפים שלי' 
+    ,'שבת שלום ומבורכת לכולם'  
+    ,'יאלה מתקלח זריז והולך לבית כנסת'  
+    ,'מי אוהב את השבת?'  
+    ,'שבת היום!'  
+    ,'יאלה שבת, אנחנו נמשיך לחלע ומשה הגיי יתפלל בשבילנו']
+let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+  var job = new CronJob({
+      cronTime: '30 18 * * 5', //* * * * * every minute
+      onTick: function() {
+        const embed = new Discord.RichEmbed()
+        .setColor('#FFFF00')
+        .setTitle(ansxd)
+        channel.send(embed).then(message => message.delete(21600000));
+        console.log(moment.tz('Israel').format('HH:mm:ss'))
+      },
+      start: false,
+      timeZone: 'Israel'
+ });
+  job.start();
+});
 
 client.on('message', message => {
   
@@ -204,29 +201,26 @@ client.on('message', message => {
   }
 });
 
-// client.once('ready', () => {
-//   const moment = require('moment');
-//   const CronJob = require('cron').CronJob;
-//   const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
-//   let answerlist = ['**בוקר טוב נשמות**'  ,'**איזה בוקר! יאלה מי בא לים?!**'  ,'**ואי קמתי מאוחר חיב לפתוח את הגולג**'  ,'**בוקר טוב לכם גיימרים יקרים**'  ,'**קמתי!**'  ,'**🌅🌅🌅בוקר!🌅🌅🌅**']
-// let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
-//   var job = new CronJob({
-//       cronTime: '00 00 09 * * *', //* * * * * every minute
-//       onTick: function() {
-//         const embed = new Discord.RichEmbed()
-//         .setColor('#FFFF00')
-//         .setTitle(ansxd)
-//         .setFooter('הודעה אוטומטית')
-//         .setImage('https://media.giphy.com/media/TDLOCATcExXAm24MPm/source.gif')
-//         .setTimestamp()
-//         channel.send(embed).then(message => message.delete(21600000));
-//         console.log(moment.tz('Israel').format('HH:mm:ss'))
-//       },
-//       start: false,
-//       timeZone: 'Israel'
-//  });
-//   job.start();
-// });
+client.once('ready', () => {
+  const moment = require('moment');
+  const CronJob = require('cron').CronJob;
+  const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
+  let answerlist = ['אז מה ככה יש מכות?' , 'למה ככה רדום פה?' , 'נראה לי נדבקתם ממחלת משה שככה עייף פה','יש קוד?', 'מי בא לעשות כסף?','מה GTA מה']
+let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
+  var job = new CronJob({
+      cronTime: '00 22 * * 0-4', //* * * * * every minute
+      onTick: function() {
+        const embed = new Discord.RichEmbed()
+        .setColor('#FFFF00')
+        .setTitle(ansxd)
+        channel.send(embed).then(message => message.delete(21600000));
+        console.log(moment.tz('Israel').format('HH:mm:ss'))
+      },
+      start: false,
+      timeZone: 'Israel'
+ });
+  job.start();
+});
 
 client.on('message', async message => {
 
@@ -710,6 +704,69 @@ client.on('message', async message => {
           });
     }
 });
+
+client.on('message', message => {
+  
+  if(message.content.includes('help')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`תרשום עזרה ימטומטם מה אני גוי?!`')
+    .setColor("#000000")
+      message.channel.send(embed);
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('עומר')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`עומר אדם או לג בעומר?`')
+    .setColor("#000000")
+      message.channel.send(embed);
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('פלייבוי')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`לא תמצא פה תוכן מיני. יש פה ילד קטן לא אזכיר שמות ... משה`')
+    .setColor("#000000")
+      message.channel.send(message.author +'\xa0\xa0'+ embed);
+      
+  }
+});
+
+
+
+client.on('message', message => {
+  
+  if(message.content.includes('חאלס')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('`תגיד, יש מצב שאתה הומו בן של זונה מזדיין בתחת? לא לדבר לי פה בשפה הערבית`')
+    .setColor("#000000")
+      message.channel.send(message.author +'\xa0\xa0'+ embed);
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('כסף')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setColor("#00FF00")
+    .setImage('https://media.giphy.com/media/3o6gDWzmAzrpi5DQU8/giphy.gif')
+      message.channel.send(embed);
+      
+  }
+});
+
 
 client.on('message', message => {
   
