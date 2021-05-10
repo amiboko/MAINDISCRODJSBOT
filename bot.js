@@ -711,6 +711,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('`תרשום עזרה ימטומטם מה אני גוי?!`')
+    .setDescription(`${message.author}`)
     .setColor("#000000")
       message.channel.send(embed);
       
@@ -723,6 +724,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('`עומר אדם או לג בעומר?`')
+    .setDescription(`${message.author}`)
     .setColor("#000000")
       message.channel.send(embed);
       
@@ -735,7 +737,8 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('לא תמצא פה תוכן מיני. יש פה ילד קטן לא אזכיר שמות ... משה')
-    .setColor("#000000")
+    .setDescription(`${message.author}`)
+    .setColor("#0000FF")
       message.channel.send(message.author +'\xa0\xa0'+ embed);
       
   }
@@ -747,8 +750,9 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('בתאבון לך נשמה יקרה')
+    .setDescription(`${message.author}`)
     .setColor("#000000")
-      message.channel.send(message.author +'\xa0\xa0'+ embed);
+      message.channel.send(embed);
       
   }
 });
@@ -759,8 +763,9 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('תגיד, יש מצב שאתה הומו בן של זונה מזדיין בתחת? לא לדבר לי פה בשפה הערבית')
+    .setDescription(`${message.author}`)
     .setColor("#000000")
-      message.channel.send(message.author +'\xa0\xa0'+ embed);
+      message.channel.send(embed);
       
   }
 });
@@ -771,8 +776,9 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('תגיד, יש מצב שאתה הומו בן של זונה מזדיין בתחת? לא לדבר לי פה בשפה הערבית')
+    .setDescription(`${message.author}`)
     .setColor("#000000")
-      message.channel.send(message.author +'\xa0\xa0'+ embed);
+      message.channel.send(embed);
       
   }
 });
@@ -825,6 +831,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('`למי קראת ילד ?!`')
+    .setDescription(`${message.author}`)
     .setColor("#000000")
 
       message.channel.send(embed);
@@ -929,6 +936,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
     .setTitle('<a:veri:691980334782218240>')
+    .setDescription(`${message.author}`)
     .setColor("#0000FF")
 
       message.channel.send(embed);
@@ -1041,7 +1049,7 @@ client.on('message', message => {
 
 client.on('message', async message => {
 
-  let songlist = ['תנגן', 'נגן', 'ישיר', 'נשיר','מנגינה'] 
+  let songlist = ['תנגן', 'נגן', 'ישיר', 'נשיר','מנגינה','מוזיקה'] 
 
   let foundInText = false;
   for (var i in songlist) { 
