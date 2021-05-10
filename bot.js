@@ -734,21 +734,43 @@ client.on('message', message => {
   if(message.content.includes('פלייבוי')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
-    .setTitle('`לא תמצא פה תוכן מיני. יש פה ילד קטן לא אזכיר שמות ... משה`')
+    .setTitle('לא תמצא פה תוכן מיני. יש פה ילד קטן לא אזכיר שמות ... משה')
     .setColor("#000000")
       message.channel.send(message.author +'\xa0\xa0'+ embed);
       
   }
 });
 
-
+client.on('message', message => {
+  
+  if(message.content.includes('תאבון')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('בתאבון לך נשמה יקרה')
+    .setColor("#000000")
+      message.channel.send(message.author +'\xa0\xa0'+ embed);
+      
+  }
+});
 
 client.on('message', message => {
   
   if(message.content.includes('חאלס')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
-    .setTitle('`תגיד, יש מצב שאתה הומו בן של זונה מזדיין בתחת? לא לדבר לי פה בשפה הערבית`')
+    .setTitle('תגיד, יש מצב שאתה הומו בן של זונה מזדיין בתחת? לא לדבר לי פה בשפה הערבית')
+    .setColor("#000000")
+      message.channel.send(message.author +'\xa0\xa0'+ embed);
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('אללה')) {
+    if (message.author.bot) return;
+    const embed = new Discord.RichEmbed()
+    .setTitle('תגיד, יש מצב שאתה הומו בן של זונה מזדיין בתחת? לא לדבר לי פה בשפה הערבית')
     .setColor("#000000")
       message.channel.send(message.author +'\xa0\xa0'+ embed);
       
