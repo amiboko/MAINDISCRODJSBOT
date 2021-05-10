@@ -5,6 +5,8 @@ exports.run = async (client, message, args, level) => {
 
   const voiceChannel = message.member.voiceChannel
   
+  message.delete(10000);
+  
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/moshe.mp3', {volume: 1.0,});
