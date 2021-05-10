@@ -4,7 +4,6 @@ const colors = require('../lib/colors.json')
 exports.run = async (client, message, args, level) => {
 
   const voiceChannel = message.member.voiceChannel
-  message.delete(100000);
 
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
@@ -17,7 +16,7 @@ exports.run = async (client, message, args, level) => {
       });
 
   }
-       if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**')
+       if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**').then(message => message.delete(120000));
        setTimeout(function () { play(voiceChannel); }, 5000);
        voiceChannel.join()
        
@@ -28,7 +27,7 @@ exports.run = async (client, message, args, level) => {
       .setDescription(`${message.author}` +'\xa0' + 'ברוך הבא לנגן שלי' + '\n\n' + '`🔊 5 שניות לניגון הלהיט של רוסלנה  🔊`' + '\n\n')
       .setTimestamp()
       
-      message.channel.send(embed2).then(message => message.delete(100000));
+      message.channel.send(embed2).then(message => message.delete(300000));
 
       let channel = message.member.voiceChannel;
       for (let member of channel.members) {
@@ -38,7 +37,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['פליירוס'],
+  aliases: ['פליירוסלן','פליירוס'],
   guildOnly: true,
   permLevel: 'User'
 }
