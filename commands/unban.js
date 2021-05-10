@@ -28,7 +28,7 @@ message.delete(120000);
 
 exports.conf = {
   enabled: true,
-  aliases: ['שירים','play','playlist','נגן'],
+  aliases: ['שירים','play','playlist','נגן','פלייליסט'],
   guildOnly: true,
   permLevel: 'User'
 }
