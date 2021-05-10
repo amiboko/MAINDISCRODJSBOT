@@ -16,7 +16,7 @@ exports.run = async (client, message, args, level) => {
       });
 
   }
-       if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**').then(message => message.delete(120000));
+       if (!voiceChannel) return message.reply('**בא לך לשמוע משהו על משה? כנס לחדר שיחה קודם**').then(message => message.delete(120000));
        voiceChannel.join()
        
       const embed2 = new Discord.RichEmbed()
