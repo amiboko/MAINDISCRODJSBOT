@@ -5,12 +5,11 @@ exports.run = async (client, message) => {
 
   const voiceChannel = message.member.voiceChannel
 
-  message.delete(60000);
+  message.delete(10000);
 
-  if (!voiceChannel) return message.reply('**אם אתה גבר כנס לערוץ שיחה ותרשום שוב את מה שרשמת . . .**')
+  if (!voiceChannel) return message.reply('**אם אתה גבר כנס לערוץ שיחה ותרשום שוב את מה שרשמת . . .**').then(message => message.delete(120000));
 
-  voiceChannel.join()
-  .then(async (connection) => {
+  voiceChannel.join().then(async (connection) => {
    let dispatcher = connection.playFile('./img/botsound.mp3', {volume: 1.0});
      await dispatcher.on("end", end => {voiceChannel.leave();
         for (let member of voiceChannel.members) {member[1].setMute(false)}
@@ -22,7 +21,7 @@ exports.run = async (client, message) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['טמבל','סתום','מפגר','דביל','מסריח','דבע','זבל','שתוק'],
+  aliases: ['טמבל','סתום','מפגר','דביל','מסריח','דבע','זבל','שתוק','חרא','תחרא'],
   guildOnly: true,
   permLevel: 'User'
 }
