@@ -80,8 +80,8 @@ const antiSpam = new AntiSpam({
 	maxDuplicatesKick: 10, // Amount of duplicate messages that trigger a warning.
 	maxDuplicatesBan: 15, // Amount of duplicate messages that trigger a warning.
 	maxDuplicatesMute: 8, // Amount of duplicate messages that trigger a warning.
-  modLogsChannelName: '𝙐𝙋𝘿𝘼𝙏𝙀𝙎',
-  muteRoleName: "⛔ MUTED", // Name of the role that will be given to muted users!
+  modLogsChannelName: '𝙈𝘼𝙄𝙉',
+  muteRoleName: 'MUTED', // Name of the role that will be given to muted users!
   ignoredPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
   muteEnabled: true, //enable mute
   warnEnabled: true, //enable warn
