@@ -208,7 +208,7 @@ client.once('ready', () => {
   let answerlist = ['אז מה ככה יש מכות?' , 'למה ככה רדום פה?' , 'נראה לי נדבקתם ממחלת משה שככה עייף פה','יש קוד?', 'מי בא לעשות כסף?','מה GTA מה']
 let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
   var job = new CronJob({
-      cronTime: '35 22 * * 0-4', //* * * * * every minute
+      cronTime: '40 22 * * 0-4', //* * * * * every minute
       onTick: function() {
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
