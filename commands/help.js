@@ -59,7 +59,7 @@ exports.run = (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['עזרה', 'help'],
+  aliases: ['עזרה','/'],
   guildOnly: false,
   permLevel: 'User'
 }
