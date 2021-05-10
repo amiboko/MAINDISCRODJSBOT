@@ -4,11 +4,10 @@ const colors = require('../lib/colors.json')
 exports.run = async (client, message, args, level) => {
 
   const voiceChannel = message.member.voiceChannel
-  message.delete(31000);
   
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
-      let dispatcher = await connection.playFile('./img/aniroze.mp3', {volume: 1.0,});
+      let dispatcher = await connection.playFile('./img/moshe.mp3', {volume: 1.0,});
       await dispatcher.on('end', function () { 
           setTimeout(function () { voiceChannel.leave();}, 5000);
           for (let member of voiceChannel.members) {member[1].setMute(false)}
@@ -17,17 +16,15 @@ exports.run = async (client, message, args, level) => {
       });
 
   }
-       if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**')
+       if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**').then(message => message.delete(120000));
        voiceChannel.join()
        
       const embed2 = new Discord.RichEmbed()
-      .setTitle('🎧 MASTERBOT-TUBE 🎧')
+      .setTitle('🔇')
       .setColor("#3498DB")
-      .addField('הערוץ 🔇 זמנית לניגון הקטע', '<a:cooldoge:693846954073129051>')
-      .setDescription(`${message.author}` +'\xa0' + 'ברוך הבא לנגן שלי' + '\n\n' + '`🔊 5 שניות לניגון הלהיט של משה השראוד 🔊`' + '\n\n')
-      .setTimestamp()
+      .setDescription(`${message.author}` +'\xa0' + 'מצטרף רגע את חברה שלי יש לה משהו לומר למשה ...')
       
-      message.channel.send(embed2).then(message => message.delete(31000));
+      message.channel.send(embed2).then(message => message.delete(300000));
            setTimeout(function () { play(voiceChannel); }, 5000);
            for (let member of voiceChannel.members) {
             member[1].setMute(true)    }
@@ -35,7 +32,7 @@ exports.run = async (client, message, args, level) => {
 
 exports.conf = {
   enabled: true,
-  aliases: [''],
+  aliases: ['פליימשה','משה'],
   guildOnly: true,
   permLevel: 'User'
 }
