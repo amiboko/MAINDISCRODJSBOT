@@ -160,7 +160,7 @@ client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
 client.once('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
-  const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
+  const channel = client.channels.find(chan => chan.name === '𝙈𝘼𝙄𝙉');
   let answerlist = [
     'שבת שלום יפים שלי' 
     ,'שבת שלום ומבורכת לכולם'  
@@ -242,11 +242,11 @@ client.on('message', message => {
 client.once('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
-  const channel = client.channels.find(chan => chan.name === '𝓜𝓪𝓲𝓷');
+  const channel = client.channels.find(chan => chan.name === '𝙈𝘼𝙄𝙉');
   let answerlist = ['אז מה ככה יש מכות?' , 'למה ככה רדום פה?' , 'נראה לי נדבקתם ממחלת משה שככה עייף פה','יש קוד?', 'מי בא לעשות כסף?','מה GTA מה']
 let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
   var job = new CronJob({
-      cronTime: '00 22 * * 0-4', //* * * * * every minute
+      cronTime: '50 22 * * 0-4', //* * * * * every minute
       onTick: function() {
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
