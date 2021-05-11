@@ -25,7 +25,7 @@ exports.run = async (client, message, args, level) => {
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
       .addField('הערוץ 🔇 זמנית לניגון הקטע', '<a:cooldoge:693846954073129051>')
-      .addField('רצוי לא לעבור לערוץ אחר אחרת תתקע עם ההשתק', '"בטל השתק" לביטול ההשתק במידה ואתה טמבל"')
+      .addField('רצוי לא לעבור לערוץ אחר אחרת תתקע עם ההשתק', '"בטל השתק" לביטול ההשתק במידה ואתה טמבל')
       .setDescription(`${message.author}` +'\xa0' + 'ברוך הבא לנגן שלי' + '\n\n' + '`🔊 5 שניות לניגון הלהיט של מתן האשדודי 🔊`' + '\n\n')
       .setTimestamp()
       
