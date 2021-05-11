@@ -147,16 +147,6 @@ client.on('raw', packet => {
   });
 });
 
-client.on("presenceUpdate", (oldGuildMember, newGuildMember) => {
-  const role = newGuildMember.guild.roles.get("771450742070444042");
-  if (!role) {return console.error("No role found.")};
-
-  if (newGuildMember.presence.status == "offline") {
-      newGuildMember.removeRole(role).catch(e => {console.error(e)});
-
-  } 
-});
-
 client.once('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
@@ -187,23 +177,23 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
 client.on('voiceStateUpdate', (oldMember, newMember) => {
   const newUserChannel = newMember.voiceChannel
   const oldUserChannel = oldMember.voiceChannel
-  const channel = client.channels.get('797533178243317770');
+  // const channel = client.channels.get('797533178243317770');
 
 
-  if(oldUserChannel === undefined && newUserChannel !== '841599964143419403') {
-    channel.send(newMember + ' has been verified.');
+  if(oldUserChannel === undefined && newUserChannel == 841599964143419403) {
+    // channel.send(newMember + ' has been verified.');
     // let role = newMember.guild.roles.find(role => role.name === "Verified");
     // newMember.addRole(role);
-    const embed = new Discord.RichEmbed()
-    .setAuthor("Verificaiton")
-    .setDescription("You have been verified")
-    .setFooter(newMember.guild.name)
-    .setColor("#98AFC7")
-    newMember.sendMessage(embed);
+    // const embed = new Discord.RichEmbed()
+    // .setAuthor("Verificaiton")
+    // .setDescription("You have been verified")
+    // .setFooter(newMember.guild.name)
+    // .setColor("#98AFC7")
+    // newMember.sendMessage(embed);
     newUserChannel.join().then(connection => {
       const dispatcher = connection.playFile('./img/taverna.mp3', {volume: 1.0});
        dispatcher.on('end', function () { 
-          setTimeout(function () { newUserChannel.leave();}, 3000);
+          setTimeout(function () { newUserChannel.leave() }, 20000);
         });
       console.log("Successfully connected.");
     }).catch(e => {
@@ -214,14 +204,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
   }
 });
 
-
-
-
-
-
-
-
-
 client.on('message', message => {
   
   if(message.content.includes('לילה טוב')) {
@@ -230,6 +212,7 @@ client.on('message', message => {
       
   }
 });
+
 client.on('message', message => {
   
   if(message.content.includes('בוקר טוב')) {
