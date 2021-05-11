@@ -24,12 +24,11 @@ exports.run = async (client, message, args, level) => {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
-      .addField('הערוץ 🔇 זמנית לניגון הקטע', '<a:cooldoge:693846954073129051>')
-      .addField('רצוי לא לעבור לערוץ אחר אחרת תתקע עם ההשתק', '"בטל השתק" לביטול ההשתק במידה ואתה טמבל')
+      .addField('🔇הושתק זמנית לניגון הקטע🔇', 'רצוי לא לעבור לערוץ אחר אחרת תתקע עם ההשתק')
       .setDescription(`${message.author}` +'\xa0' + 'ברוך הבא לנגן שלי' + '\n\n' + '`🔊 5 שניות לניגון הלהיט של מתן האשדודי 🔊`' + '\n\n')
       .setTimestamp()
       
-      message.channel.send(embed2).then(message => message.delete(300000));
+      message.channel.send(embed2).then(message => message.delete(60000));
 
       let channel = message.member.voiceChannel;
       for (let member of channel.members) {
