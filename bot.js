@@ -179,8 +179,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
   const oldUserChannel = oldMember.voiceChannel
   // const channel = client.channels.get('797533178243317770');
 
-
-  if(oldUserChannel === undefined && newUserChannel == 841599964143419403) {
+  if(oldUserChannel === undefined && newUserChannel == '841599964143419403') {
     // channel.send(newMember + ' has been verified.');
     // let role = newMember.guild.roles.find(role => role.name === "Verified");
     // newMember.addRole(role);
