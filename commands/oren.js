@@ -11,7 +11,7 @@ exports.run = async (client, message, args, level) => {
     await voiceChannel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/oren.mp3', {volume: 1.0,});
       await dispatcher.on('end', function () { 
-          setTimeout(function () { voiceChannel.leave();}, 1000);
+          setTimeout(function () { voiceChannel.leave();}, 10000);
           for (let member of voiceChannel.members) {member[1].setMute(false)}
       });
 
@@ -19,7 +19,7 @@ exports.run = async (client, message, args, level) => {
 
   }
        if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**').then(message => message.delete(120000));
-       setTimeout(function () { play(voiceChannel); }, 1500);
+       setTimeout(function () { play(voiceChannel); }, 5000);
        voiceChannel.join()
        
       const embed2 = new Discord.RichEmbed()
