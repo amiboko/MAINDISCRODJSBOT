@@ -183,15 +183,16 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     // channel.send(newMember + ' has been verified.');
     // let role = newMember.guild.roles.find(role => role.name === "Verified");
     // newMember.addRole(role);
-    // const embed = new Discord.RichEmbed()
-    // .setAuthor("ברוך הבא לטברנה של אורן")
-    // .setDescription("אישתי הבוטית מבקשת להתיחס יפה לאורן \n ")
-    // .setFooter(newMember.guild.name)
-    // .setColor("#98AFC7")
-    // newMember.sendMessage(embed);
+    const embed = new Discord.RichEmbed()
+    .setAuthor("ברוך הבא לטברנה של אורן")
+    .setDescription("נא להתנהג בהתאם \n אני שומע ורואה הכל...")
+    .setFooter(newMember.guild.name)
+    .setColor("#98AFC7")
+    newMember.sendMessage(embed);
       newUserChannel.join().then(connection => {
       const dispatcher = connection.playFile('./img/taverna.mp3', {volume: 1.0});
-      setTimeout(function () {playFile(newUserChannel);}, 3000);
+      setTimeout(function () { newUserChannel.playFile() }, 3000);
+      
        dispatcher.on('end', function () { 
           setTimeout(function () { newUserChannel.leave() }, 10000);
         });
