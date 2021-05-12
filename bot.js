@@ -165,7 +165,7 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
         .setTitle(ansxd)
-        channel.send(embed).then(message => message.delete(21600000));
+        channel.send(embed).then(message => message.delete(82800000));
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
@@ -184,21 +184,22 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     // let role = newMember.guild.roles.find(role => role.name === "Verified");
     // newMember.addRole(role);
     // const embed = new Discord.RichEmbed()
-    // .setAuthor("Verificaiton")
-    // .setDescription("You have been verified")
+    // .setAuthor("ברוך הבא לטברנה של אורן")
+    // .setDescription("אישתי הבוטית מבקשת להתיחס יפה לאורן \n ")
     // .setFooter(newMember.guild.name)
     // .setColor("#98AFC7")
     // newMember.sendMessage(embed);
-    newUserChannel.join().then(connection => {
+      newUserChannel.join().then(connection => {
       const dispatcher = connection.playFile('./img/taverna.mp3', {volume: 1.0});
        dispatcher.on('end', function () { 
-          setTimeout(function () { newUserChannel.leave() }, 20000);
+          setTimeout(function () { newUserChannel.leave() }, 10000);
         });
       console.log("Successfully connected.");
     }).catch(e => {
       // Oh no, it errored! Let's log it to console :)
       console.error(e);
     });
+    setTimeout(function () {play(newUserChannel);}, 3000);
     // newMember.setVoiceChannel(null);
   }
 });
@@ -225,15 +226,23 @@ client.once('ready', () => {
   const moment = require('moment');
   const CronJob = require('cron').CronJob;
   const channel = client.channels.find(chan => chan.name === '𝙈𝘼𝙄𝙉');
-  let answerlist = ['אז מה ככה יש מכות?' , 'למה ככה רדום פה?' , 'נראה לי נדבקתם ממחלת משה שככה עייף פה','יש קוד?', 'מי בא לעשות כסף?','מה GTA מה']
+  let answerlist = ['אז מה ככה יש מכות?' ,
+   'למה ככה רדום פה?' , 
+  'נראה לי נדבקתם ממחלת משה שככה עייף פה',
+  'יש קוד?', 
+  'מי בא לעשות כסף?',
+  'מה GTA מה',
+  'שמעו אתם גופות',
+  'אני חיב להבין מי אשם בעייפות שנוצרה פה',
+  'יו סתמו תפה כבר','למה?','אני עצוב','שקט פה היום','מה יהיה?']
 let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
   var job = new CronJob({
-      cronTime: '50 22 * * 0-4', //* * * * * every minute
+      cronTime: '30 22 * * 0-4', //* * * * * every minute
       onTick: function() {
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
         .setTitle(ansxd)
-        channel.send(embed).then(message => message.delete(21600000));
+        channel.send(embed).then(message => message.delete(82800000));
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
