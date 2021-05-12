@@ -10,7 +10,7 @@ exports.run = async (client, message, args, level) => {
     await voiceChannel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/matan.mp3', {volume: 1.0,});
       await dispatcher.on('end', function () { 
-          setTimeout(function () { voiceChannel.leave();}, 5000);
+          setTimeout(function () { voiceChannel.leave();}, 10000);
           for (let member of voiceChannel.members) {member[1].setMute(false)}
       });
 
