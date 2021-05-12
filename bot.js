@@ -191,6 +191,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     // newMember.sendMessage(embed);
       newUserChannel.join().then(connection => {
       const dispatcher = connection.playFile('./img/taverna.mp3', {volume: 1.0});
+      setTimeout(function () {playFile(newUserChannel);}, 3000);
        dispatcher.on('end', function () { 
           setTimeout(function () { newUserChannel.leave() }, 10000);
         });
@@ -199,7 +200,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
       // Oh no, it errored! Let's log it to console :)
       console.error(e);
     });
-    setTimeout(function () {play(newUserChannel);}, 3000);
+    
     // newMember.setVoiceChannel(null);
   }
 });
