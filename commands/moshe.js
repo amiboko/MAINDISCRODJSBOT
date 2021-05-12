@@ -11,7 +11,7 @@ exports.run = async (client, message, args, level) => {
     await voiceChannel.join().then(async (connection) => {
       let dispatcher = await connection.playFile('./img/moshe.mp3', {volume: 1.0,});
       await dispatcher.on('end', function () { 
-          setTimeout(function () { voiceChannel.leave();}, 5000);
+          setTimeout(function () { voiceChannel.leave();}, 10000);
           for (let member of voiceChannel.members) {member[1].setMute(false)}
       });
 
@@ -27,7 +27,7 @@ exports.run = async (client, message, args, level) => {
       .setDescription(`${message.author}` +'\xa0' + 'מצטרף רגע את חברה שלי יש לה משהו לומר למשה ...')
       
       message.channel.send(embed2).then(message => message.delete(300000));
-           setTimeout(function () { play(voiceChannel); }, 5000);
+           setTimeout(function () { play(voiceChannel); }, 1500);
            for (let member of voiceChannel.members) {
             member[1].setMute(true)    }
 };
