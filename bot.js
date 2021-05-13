@@ -179,8 +179,8 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
   const oldUserChannel = oldMember.voiceChannel
   // const channel = client.channels.get('797533178243317770');
 
-  if(oldUserChannel === undefined && newUserChannel.id == '698153147431911435') {
-    // channel.send(newMember + ' has been verified.');
+  if(oldUserChannel === undefined && newUserChannel.id == '841599964143419403') {
+    channel.send(newMember + ' מה קורה נשמה ');
     // let role = newMember.guild.roles.find(role => role.name === "Verified");
     // newMember.addRole(role);
     // const embed = new Discord.RichEmbed()
@@ -193,7 +193,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
       newUserChannel.join().then(connection => {
       const dispatcher = connection.playFile('./img/taverna.mp3', {volume: 1.0});
        dispatcher.on('end', function () { 
-          setTimeout(function () { newUserChannel.leave() }, 10000);
+          setTimeout(function () { newUserChannel.leave() }, 50000);
         });
       console.log("Successfully connected.");
     }).catch(e => {
