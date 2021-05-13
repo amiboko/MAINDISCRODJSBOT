@@ -174,37 +174,34 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
   job.start();
 });
 
-client.on('voiceStateUpdate', (oldMember, newMember) => {
-  const newUserChannel = newMember.voiceChannel
-  const oldUserChannel = oldMember.voiceChannel
-  const channel = client.channels.get('797533178243317770');
+// client.on('voiceStateUpdate', (oldMember, newMember) => {
+//   const newUserChannel = newMember.voiceChannel
+//   const oldUserChannel = oldMember.voiceChannel
+//   const channel = client.channels.get('797533178243317770');
 
-  if(oldUserChannel === undefined && newUserChannel.id == '841599964143419403') {
-    channel.send(newMember + ' מה קורה נשמה ');
-    // let role = newMember.guild.roles.find(role => role.name === "Verified");
-    // newMember.addRole(role);
-    // const embed = new Discord.RichEmbed()
-    // .setTitle("ברוך הבא לטברנה של אורן")
-    // .setDescription("נא להתנהג בהתאם")
-    // .setFooter(newMember.guild.name)
-    // .setColor("#FF0000")
-    // newUserChannel.sendMessage(embed);
+//   if(oldUserChannel === undefined && newUserChannel.id == '841599964143419403') {
+//     channel.send(newMember + ' מה קורה נשמה ');
+//     // let role = newMember.guild.roles.find(role => role.name === "Verified");
+//     // newMember.addRole(role);
+//     // const embed = new Discord.RichEmbed()
+//     // .setTitle("ברוך הבא לטברנה של אורן")
+//     // .setDescription("נא להתנהג בהתאם")
+//     // .setFooter(newMember.guild.name)
+//     // .setColor("#FF0000")
+//     // newUserChannel.sendMessage(embed);
     
-      newUserChannel.join().then(connection => {
-      const dispatcher = connection.playFile('./img/taverna.mp3', {volume: 1.0});
-       dispatcher.on('end', function () { 
-        newUserChannel.leave()
-        
-        });
-      console.log("Successfully connected.");
-    }).catch(e => {
-      // Oh no, it errored! Let's log it to console :)
-      console.error(e);
-    });
+//       newUserChannel.join().then(connection => {
+//       const dispatcher = connection.playFile('./img/taverna.mp3', {volume: 1.0});
+//        dispatcher.on('end', function () {   newUserChannel.leave()   });
+//       console.log("Successfully connected.");
+//     }).catch(e => {
+//       // Oh no, it errored! Let's log it to console :)
+//       console.error(e);
+//     });
     
-    // newMember.setVoiceChannel(null);
-  }
-});
+//     // newMember.setVoiceChannel(null);
+//   }
+// });
 
 client.on('message', message => {
   
