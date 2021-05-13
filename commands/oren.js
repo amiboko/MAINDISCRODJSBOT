@@ -20,8 +20,12 @@ exports.run = async (client, message, args, level) => {
   }
        if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**').then(message => message.delete(120000));
        setTimeout(function () { play(voiceChannel); }, 5000);
-       voiceChannel.join()
-       
+       if (voiceChannel) { 
+        // Check if any of the ALREADY EXISTING connections are in that channel, if not connect
+        if (!client.voice.connections.some(conn => conn.channel.id == voiceChannel.id)) {
+                 voiceChannel.join()
+        }
+      }
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
