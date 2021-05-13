@@ -34,11 +34,7 @@ exports.run = async (client, message, args, level) => {
 
       let channel = message.member.voiceChannel;
       for (let member of channel.members) {
-        member[1].setMute(true)    }
-
-        if (!client.voice.connections.some(conn => conn.channel.id == voiceChannel.id)) return
-        message.reply('הלו תמתין קצת אל תציק לי').then(message => message.delete(20000));  
-   
+        member[1].setMute(true)    } 
 };
 
 
