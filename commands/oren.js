@@ -20,13 +20,9 @@ exports.run = async (client, message, args, level) => {
   }
        if (!voiceChannel) return message.reply('**אתה לא בערוץ שיחה איך אתה רוצה לשמוע בידיוק?**').then(message => message.delete(120000));
        setTimeout(function () { play(voiceChannel); }, 5000);
-       if (!client.voice.connections.some(conn => conn.channel.id == voiceChannel.id))  {
-         message.reply('הלו תמתין קצת אל תציק לי').then(message => message.delete(20000));  
-       }
-       else {
+
         voiceChannel.join()
-       }
-       
+
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
@@ -39,6 +35,9 @@ exports.run = async (client, message, args, level) => {
       let channel = message.member.voiceChannel;
       for (let member of channel.members) {
         member[1].setMute(true)    }
+
+        if (!client.voice.connections.some(conn => conn.channel.id == voiceChannel.id)) return
+        message.reply('הלו תמתין קצת אל תציק לי').then(message => message.delete(20000));  
    
 };
 
