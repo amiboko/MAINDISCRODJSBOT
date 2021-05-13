@@ -193,7 +193,8 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
       newUserChannel.join().then(connection => {
       const dispatcher = connection.playFile('./img/taverna.mp3', {volume: 1.0});
        dispatcher.on('end', function () { 
-          setTimeout(function () { newUserChannel.leave() }, 10000);
+        newUserChannel.leave()
+        
         });
       console.log("Successfully connected.");
     }).catch(e => {
