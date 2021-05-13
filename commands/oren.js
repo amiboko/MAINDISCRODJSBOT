@@ -22,8 +22,11 @@ exports.run = async (client, message, args, level) => {
        setTimeout(function () { play(voiceChannel); }, 5000);
        if (voiceChannel) { 
         // Check if any of the ALREADY EXISTING connections are in that channel, if not connect
-        if (!client.voice.connections.some(conn => conn.channel.id == voiceChannel.id)) return message.reply('הלו').then(message => message.delete(20000)); {
-                 voiceChannel.join()
+        if (!client.voice.connections.some(conn => conn.channel.id == voiceChannel.id)) 
+        return message.reply('הלו תמתין קצת אל תציק לי').then(message => message.delete(20000)); 
+        else {
+          
+          voiceChannel.join()
         }
       }
       const embed2 = new Discord.RichEmbed()
