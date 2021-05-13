@@ -22,7 +22,7 @@ exports.run = async (client, message, args, level) => {
        setTimeout(function () { play(voiceChannel); }, 5000);
        if (voiceChannel) { 
         // Check if any of the ALREADY EXISTING connections are in that channel, if not connect
-        if (!client.voice.connections.some(conn => conn.channel.id == voiceChannel.id)) {
+        if (!client.voice.connections.some(conn => conn.channel.id == voiceChannel.id)) return message.reply('הלו').then(message => message.delete(20000)); {
                  voiceChannel.join()
         }
       }
