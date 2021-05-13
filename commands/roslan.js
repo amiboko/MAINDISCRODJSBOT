@@ -25,10 +25,11 @@ exports.run = async (client, message, args, level) => {
       const embed2 = new Discord.RichEmbed()
       .setTitle('🎧 MASTERBOT-TUBE 🎧')
       .setColor("#3498DB")
-      .addField('🔇הושתק זמנית לניגון הקטע🔇', 'רצוי לא לעבור לערוץ אחר אחרת תתקע עם ההשתק')
-      .setDescription(`${message.author}` +'\xa0' + 'ברוך הבא לנגן שלי' + '\n\n' + '`🔊 5 שניות לניגון הלהיט של רוסלנה  🔊`' + '\n\n')
+      .addField('🔇הערוץ הושתק זמנית לניגון הקטע🔇', 'רצוי לא לעבור לערוץ אחר אחרת תתקע עם ההשתק')
+      .setDescription('`🔊 5 שניות לניגון הלהיט של רוסלנה 🔊`')
+      .setImage('https://github.com/amiboko/MAINDISCRODJSBOT/blob/master/img/ROSLANA.gif?raw=true') 
       .setTimestamp()
-      
+
       message.channel.send(embed2).then(message => message.delete(60000));
 
       let channel = message.member.voiceChannel;
