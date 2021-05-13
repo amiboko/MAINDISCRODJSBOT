@@ -177,7 +177,7 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
 client.on('voiceStateUpdate', (oldMember, newMember) => {
   const newUserChannel = newMember.voiceChannel
   const oldUserChannel = oldMember.voiceChannel
-  // const channel = client.channels.get('797533178243317770');
+  const channel = client.channels.get('797533178243317770');
 
   if(oldUserChannel === undefined && newUserChannel.id == '841599964143419403') {
     channel.send(newMember + ' מה קורה נשמה ');
