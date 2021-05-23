@@ -23,9 +23,7 @@ exports.run = (client, message, args, level) => {
       .setColor(colors.default)
       .setThumbnail(client.user.avatarURL)
       .addField('`כלים`', '🔨')
-      .addBlankField(true)
       .addField('`הימורים`', '💰')
-      .addBlankField(true)
       .addField('`כיף`', '🎲')
 
       message.channel.send(embed)
