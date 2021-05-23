@@ -21,11 +21,12 @@ exports.run = (client, message, args, level) => {
       const embed = new Discord.RichEmbed()
       .setTitle('תפריט פקודות')
       .setColor(colors.default)
-      .setFooter(`פקודה/פקודות/בוט "כלים"`)
       .setThumbnail(client.user.avatarURL)
-      .addField(` ➖➖➖➖➖`, '`🔨 כלים 🔨`')
-      .addField(` ➖➖➖➖➖`, '` 💲 הימורים 💲`')
-      .addField(` ➖➖➖➖➖ `, '`🎲 כיף 🎲`')
+      .addField('`כלים`', '🔨')
+      .addBlankField(true)
+      .addField('`הימורים`', '💰')
+      .addBlankField(true)
+      .addField('`כיף`', '🎲')
 
       message.channel.send(embed)
     } else {
