@@ -101,6 +101,133 @@ client.on('message', (msg) => {
 	antiSpam.message(msg);
 });
 
+client.on('message', message => {
+  
+
+  if(message.content.includes("סטטוס")) {
+    const embed = new Discord.RichEmbed()
+    .setTitle("**מצב נוכחי**")
+    .setColor('#0099ff')
+    .addField('משתמשים', `**${message.guild.memberCount}**`, true)
+    .addBlankField(true)
+    .addField('שרמוטות', `**${message.guild.members.filter(member => !member.user.bot).size}**`, true)
+    .addField('בוטים', `**${message.guild.members.filter(member => member.user.bot).size}**`, true)
+    .addField('דוח סטטוס', `**${message.guild.members.filter(o => o.presence.status === 'online').size}** Online\n**${message.guild.members.filter(i => i.presence.status === 'idle').size}** Inactive\n**${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}** Do Not Disturb\n**${message.guild.members.filter(off => off.presence.status === 'offline').size}** Offline\n**${message.guild.members.filter(s => s.presence.status === 'streaming').size}** Streaming`)
+    .setFooter(`© MASTERBOT`)
+  
+    message.channel.send({embed});
+}
+
+});
+
+client.on("presenceUpdate", (oldMember, newMember) => {
+  
+  if (newMember.user.bot) return;
+
+    let status = newMember.presence.status;
+    let guildChannels = newMember.guild.channels;
+
+    const embed = new Discord.RichEmbed()
+    .setTitle("**מה אתה משחק אותה עסוק**")
+    .setDescription(`${newMember.user}`)
+    .setColor('#FF0000')
+    .setFooter(`⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔`)
+
+    if(status === 'dnd')
+    {
+      guildChannels.get('583575179880431616')
+      .send(embed)
+      console.log(`${newMember.user.username} is now ${newMember.presence.status}`);
+    }});
+
+
+    client.on('message', message => {
+  
+      if(message.content.includes('ksp')) {
+        if (message.author.bot) return;
+        const embed = new Discord.RichEmbed()
+        .setTitle('KSP \n שרמוטות גנבים אוכלים בתחת')
+        .setDescription(`${message.author}`)
+        .setColor("#000000")
+          message.channel.send(embed);
+          
+      }
+    });
+
+    client.on('message', message => {
+  
+      if(message.content.includes('אוהב אותך')) {
+        if (message.author.bot) return;
+        const embed = new Discord.RichEmbed()
+        .setTitle('גם אני אוהב אותך נשמה יקרה')
+        .setDescription(`${message.author}`)
+        .setColor("#FFC0CB")
+          message.channel.send(embed);
+          
+      }
+    });
+
+    client.on('message', message => {
+  
+      if(message.content.includes('שונא אותך')) {
+        if (message.author.bot) return;
+        const embed = new Discord.RichEmbed()
+        .setTitle('גם אני שונא אותך נשמה יקרה')
+        .setDescription(`${message.author}`)
+        .setColor("#FF69B4")
+          message.channel.send(embed);
+          
+      }
+    });
+
+
+    client.on('message', message => {
+  
+      if(message.content.includes('שונא אותך')) {
+        if (message.author.bot) return;
+        const embed = new Discord.RichEmbed()
+        .setTitle('גם אני שונא אותך נשמה יקרה')
+        .setDescription(`${message.author}`)
+        .setColor("#E6E6FA")
+          message.channel.send(embed);
+          
+      }
+    });
+
+    
+    client.on('message', message => {
+  
+      if(message.content.includes('יצר אותך')) {
+        if (message.author.bot) return;
+        const embed = new Discord.RichEmbed()
+        .setTitle('זכויות יוצרים! תיזהר בלשונך')
+        .setDescription(`${message.author}`)
+        .setColor("#FFFF00")
+          message.channel.send(embed);
+          
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
@@ -330,6 +457,7 @@ client.on('message', async message => {
             ,'**למה לקלל למה**'
             ,'**אזהרה אחרונה!**'
             ,'**ההורים שלך בדוק אחים, צור קשר עם צופית גרנט**'
+            ,'**רק אם אתה גבר... כנס לערוץ שיחה ותרשום את זה שוב**'
           ]
       
       let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
