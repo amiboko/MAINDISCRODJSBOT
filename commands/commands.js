@@ -56,7 +56,7 @@ exports.run = (client, message, args, level) => {
           }
         })
 
-        if (!output) return message.reply('קטגוריה לא תקינה')
+        if (!output) return message.reply('אל תיהיה טיפש, תרשום בוט או פקודה ותקבל הכל מסודר ')
 		 const embed = new Discord.RichEmbed()
 	      .setTitle('תפריט פקודות')
 	      .setColor(colors.default)
