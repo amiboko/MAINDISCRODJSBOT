@@ -183,10 +183,10 @@ client.on("presenceUpdate", (oldMember, newMember) => {
 
     client.on('message', message => {
   
-      if(message.content.includes('שונא אותך')) {
+      if(message.content.includes('כנס')) {
         if (message.author.bot) return;
         const embed = new Discord.RichEmbed()
-        .setTitle('גם אני שונא אותך נשמה יקרה')
+        .setTitle('לאן?')
         .setDescription(`${message.author}`)
         .setColor("#E6E6FA")
           message.channel.send(embed);
@@ -207,26 +207,6 @@ client.on("presenceUpdate", (oldMember, newMember) => {
           
       }
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 client.on('presenceUpdate', (oldMember, newMember) => {
