@@ -120,24 +120,24 @@ client.on('message', message => {
 
 });
 
-client.on("presenceUpdate", (oldMember, newMember) => {
+// client.on("presenceUpdate", (oldMember, newMember) => {
   
-  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
+//   if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
 
-    let status = newMember.presence.status;
-    let guildChannels = newMember.guild.channels;
+//     let status = newMember.presence.status;
+//     let guildChannels = newMember.guild.channels;
 
-    const embed = new Discord.RichEmbed()
-    .setTitle("**מה אתה משחק אותה עסוק**")
-    .setDescription(`${newMember.user}`)
-    .setColor('#FF0000')
-    .setFooter(`⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔`)
+//     const embed = new Discord.RichEmbed()
+//     .setTitle("**מה אתה משחק אותה עסוק**")
+//     .setDescription(`${newMember.user}`)
+//     .setColor('#FF0000')
+//     .setFooter(`⛔⛔⛔⛔⛔⛔⛔⛔⛔⛔`)
 
-    if(status === 'dnd')
-    {
-      guildChannels.get('583575179880431616').send(embed);
-      console.log(`${newMember.user.username} is now ${newMember.presence.status}`);
-    }});
+//     if(status === 'dnd')
+//     {
+//       guildChannels.get('583575179880431616').send(embed);
+//       console.log(`${newMember.user.username} is now ${newMember.presence.status}`);
+//     }});
 
 
     client.on('message', message => {
