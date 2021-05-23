@@ -11,11 +11,11 @@ exports.run = (client, message, args, level) => {
       .addField(`תקללו חופשי רק קחו בחשבון שלי מותר הכל`,'➖➖➖➖➖➖➖➖➖➖')
       .addField(`אין להספים אז בבקשה לא לנסות אותי`,'➖➖➖➖➖➖➖➖➖➖')
       .addField(`גזענות לא מתקבלת על הדעת (לא תופס על תיימנים)`,'➖➖➖➖➖➖➖➖➖➖')
-      .addField(`צריכים עזרה? רשמו עזרה או פקודות בערוץ MAIN `,'➖➖➖➖➖➖➖➖➖➖')
+      .addField(`צריכים עזרה? רשמו בוט או פקודה בערוץ צ'אט `,'➖➖➖➖➖➖➖➖➖➖')
       .setDescription(`ברוכים הבאים לערוץ שלנו, כמה כללים חשובים\n`)
   		.setColor(colors.default)
 			.setThumbnail(client.user.avatarURL)
-			.addField('רוצים להזמין עוד משהוא לשרת?', '[CLICK ME](https://discord.gg/7ZZFk52Jvg)')
+			.addField('רוצים להזמין עוד משהוא לשרת?', '[CLICK ME](https://discord.gg/RcHes6y)')
 			.setImage("https://scontent.fhfa2-2.fna.fbcdn.net/v/t1.0-9/s960x960/81214613_1397300473812746_7875231392332775424_o.jpg?_nc_cat=109&_nc_ohc=2mjhu9slCRgAX-QuI0n&_nc_ht=scontent.fhfa2-2.fna&_nc_tp=1002&oh=209fde4a212c3de86dcf387e57fec1c0&oe=5E9ACFDF")
 
       message.channel.send(embed)
