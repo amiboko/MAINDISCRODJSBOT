@@ -122,7 +122,7 @@ client.on('message', message => {
 
 client.on("presenceUpdate", (oldMember, newMember) => {
   
-  if (newMember.user.bot) return;
+  if (newMember.user.bot || oldMember.presence.status !== newMember.presence.status) return;
 
     let status = newMember.presence.status;
     let guildChannels = newMember.guild.channels;
