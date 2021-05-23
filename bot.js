@@ -135,8 +135,7 @@ client.on("presenceUpdate", (oldMember, newMember) => {
 
     if(status === 'dnd')
     {
-      guildChannels.get('583575179880431616')
-      .send(embed)
+      guildChannels.get('583575179880431616').send(embed);
       console.log(`${newMember.user.username} is now ${newMember.presence.status}`);
     }});
 
@@ -208,6 +207,22 @@ client.on("presenceUpdate", (oldMember, newMember) => {
       }
     });
 
+
+
+    client.on('message', message => {
+  
+      if(message.content.includes('!ami')) {
+        if (message.author.bot) return;
+        const embed = new Discord.RichEmbed()
+        .setTitle('GAMERS UNITED COMMANDS')
+        .addField(`מעליי תפריט פקודות` ,'➖➖➖➖ \n לכל תפריט שלל פקודות אז תרגיש חופשי לנסות\n דוגמה - בוט כיף')
+        .addBlankField(true)
+        .addField(`ניתן לקבל עזרה לכל פקודה` ,'דוגמה - עזרה כיף')
+        .setThumbnail(client.user.avatarURL)
+          message.channel.send(embed);
+          
+      }
+    });
 
 client.on('presenceUpdate', (oldMember, newMember) => {
   const guild = newMember.guild;
