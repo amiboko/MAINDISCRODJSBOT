@@ -4,7 +4,7 @@ const colors = require('../lib/colors.json')
 exports.run = async (client, message, args, level) => {
 
   const voiceChannel = message.member.voiceChannel
-  message.delete(10000);
+  message.delete(2000);
 
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
@@ -29,7 +29,7 @@ exports.run = async (client, message, args, level) => {
       .setImage('https://github.com/amiboko/MAINDISCRODJSBOT/blob/master/img/MATANA.gif?raw=true')    
       .setTimestamp()
       
-      message.channel.send(embed2).then(message => message.delete(60000));
+      message.channel.send(embed2).then(message => message.delete(120000));
 
       let channel = message.member.voiceChannel;
       for (let member of channel.members) {
