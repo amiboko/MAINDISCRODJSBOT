@@ -1192,7 +1192,7 @@ client.on('message', message => {
 
 client.on('message', message => {
   
-  if(message.content.includes('3..')) {
+  if(message.content.includes('3')) {
     if (message.author.bot) return;
       message.channel.send('`2️...1...`');
       
