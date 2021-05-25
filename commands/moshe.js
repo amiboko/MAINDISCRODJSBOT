@@ -5,7 +5,7 @@ exports.run = async (client, message, args, level) => {
 
   const voiceChannel = message.member.voiceChannel
   
-  message.delete(10000);
+  message.delete(2000);
   
   async function play(voiceChannel) {
     await voiceChannel.join().then(async (connection) => {
@@ -26,8 +26,8 @@ exports.run = async (client, message, args, level) => {
       .setColor("#3498DB")
       .setDescription(`${message.author}` +'\xa0' + 'מצטרף רגע את חברה שלי יש לה משהו לומר למשה ...')
       
-      message.channel.send(embed2).then(message => message.delete(300000));
-           setTimeout(function () { play(voiceChannel); }, 1500);
+      message.channel.send(embed2).then(message => message.delete(120000));
+           setTimeout(function () { play(voiceChannel); }, 2000);
            for (let member of voiceChannel.members) {
             member[1].setMute(true)    }
 };
