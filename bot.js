@@ -288,7 +288,7 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
         .setTitle(ansxd)
-        channel.send(embed).then(message => message.delete(82800000));
+        channel.send(embed).then(message.delete(172800000))
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
@@ -351,12 +351,17 @@ client.once('ready', () => {
   let answerlist = ['אז מה ככה יש מכות?' ,
    'למה ככה רדום פה?' , 
   'נראה לי נדבקתם ממחלת משה שככה עייף פה',
+  'זיקוקים! השמיים שלך צמאים! לזיקוקים!',
+  'כייי אני לא שותה וודקה... אני לא שותה רדבול... רק לחלע כל היום בקוד. קוד. קוד . קוד. קוד. קוד. קוד. קוד. קוד. קוד. קוד. קוד. קוד.',
   'יש קוד?', 
   'מי בא לעשות כסף?',
   'מה GTA מה',
   'שמעו אתם גופות',
-  'אני חיב להבין מי אשם בעייפות שנוצרה פה',
-  'יו סתמו תפה כבר','למה?','אני עצוב','שקט פה היום','מה יהיה?']
+  'דיין מה איתך ימטוליסט',
+  'עומר יגבר',
+  'אני עצוב',
+  'שקט פה היום',
+  'מה יהיה?']
 let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
   var job = new CronJob({
       cronTime: '30 22 * * 0-4', //* * * * * every minute
@@ -364,7 +369,7 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
         .setTitle(ansxd)
-        channel.send(embed).then(message => message.delete(82800000));
+        channel.send(embed).then(message.delete(84600000))
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
@@ -775,7 +780,7 @@ client.on('message', async message => {
 
 client.on('message', async message => {
 
-  let botlist = ['מושה', 'מ ש ה', 'MOSHE', 'Moshe', '228555337542664192', 'moshe'] 
+  let botlist = ['מושה', 'מ ש ה', 'MOSHE', 'Moshe', '798592041738436649', 'moshe','משה'] 
 
   let foundInText = false;
   for (var i in botlist) { 
@@ -1102,6 +1107,33 @@ client.on('message', message => {
   if(message.content.includes('חכם')) {
     if (message.author.bot) return;
       message.channel.send('<a:veri:691980335235334155>');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('אמא ואבא')) {
+    if (message.author.bot) return;
+      message.channel.send('מי אוהב את השבת?');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('סבא וסבתא')) {
+    if (message.author.bot) return;
+      message.channel.send('מי אוהב את השבת?');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('אני אתה ואת')) {
+    if (message.author.bot) return;
+      message.channel.send('מה לי ולשבת אני בוט ימפגר');
       
   }
 });
