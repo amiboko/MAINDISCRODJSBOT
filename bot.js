@@ -288,7 +288,7 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
         .setTitle(ansxd)
-        channel.send(embed).then(message.delete(172800000))
+        channel.send(embed)
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
@@ -369,7 +369,7 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
         .setTitle(ansxd)
-        channel.send(embed).then(message.delete(84600000))
+        channel.send(embed)
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
