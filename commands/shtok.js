@@ -5,7 +5,7 @@ exports.run = async (client, message) => {
 
   const voiceChannel = message.member.voiceChannel
 
-  message.delete(10000);
+  message.delete(30000);
 
   if (!voiceChannel) return message.reply('**אם אתה גבר כנס לערוץ שיחה ותרשום שוב את מה שרשמת . . .**').then(message => message.delete(120000));
 
@@ -21,7 +21,7 @@ exports.run = async (client, message) => {
 
 exports.conf = {
   enabled: true,
-  aliases: ['טמבל','סתום','מפגר','דביל','מסריח','דבע','זבל','שתוק','חרא','תחרא'],
+  aliases: ['טמבל','סתום','מפגר','דביל','מסריח','דבע','זבל','שתוק','חרא','שמוק'],
   guildOnly: true,
   permLevel: 'User'
 }
