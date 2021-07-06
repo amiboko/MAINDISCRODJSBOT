@@ -288,7 +288,7 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
         .setTitle(ansxd)
-        channel.send(embed).then(message => message.delete(82800000));
+        channel.send(embed)
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
@@ -351,12 +351,17 @@ client.once('ready', () => {
   let answerlist = ['אז מה ככה יש מכות?' ,
    'למה ככה רדום פה?' , 
   'נראה לי נדבקתם ממחלת משה שככה עייף פה',
+  'זיקוקים! השמיים שלך צמאים! לזיקוקים!',
+  'כייי אני לא שותה וודקה... אני לא שותה רדבול... רק לחלע כל היום בקוד. קוד. קוד . קוד. קוד. קוד. קוד. קוד. קוד. קוד. קוד. קוד. קוד.',
   'יש קוד?', 
   'מי בא לעשות כסף?',
   'מה GTA מה',
   'שמעו אתם גופות',
-  'אני חיב להבין מי אשם בעייפות שנוצרה פה',
-  'יו סתמו תפה כבר','למה?','אני עצוב','שקט פה היום','מה יהיה?']
+  'דיין מה איתך ימטוליסט',
+  'עומר יגבר',
+  'אני עצוב',
+  'שקט פה היום',
+  'מה יהיה?']
 let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
   var job = new CronJob({
       cronTime: '30 22 * * 0-4', //* * * * * every minute
@@ -364,7 +369,7 @@ let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
         const embed = new Discord.RichEmbed()
         .setColor('#FFFF00')
         .setTitle(ansxd)
-        channel.send(embed).then(message => message.delete(82800000));
+        channel.send(embed)
         console.log(moment.tz('Israel').format('HH:mm:ss'))
       },
       start: false,
@@ -391,6 +396,7 @@ client.on('message', async message => {
             ,'**לפי החישובים שלי נמצא כי אתה 100% גיי**'
             ,'**אתה צריך טיפול נשמה**'
             ,'**יש לי פסיכיאטרית מקצועית להביא לך מספר?**'
+            ,'846084362247995393'
           ]
       
       let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
@@ -443,7 +449,7 @@ client.on('message', async message => {
       //message.delete();
 
       let answerlist = [
-              '`סליחה! רק לי מותר לקלל פה יזיין`'
+              '`סליחה!?! רק לי מותר לקלל פה יזיין`'
             , '`אתה מקלל הרבה לאחרונה... הכל בסדר בבית?`' 
             ,'**מה יהיה עם הקללות**'
             ,'**⚠️ תרגיע עם הקללות שלך ⚠️**'
@@ -454,6 +460,8 @@ client.on('message', async message => {
             ,'**אזהרה אחרונה!**'
             ,'**ההורים שלך בדוק אחים, צור קשר עם צופית גרנט**'
             ,'**רק אם אתה גבר... כנס לערוץ שיחה ותרשום את זה שוב**'
+            ,'846087193410666516'
+            ,'**במקום לקלל כל היום תיעזר בי, תרשום בוט ותקבל כלים שיעזרו לך בחיים יטמבל**'
           ]
       
       let ansxd = answerlist[Math.floor(Math.random() * answerlist.length)];
@@ -775,7 +783,7 @@ client.on('message', async message => {
 
 client.on('message', async message => {
 
-  let botlist = ['מושה', 'מ ש ה', 'MOSHE', 'Moshe', '228555337542664192', 'moshe'] 
+  let botlist = ['מושה', 'מ ש ה', 'MOSHE', 'Moshe', '798592041738436649', 'moshe','משה'] 
 
   let foundInText = false;
   for (var i in botlist) { 
@@ -875,7 +883,7 @@ client.on('message', message => {
   if(message.content.includes('עומר')) {
     if (message.author.bot) return;
     const embed = new Discord.RichEmbed()
-    .setTitle('`עומר אדם או לג בעומר?`')
+    .setTitle('`כולם חיות ורק עומר אדם...`')
     .setDescription(`${message.author}`)
     .setColor("#000000")
       message.channel.send(embed);
@@ -1108,6 +1116,33 @@ client.on('message', message => {
 
 client.on('message', message => {
   
+  if(message.content.includes('אמא ואבא')) {
+    if (message.author.bot) return;
+      message.channel.send('מי אוהב את השבת?');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('סבא וסבתא')) {
+    if (message.author.bot) return;
+      message.channel.send('מי אוהב את השבת?');
+      
+  }
+});
+
+client.on('message', message => {
+  
+  if(message.content.includes('אני אתה ואת')) {
+    if (message.author.bot) return;
+      message.channel.send('מה לי ולשבת אני בוט ימפגר');
+      
+  }
+});
+
+client.on('message', message => {
+  
   if(message.content.includes('סליחה')) {
     if (message.author.bot) return;
       message.channel.send('אני סולח לך');
@@ -1172,6 +1207,15 @@ client.on('message', message => {
 
 client.on('message', message => {
   
+  if(message.content.includes('איפה כולם')) {
+    if (message.author.bot) return;
+      message.channel.send(message.author + '`כולם מוצצים לי כרגע, נא לא להפריע`');
+      
+  }
+});
+
+client.on('message', message => {
+  
   if(message.content.includes('שחור')) {
     if (message.author.bot) return;
       message.channel.send(message.author + '`זה הצבע שאתה אוהב?`');
@@ -1222,6 +1266,40 @@ client.on('message', message => {
   }
 });
 
+client.on('message', message => {
+  if(message.content.includes('למה מה')) {
+    if (message.author.bot) return;
+      message.channel.send('`את מאיים?`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content.includes('זאת פקודה')) {
+    if (message.author.bot) return;
+      message.channel.send('`אמאמאמאמא שך פקודה ידבע`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content.includes('תתנייק')) {
+    if (message.author.bot) return;
+      message.channel.send('`כאילו הספינה שהתנגשה בקרחון לזה אתה מדבר?`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content.includes('הימורים')) {
+    if (message.author.bot) return;
+      message.channel.send('`שמע אתה דבע ברמות! תרשום פקודה הימורים`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content.includes('מעפן')) {
+    if (message.author.bot) return;
+      message.channel.send('`מי מעפן?!`');
+  }
+});
 
 client.on('message', message => {
   if(message.content.includes('סבבה')) {
@@ -1231,9 +1309,30 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
+  if(message.content.includes('בוטוש')) {
+    if (message.author.bot) return;
+      message.channel.send('`קוקסינל שלי!`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content.includes('חחח')) {
+    if (message.author.bot) return;
+      message.channel.send('`מה מצחיק אותך?`');
+  }
+});
+
+client.on('message', message => {
   if(message.content === '?') {
     if (message.author.bot) return;
       message.channel.send(message.author +'\xa0\xa0'+ '`מה אתה לא מבין?`');
+  }
+});
+
+client.on('message', message => {
+  if(message.content === 'בדיקה123') {
+    if (message.author.bot) return;
+    message.channel.bulkDelete(50);
   }
 });
 
